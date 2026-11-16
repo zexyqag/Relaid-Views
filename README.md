@@ -159,7 +159,7 @@ a permission only for the app of a pack that declared it and was granted it.
 
 A pack may keep captured screens of its app in `packs/<app>/<view>/fixtures/`, as the Relaid host reads
 them. With the app shared and in front on a host, save one with
-`adb shell dumpsys activity service relaid.app/.RelaidAccessibilityService tree | sed -n '/<snapshot/,/<\/snapshot>/p' > packs/<app>/<view>/fixtures/<name>.xml`. Next to them, `expect.json` says what the pack must make of each: which screen applies (`screen`), `secure`,
+`adb shell dumpsys activity service relaid.host/.RelaidAccessibilityService tree | sed -n '/<snapshot/,/<\/snapshot>/p' > packs/<app>/<view>/fixtures/<name>.xml`. Next to them, `expect.json` says what the pack must make of each: which screen applies (`screen`), `secure`,
 `title`, `actions`, `options`, `tabs`, `slides`, `fields` (label to keyboard), `keypad`, `progress`,
 `hero`, `avatars`, `headings`, and labels it `shows` or `hides`. Relaid's tests run every pack's fixtures through
 its real pipeline, so a change to Relaid or to a pack that breaks a screen shows up before anyone
