@@ -1,0 +1,34 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="dk.mitid.app.android.activity.MainActivity">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.widget.Button" content-desc="Cancel" bounds="[24,92][292,248]"/>
+       <node class="android.view.View" bounds="[849,98][1032,242]"/>
+       <node class="android.widget.ScrollView" bounds="[0,248][1080,1752]">
+        <node class="android.view.View" bounds="[96,384][984,593]"/>
+        <node class="android.widget.TextView" text="Service One" bounds="[379,824][702,920]" heading="true"/>
+        <node class="android.widget.TextView" text="Wants you to log on" bounds="[96,1067][478,1139]"/>
+        <node class="android.widget.TextView" text="Signer" bounds="[96,1187][279,1283]" heading="true"/>
+       </node>
+       <node class="android.view.View" bounds="[144,1752][936,1968]" clickable="true">
+        <node class="android.view.View" content-desc="Approve" bounds="[144,1752][936,1968]"/>
+        <node class="android.view.View" bounds="[156,1764][924,1956]">
+         <node class="android.view.View" bounds="[348,1824][924,1896]"/>
+         <node class="android.view.View" bounds="[156,1764][348,1956]" clickable="true">
+          <node class="android.view.View" bounds="[156,1764][348,1956]">
+           <node class="android.view.View" bounds="[180,1788][324,1932]"/>
+          </node>
+         </node>
+        </node>
+        <node class="android.widget.Button" bounds="[144,1752][936,1968]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

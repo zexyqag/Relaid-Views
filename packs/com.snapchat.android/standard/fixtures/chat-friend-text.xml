@@ -1,0 +1,75 @@
+<snapshot package="com.snapchat.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,104][132,224]" clickable="true"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[132,107][246,221]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" text="Friend One" bounds="[270,128][792,200]" clickable="true"/>
+  <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[792,80][1056,248]">
+   <node class="android.view.View" resource-id="start_audio_call" content-desc="Audio call" bounds="[792,104][912,224]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+   <node class="android.view.View" resource-id="start_video_call" content-desc="Video call" bounds="[936,104][1056,224]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+  </node>
+  <node class="androidx.recyclerview.widget.RecyclerView" resource-id="com.snapchat.android:id/chat_message_list" bounds="[0,248][1080,2256]" scrollable="true" scroll-forward="true" scroll-backward="true" collection="true">
+   <node class="android.widget.FrameLayout" bounds="[0,248][1074,283]">
+    <node class="android.view.View" bounds="[0,248][1074,283]">
+     <node class="android.widget.TextView" resource-id="" text="STATUS LINE" content-desc="STATUS LINE" bounds="[303,212][771,250]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[24,307][1038,404]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[406,331][655,380]">
+     <node class="javaClass" text="DATE ONE" content-desc="" bounds="[406,331][655,380]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,404][1038,592]">
+    <node class="android.view.View" bounds="[24,428][747,592]">
+     <node class="javaClass" text="FRIEND ONE" content-desc="" bounds="[24,428][315,489]" clickable="true"/>
+     <node class="javaClass" text="Message from the friend" content-desc="" bounds="[48,501][723,580]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[24,616][1038,713]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[421,640][641,689]">
+     <node class="javaClass" text="DATE TWO" content-desc="" bounds="[421,640][641,689]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,713][1038,901]">
+    <node class="android.view.View" bounds="[24,737][733,901]">
+     <node class="javaClass" text="ME" content-desc="" bounds="[24,737][79,798]" clickable="true"/>
+     <node class="javaClass" text="Message from me" content-desc="" bounds="[48,810][709,889]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[24,925][1038,1022]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[416,949][645,998]">
+     <node class="javaClass" text="DATE THREE" content-desc="" bounds="[416,949][645,998]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1022][1074,1970]">
+    <node class="android.widget.LinearLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[24,1046][477,1842]">
+     <node class="android.view.View" bounds="[57,1058][453,1113]">
+      <node class="javaClass" text="FRIEND ONE" content-desc="" bounds="[57,1058][348,1113]" clickable="true"/>
+     </node>
+     <node class="android.widget.RelativeLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[57,1149][434,1818]"/>
+    </node>
+    <node class="android.view.View" bounds="[0,1866][1074,1970]">
+     <node class="android.widget.TextView" resource-id="" text="STATUS LINE" content-desc="STATUS LINE" bounds="[303,1899][771,1937]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1970][1074,2256]">
+    <node class="android.widget.LinearLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[24,1994][477,2256]">
+     <node class="android.view.View" bounds="[57,2006][453,2061]">
+      <node class="javaClass" text="FRIEND ONE" content-desc="" bounds="[57,2006][348,2061]" clickable="true"/>
+     </node>
+     <node class="android.widget.RelativeLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[57,2097][434,2256]"/>
+    </node>
+   </node>
+  </node>
+  <node class="android.view.View" bounds="[0,1932][1080,2076]"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[24,2100][144,2244]" clickable="true">
+   <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/chat_input_bar_camera" content-desc="Camera" bounds="[24,2112][144,2232]" clickable="true"/>
+  </node>
+  <node class="android.widget.EditText" resource-id="com.snapchat.android:id/chat_input_text_field" hint="Send a chat" bounds="[168,2088][687,2244]" clickable="true" long-clickable="true" editable="true" focused="true" ime-enter="true"/>
+  <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/chat_note_record_button" bounds="[589,2129][661,2201]" clickable="true"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[711,2088][810,2244]" clickable="true">
+   <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Stickers" bounds="[711,2121][810,2220]"/>
+  </node>
+  <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[834,2121][933,2220]" clickable="true"/>
+  <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Games" bounds="[957,2121][1056,2220]" clickable="true"/>
+ </node>
+</snapshot>

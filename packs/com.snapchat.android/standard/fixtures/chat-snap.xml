@@ -1,0 +1,40 @@
+<snapshot package="com.snapchat.android" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,104][132,224]" clickable="true"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[132,107][246,221]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" text="Team Snapchat" bounds="[270,111][702,183]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" text="Powered by My AI" bounds="[270,183][520,224]"/>
+  <node class="androidx.recyclerview.widget.RecyclerView" resource-id="com.snapchat.android:id/chat_message_list" bounds="[0,248][1080,2256]" collection="true">
+   <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,249][1080,298]">
+    <node class="javaClass" text="OCTOBER 31ST" bounds="[0,249][1080,298]" clickable="true"/>
+   </node>
+   <node class="android.widget.LinearLayout" bounds="[0,298][1080,354]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[24,298][300,354]">
+     <node class="javaClass" text="TEAM SNAPCHAT" bounds="[24,298][300,354]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.LinearLayout" bounds="[0,354][1080,528]">
+    <node class="android.view.View" bounds="[24,354][1056,528]">
+     <node class="android.view.View" text="snap_envelop" bounds="[42,363][1047,519]" clickable="true"/>
+     <node class="javaClass" text="Tap to view" bounds="[24,389][273,468]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,528][1080,577]">
+    <node class="javaClass" text="TODAY" bounds="[0,528][1080,577]" clickable="true"/>
+   </node>
+  </node>
+  <node class="android.view.View" bounds="[0,1157][1080,1301]"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[24,1313][144,1457]" clickable="true">
+   <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/chat_input_bar_camera" content-desc="Camera" bounds="[24,1325][144,1445]" clickable="true"/>
+  </node>
+  <node class="android.widget.EditText" resource-id="com.snapchat.android:id/chat_input_text_field" hint="Send a chat" bounds="[168,1325][687,1445]" clickable="true" long-clickable="true" editable="true" focused="true" ime-enter="true"/>
+  <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/chat_note_record_button" bounds="[589,1348][661,1420]" clickable="true"/>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[711,1313][810,1457]" clickable="true">
+   <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Stickers" bounds="[711,1334][810,1433]"/>
+  </node>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[834,1313][933,1457]" clickable="true">
+   <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Memories" bounds="[834,1334][933,1433]"/>
+  </node>
+  <node class="android.widget.ImageButton" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Games" bounds="[957,1334][1056,1433]" clickable="true"/>
+ </node>
+</snapshot>

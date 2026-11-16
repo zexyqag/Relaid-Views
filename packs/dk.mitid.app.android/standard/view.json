@@ -1,0 +1,35 @@
+{
+  "theme": {
+    "accent": "#0060e6"
+  },
+  "screens": [
+    {
+      "name": "mitid-pin",
+      "displayName": "PIN entry",
+      "when": [
+        "desc~:digits entered"
+      ],
+      "secure": true,
+      "parts": [
+        {
+          "select": "desc~:digits entered",
+          "as": "pin",
+          "label": "PIN"
+        }
+      ]
+    },
+    {
+      "name": "mitid-screens",
+      "displayName": "All other screens",
+      "secure": true,
+      "priority": -1,
+      "parts": [
+        {
+          "select": "class:android.view.View & is:clickable & has(class:android.view.View & is:clickable) & has(class:android.widget.Button)",
+          "as": "action",
+          "confirm": "slide"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.danskebank.mobilepay" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.TextView" resource-id="TAG_AMOUNT_SUMMARY" text="1 kr" bounds="[100,200][980,300]"/>
+  <node class="android.view.View" resource-id="TAG_PAYEE_TITLE" text="Recipient One" bounds="[100,340][980,420]"/>
+  <node class="android.view.View" resource-id="TAG_PAYEE_SUBTITLE" text="Mobile 00000000" bounds="[100,430][980,500]"/>
+  <node class="android.view.View" resource-id="TAG_SWIPER_SURFACE" content-desc="Swipe to send" bounds="[100,2000][980,2200]" clickable="true">
+   <node class="android.view.View" resource-id="TAG_SWIPER_TEXT" text="Swipe to send" bounds="[300,2060][780,2140]"/>
+   <node class="android.view.View" resource-id="TAG_SWIPER_THUMB" bounds="[110,2010][280,2190]"/>
+  </node>
+ </node>
+</snapshot>

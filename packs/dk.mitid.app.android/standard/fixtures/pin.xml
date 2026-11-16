@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.mitid.app.android" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.TextView" text="Enter PIN" bounds="[100,200][980,280]"/>
+  <node class="android.view.View" content-desc="3 out of 6 digits entered" bounds="[100,320][980,400]"/>
+  <node class="android.widget.Button" text="1" bounds="[100,1000][360,1200]" clickable="true"/>
+  <node class="android.widget.Button" text="2" bounds="[360,1000][720,1200]" clickable="true"/>
+  <node class="android.widget.Button" text="3" bounds="[720,1000][980,1200]" clickable="true"/>
+  <node class="android.widget.Button" text="0" bounds="[360,1600][720,1800]" clickable="true"/>
+  <node class="android.widget.Button" content-desc="Delete" bounds="[720,1600][980,1800]" clickable="true"/>
+ </node>
+</snapshot>

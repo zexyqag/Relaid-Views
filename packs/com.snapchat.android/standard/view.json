@@ -1,0 +1,122 @@
+{
+  "screens": [
+    {
+      "name": "snapchat-chats",
+      "displayName": "Chats",
+      "when": [
+        "id:ff_item"
+      ],
+      "parts": [
+        {
+          "select": "id~:list-picker-",
+          "as": "hidden"
+        },
+        {
+          "select": "id:neon_header_avatar",
+          "as": "hidden"
+        },
+        {
+          "select": "id:ff_item",
+          "as": "row",
+          "parts": "class:javaClass",
+          "press": "class:android.view.View & text~:21"
+        },
+        {
+          "select": "id:ngs_map_icon_container",
+          "as": "tab"
+        },
+        {
+          "select": "id:ngs_chat_icon_container",
+          "as": "tab",
+          "icon": "chat"
+        },
+        {
+          "select": "id:ngs_camera_icon_container",
+          "as": "tab"
+        },
+        {
+          "select": "id:ngs_community_icon_container",
+          "as": "tab",
+          "icon": "people"
+        },
+        {
+          "select": "id:ngs_spotlight_icon_container",
+          "as": "tab",
+          "icon": "star"
+        },
+        {
+          "select": "id:ff_item",
+          "as": "person"
+        }
+      ]
+    },
+    {
+      "name": "snapchat-chat",
+      "displayName": "Chat",
+      "when": [
+        "id:chat_message_list",
+        "id:chat_input_text_field"
+      ],
+      "parts": [
+        {
+          "select": "id:chat_message_list",
+          "as": "list",
+          "scroll": "drag"
+        },
+        {
+          "select": "id:start_audio_call",
+          "as": "hidden"
+        },
+        {
+          "select": "id:start_video_call",
+          "as": "hidden"
+        },
+        {
+          "select": "id:chat_input_bar_camera",
+          "as": "hidden"
+        },
+        {
+          "select": "id:chat_note_record_button",
+          "as": "hidden"
+        },
+        {
+          "select": "desc:Stickers",
+          "as": "hidden"
+        },
+        {
+          "select": "desc:Memories",
+          "as": "hidden"
+        },
+        {
+          "select": "desc:Games",
+          "as": "hidden"
+        },
+        {
+          "select": "text:snap_envelop",
+          "as": "hidden"
+        },
+        {
+          "select": "class:android.view.View & id:0_resource_name_obfuscated & in(id:chat_message_list)",
+          "as": "heading"
+        },
+        {
+          "select": "class:javaClass & nth:1 & parent(class:android.view.View & has(class:javaClass & nth:2)) & in(id:chat_message_list)",
+          "as": "heading"
+        },
+        {
+          "select": "class:javaClass & parent(class:android.view.View & nth:1 & parent(class:android.widget.LinearLayout & has(class:android.widget.RelativeLayout))) & in(id:chat_message_list)",
+          "as": "heading"
+        },
+        {
+          "select": "id:chat_message_list",
+          "as": "text"
+        },
+        {
+          "select": "class:android.widget.RelativeLayout & id:0_resource_name_obfuscated & in(id:chat_message_list)",
+          "as": "picture",
+          "label": "Picture or video"
+        }
+      ]
+    }
+  ]
+}

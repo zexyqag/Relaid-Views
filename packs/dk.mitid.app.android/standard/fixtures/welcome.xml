@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.mitid.app.android" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2400]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+    <node class="android.widget.LinearLayout" resource-id="dk.mitid.app.android:id/action_bar_root" bounds="[0,0][1080,2400]">
+     <node class="android.widget.FrameLayout" resource-id="android:id/content" bounds="[0,0][1080,2400]">
+      <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+       <node class="android.widget.LinearLayout" bounds="[0,0][1080,2400]">
+        <node class="android.widget.FrameLayout" resource-id="dk.mitid.app.android:id/main_content" bounds="[0,0][1080,2400]">
+         <node class="android.widget.FrameLayout" resource-id="dk.mitid.app.android:id/main_content" bounds="[0,0][1080,2400]">
+          <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+           <node class="android.view.View" bounds="[0,0][1080,2400]">
+            <node class="android.view.View" bounds="[0,0][1080,2400]">
+             <node class="android.view.View" bounds="[0,272][1080,2007]">
+              <node class="android.view.View" bounds="[330,370][750,775]"/>
+              <node class="android.widget.TextView" text="Activate your MitID" bounds="[99,872][755,968]"/>
+              <node class="android.widget.TextView" resource-id="welcomeScreenBody" text="Activate your MitID in your new app, e.g., by copying from your old app or by scanning your passport." bounds="[99,1016][981,1232]"/>
+              <node class="android.widget.TextView" text="Is it the first time you use MitID?" bounds="[99,1280][831,1352]"/>
+              <node class="android.widget.TextView" text="MitID is your digital ID. Create your MitID by using your passport/ID card or with an activation code from Citizen Service." bounds="[99,1376][981,1592]"/>
+             </node>
+             <node class="android.view.View" resource-id="nextButton" bounds="[99,2007][981,2157]" clickable="true">
+              <node class="android.widget.TextView" text="GET STARTED" bounds="[147,2055][837,2110]"/>
+              <node class="android.widget.Button" bounds="[99,2007][981,2157]"/>
+             </node>
+             <node class="android.view.View" bounds="[0,0][1080,272]">
+              <node class="android.view.View" bounds="[0,80][1080,272]">
+               <node class="android.view.View" bounds="[468,104][612,248]"/>
+               <node class="android.view.View" bounds="[760,104][1068,248]">
+                <node class="android.view.View" resource-id="settingsButton" bounds="[760,104][1068,248]" clickable="true">
+                 <node class="android.view.View" content-desc="Menu" bounds="[760,104][1068,248]"/>
+                 <node class="android.view.View" bounds="[802,140][924,212]"/>
+                 <node class="android.view.View" bounds="[924,104][1068,248]"/>
+                 <node class="android.widget.Button" bounds="[760,104][1068,248]"/>
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

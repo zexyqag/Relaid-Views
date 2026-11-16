@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.danskebank.mobilepay" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2400]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+    <node class="android.widget.LinearLayout" resource-id="dk.danskebank.mobilepay:id/action_bar_root" bounds="[0,0][1080,2400]">
+     <node class="android.widget.FrameLayout" resource-id="android:id/content" bounds="[0,0][1080,2400]">
+      <node class="b78" bounds="[0,0][1080,2400]">
+       <node class="android.view.View" bounds="[0,0][1080,2400]">
+        <node class="android.view.View" bounds="[0,0][1080,2400]">
+         <node class="android.view.View" bounds="[0,0][1080,2400]">
+          <node class="android.view.View" bounds="[0,0][1080,2400]">
+           <node class="android.view.View" bounds="[0,0][1080,2400]">
+            <node class="android.view.View" bounds="[0,0][1080,2400]">
+             <node class="android.view.View" bounds="[0,80][1080,2256]">
+              <node class="android.view.View" bounds="[48,160][1032,1584]">
+               <node class="android.view.View" bounds="[231,402][850,728]"/>
+               <node class="android.view.View" bounds="[264,776][816,1036]">
+                <node class="android.widget.TextView" text="Enter your code" bounds="[360,776][721,844]"/>
+                <node class="android.view.View" bounds="[264,892][816,1036]" clickable="true" long-clickable="true">
+                 <node class="android.view.View" content-desc="Pincode field" bounds="[264,892][816,1036]"/>
+                 <node class="android.view.View" bounds="[252,892][396,1036]"/>
+                 <node class="android.view.View" bounds="[396,892][540,1036]"/>
+                 <node class="android.view.View" bounds="[540,892][684,1036]"/>
+                 <node class="android.view.View" bounds="[684,892][828,1036]"/>
+                </node>
+               </node>
+               <node class="android.view.View" bounds="[390,1051][691,1195]" clickable="true">
+                <node class="android.widget.TextView" text="Forgot code?" bounds="[426,1096][655,1150]"/>
+                <node class="android.widget.Button" bounds="[390,1084][691,1162]"/>
+               </node>
+              </node>
+              <node class="android.view.View" bounds="[1008,88][1080,232]"/>
+              <node class="android.view.View" bounds="[0,1584][1080,2256]" focused="true">
+               <node class="android.view.View" bounds="[0,1584][360,1752]" clickable="true">
+                <node class="android.widget.TextView" text="1" bounds="[0,1604][360,1732]"/>
+               </node>
+               <node class="android.view.View" bounds="[360,1584][720,1752]" clickable="true">
+                <node class="android.widget.TextView" text="2" bounds="[360,1604][720,1732]"/>
+               </node>
+               <node class="android.view.View" bounds="[720,1584][1080,1752]" clickable="true">
+                <node class="android.widget.TextView" text="3" bounds="[720,1604][1080,1732]"/>
+               </node>
+               <node class="android.view.View" bounds="[0,1752][360,1920]" clickable="true">
+                <node class="android.widget.TextView" text="4" bounds="[0,1772][360,1900]"/>
+               </node>
+               <node class="android.view.View" bounds="[360,1752][720,1920]" clickable="true">
+                <node class="android.widget.TextView" text="5" bounds="[360,1772][720,1900]"/>
+               </node>
+               <node class="android.view.View" bounds="[720,1752][1080,1920]" clickable="true">
+                <node class="android.widget.TextView" text="6" bounds="[720,1772][1080,1900]"/>
+               </node>
+               <node class="android.view.View" bounds="[0,1920][360,2088]" clickable="true">
+                <node class="android.widget.TextView" text="7" bounds="[0,1940][360,2068]"/>
+               </node>
+               <node class="android.view.View" bounds="[360,1920][720,2088]" clickable="true">
+                <node class="android.widget.TextView" text="8" bounds="[360,1940][720,2068]"/>
+               </node>
+               <node class="android.view.View" bounds="[720,1920][1080,2088]" clickable="true">
+                <node class="android.widget.TextView" text="9" bounds="[720,1940][1080,2068]"/>
+               </node>
+               <node class="android.view.View" bounds="[360,2088][720,2256]" clickable="true">
+                <node class="android.widget.TextView" text="0" bounds="[360,2108][720,2236]"/>
+               </node>
+               <node class="android.view.View" bounds="[720,2088][1080,2256]" clickable="true">
+                <node class="android.view.View" content-desc="Delete" bounds="[864,2088][936,2256]"/>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+  <node class="android.view.View" resource-id="android:id/navigationBarBackground" bounds="[0,2256][1080,2400]"/>
+ </node>
+</snapshot>

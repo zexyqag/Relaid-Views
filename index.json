@@ -1,0 +1,56 @@
+{
+    "format": 3,
+    "packs": [
+        {
+            "app": "com.snapchat.android",
+            "view": "standard",
+            "name": "Snapchat",
+            "version": 12,
+            "format": 1,
+            "description": "The chat list: each chat as one item you can open, with its name, status and initials; Map, Chat, Camera, Stories and Spotlight as tabs. A chat: who wrote what, the pictures in it, and a field that sends with Enter. Snapchat ignores some taps and scrolls Relaid sends, so the pack asks to touch the screen there, and to show a chat's pictures.",
+            "path": "packs/com.snapchat.android/standard/view.json",
+            "sha256": "c17612b44cab279fd0892e97114f322bf7ecbd4c5e8bef8b9d2e92977c7b4ba3",
+            "screens": [
+                "snapchat-chats",
+                "snapchat-chat"
+            ],
+            "permissions": [
+                "touch",
+                "pictures"
+            ]
+        },
+        {
+            "app": "dk.danskebank.mobilepay",
+            "view": "standard",
+            "name": "MobilePay",
+            "version": 6,
+            "format": 1,
+            "description": "MobilePay's colours in light and dark; Send and Request as actions; Home, Payments, Groups, Wallet as tabs with icons; contacts with initials; the amount large and centred; labelled search and amount fields; the PIN lock marked secure, with four dots for the code; the swipe-to-send as a slide you must drag, in MobilePay's own words.",
+            "path": "packs/dk.danskebank.mobilepay/standard/view.json",
+            "sha256": "392fadcd3f2483cd34ef71c588bd553f58fb7d9555376a911cc79b260678e71d",
+            "screens": [
+                "mobilepay-home",
+                "mobilepay-pin",
+                "mobilepay-send",
+                "mobilepay-amount",
+                "mobilepay-confirm"
+            ],
+            "permissions": []
+        },
+        {
+            "app": "dk.mitid.app.android",
+            "view": "standard",
+            "name": "MitID",
+            "version": 5,
+            "format": 1,
+            "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there.",
+            "path": "packs/dk.mitid.app.android/standard/view.json",
+            "sha256": "d3719176bc427d8805d6768eb40fe19785d6fba1cafeb1d77c20a0adb003046e",
+            "screens": [
+                "mitid-pin",
+                "mitid-screens"
+            ],
+            "permissions": []
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials",
+    "fixture": "landing.xml",
+    "screen": "mobilepay-home",
+    "secure": false,
+    "actions": [
+      "Send",
+      "Request"
+    ],
+    "options": [
+      "QR"
+    ],
+    "tabs": [
+      "Home",
+      "Payments",
+      "Groups",
+      "Wallet"
+    ],
+    "hides": [
+      "Home",
+      "Payments"
+    ],
+    "avatars": [
+      "Contact One",
+      "Contact Two",
+      "Contact Three",
+      "Contact Four"
+    ]
+  },
+  {
+    "why": "Choose recipient: the unlabelled search field gets a label, suggestions get initials",
+    "fixture": "send.xml",
+    "screen": "mobilepay-send",
+    "fields": {
+      "Search name or number": null
+    },
+    "avatars": [
+      "Recipient One",
+      "Recipient Two",
+      "Recipient Three"
+    ]
+  },
+  {
+    "why": "Amount: labelled fields with a number keyboard, the amount as hero, Next, the calculator keys hidden",
+    "fixture": "amount.xml",
+    "screen": "mobilepay-amount",
+    "secure": false,
+    "fields": {
+      "Amount (kr)": "number",
+      "Message (optional)": null
+    },
+    "hero": "Amount (kr)",
+    "actions": [
+      "Next"
+    ],
+    "hides": [
+      "+",
+      "−",
+      "×",
+      "÷",
+      "=",
+      "Back",
+      "Send to"
+    ]
+  },
+  {
+    "why": "Confirm: the amount as title and hero, the swipe-to-send as a slide in the app's own words, nothing hidden",
+    "fixture": "confirm.xml",
+    "screen": "mobilepay-confirm",
+    "secure": true,
+    "title": "1 kr",
+    "hero": "1 kr",
+    "slides": [
+      "Swipe to send"
+    ],
+    "shows": [
+      "Recipient One",
+      "Mobile 00000000"
+    ]
+  },
+  {
+    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept",
+    "fixture": "pin.xml",
+    "screen": "mobilepay-pin",
+    "secure": true,
+    "title": "Enter your code",
+    "keypad": 11,
+    "progress": {
+      "filled": 0,
+      "total": 4,
+      "counted": true
+    },
+    "hides": [
+      "Pincode field"
+    ],
+    "shows": [
+      "Forgot code?"
+    ]
+  }
+]

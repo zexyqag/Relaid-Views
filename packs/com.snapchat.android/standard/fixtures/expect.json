@@ -1,0 +1,146 @@
+[
+  {
+    "why": "The chat list (names replaced; status lines kept only where they are Snapchat's own words, times and streaks). Snapchat offers a click on each part of a row (avatar, name, status, Camera Reply) but on no row itself: each row becomes one item named by the chat, its status as the detail line, and the parts that are not text are left out. The filter buttons above the list (Unread, Groups, Streaks...) are left out, the header's \"Chat\" is the title, and Search, Notification and Add Friends go to the options.",
+    "fixture": "chats.xml",
+    "screen": "snapchat-chats",
+    "secure": false,
+    "shows": [
+      "Friend One",
+      "Friend Eight",
+      "Team Snapchat"
+    ],
+    "hides": [
+      "avatar_container",
+      "Camera Reply",
+      "2131232929",
+      "Received     1h",
+      "Unread",
+      "Streaks",
+      "Groups"
+    ],
+    "avatars": [
+      "Friend One",
+      "Friend Two",
+      "Team Snapchat",
+      "Friend Three",
+      "Friend Four",
+      "Friend Five",
+      "Friend Six",
+      "Friend Seven",
+      "Friend Eight"
+    ],
+    "tabs": [
+      "Map",
+      "Chat",
+      "Camera",
+      "Stories",
+      "Spotlight"
+    ],
+    "title": "Chat",
+    "options": [
+      "Search",
+      "Notification",
+      "Add Friends"
+    ]
+  },
+  {
+    "why": "A chat. Snapchat offers a click on every message and on who wrote it: the senders (ME, TEAM SNAPCHAT) become headings and the messages text, the title is the chat's name, and the field sends with Enter. Camera, voice note, Stickers, Memories and Games are left out: none of them works from another phone.",
+    "fixture": "chat.xml",
+    "screen": "snapchat-chat",
+    "secure": false,
+    "title": "Team Snapchat",
+    "shows": [
+      "ME",
+      "hello team",
+      "TEAM SNAPCHAT",
+      "Powered by My AI"
+    ],
+    "hides": [
+      "Camera",
+      "Stickers",
+      "Memories",
+      "Games"
+    ],
+    "actions": [],
+    "fields": {
+      "Send a chat": null
+    }
+  },
+  {
+    "why": "A chat with a snap in it. A snap is a picture Relaid does not show, and opening it on the host would use it up, so it stays text; the date heads its messages.",
+    "fixture": "chat-snap.xml",
+    "screen": "snapchat-chat",
+    "secure": false,
+    "title": "Team Snapchat",
+    "shows": [
+      "OCTOBER 31ST",
+      "TEAM SNAPCHAT",
+      "Tap to view",
+      "TODAY"
+    ],
+    "hides": [
+      "snap_envelop",
+      "Camera",
+      "Games"
+    ],
+    "actions": [],
+    "fields": {
+      "Send a chat": null
+    }
+  },
+  {
+    "why": "A chat with a friend (names and texts replaced). The audio and video call buttons are left out: a call cannot work from another phone, and one tap would ring the friend. Nothing in the message list is a control. The two messages are pictures with no text: each is a picture the host captures live (pictures), labelled \"Picture or video\" until it arrives, the first with the app's notice about it (\"You saved a Snap in Chat!\") as its second line.",
+    "fixture": "chat-friend.xml",
+    "screen": "snapchat-chat",
+    "secure": false,
+    "title": "Friend One",
+    "shows": [
+      "FRIEND ONE",
+      "Picture or video"
+    ],
+    "hides": [
+      "Audio call",
+      "Video call",
+      "Camera",
+      "Games"
+    ],
+    "actions": [],
+    "fields": {
+      "Send a chat": null
+    },
+    "headings": [
+      "FRIEND ONE"
+    ]
+  },
+  {
+    "why": "A chat with a friend with text messages (names and texts replaced). Who wrote each message (FRIEND ONE, ME) is a heading above it, as are the dates; a picture's sender too; the call buttons are left out.",
+    "fixture": "chat-friend-text.xml",
+    "screen": "snapchat-chat",
+    "secure": false,
+    "title": "Friend One",
+    "headings": [
+      "DATE ONE",
+      "FRIEND ONE",
+      "DATE TWO",
+      "ME",
+      "DATE THREE",
+      "FRIEND ONE",
+      "FRIEND ONE"
+    ],
+    "shows": [
+      "Message from the friend",
+      "Message from me",
+      "STATUS LINE"
+    ],
+    "hides": [
+      "Audio call",
+      "Video call",
+      "Camera",
+      "Games"
+    ],
+    "actions": [],
+    "fields": {
+      "Send a chat": null
+    }
+  }
+]

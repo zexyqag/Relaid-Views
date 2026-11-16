@@ -1,0 +1,7 @@
+{
+  "app": "dk.danskebank.mobilepay",
+  "view": "standard",
+  "name": "MobilePay",
+  "version": 6,
+  "description": "MobilePay's colours in light and dark; Send and Request as actions; Home, Payments, Groups, Wallet as tabs with icons; contacts with initials; the amount large and centred; labelled search and amount fields; the PIN lock marked secure, with four dots for the code; the swipe-to-send as a slide you must drag, in MobilePay's own words."
+}

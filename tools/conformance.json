@@ -1,0 +1,1786 @@
+{
+  "about": "Pack rule cases with the expected verdict of the phone (Relaid's validator) and of tools/check.py, and, where given, the theme parts the phone ignores. Each case is one view file. Both run these.",
+  "cases": [
+    {
+      "why": "a minimal pack",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a full pack using every role and option",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#1a73e8"
+        },
+        "screens": [
+          {
+            "name": "send",
+            "displayName": "Choose recipient",
+            "when": [
+              "id:recipient_list",
+              "text~:send to"
+            ],
+            "activity": "SendActivity",
+            "secure": false,
+            "priority": 1,
+            "parts": [
+              {
+                "select": "id:toolbar_title",
+                "as": "title"
+              },
+              {
+                "select": "id:promo_banner",
+                "as": "hidden"
+              },
+              {
+                "select": "class:RecyclerView",
+                "as": "list",
+                "scroll": "drag"
+              },
+              {
+                "select": "id:msg",
+                "as": "text"
+              },
+              {
+                "select": "id:sender",
+                "as": "heading"
+              },
+              {
+                "select": "id:photo",
+                "as": "picture",
+                "label": "Photo"
+              },
+              {
+                "select": "id:icon",
+                "label": "Icon"
+              },
+              {
+                "select": "id:amount",
+                "as": "hero"
+              },
+              {
+                "select": "id:search",
+                "as": "field",
+                "label": "Search",
+                "keyboard": "text"
+              },
+              {
+                "select": "id:send",
+                "as": "action",
+                "label": "Send",
+                "tone": "primary",
+                "confirm": "slide",
+                "perform": "click"
+              },
+              {
+                "select": "id:more",
+                "as": "option",
+                "label": "More",
+                "tone": "muted"
+              },
+              {
+                "select": "id:home_tab",
+                "as": "tab",
+                "label": "Home",
+                "icon": "home"
+              },
+              {
+                "select": "id:contact",
+                "as": "person"
+              },
+              {
+                "select": "id:chat_row",
+                "as": "row",
+                "parts": "class:Label",
+                "press": "id:open"
+              },
+              {
+                "select": "id:pin_dots",
+                "as": "pin",
+                "label": "PIN",
+                "total": 4
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a selector joining two conditions",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "class:Button & text:Send",
+                "as": "action"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a full view id with its package",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:com.example.app:id/send",
+                "as": "action"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "an id-contains selector",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id~:list-picker-",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "structural selectors: inside, directly inside, containing, not, position, state",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "class:javaClass & in(id:chat_message_list) & not(parent(id:ff_item))",
+                "as": "text"
+              },
+              {
+                "select": "class:View & has(text:Send)",
+                "as": "action"
+              },
+              {
+                "select": "nth:1 & parent(class:LinearLayout & id~:group)",
+                "as": "heading"
+              },
+              {
+                "select": "is:clickable & is:heading",
+                "as": "option"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a value with balanced parentheses",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "text:Send (1)",
+                "as": "action"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "several screens with different names",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "a"
+          },
+          {
+            "name": "b",
+            "when": [
+              "id:b"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "displayName of exactly 60 characters",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "displayName": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "nullable fields set to null",
+      "app": "com.example.app",
+      "pack": {
+        "theme": null,
+        "screens": [
+          {
+            "name": "x",
+            "displayName": null,
+            "activity": null,
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "label": null,
+                "tone": null,
+                "confirm": null,
+                "perform": null
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a label of exactly 60 characters",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "label": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a code of 12 digits",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:code",
+                "as": "pin",
+                "total": 12
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "no screens",
+      "app": "com.example.app",
+      "pack": {},
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an empty list of screens",
+      "app": "com.example.app",
+      "pack": {
+        "screens": []
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "screens not in an array",
+      "app": "com.example.app",
+      "pack": {
+        "screens": {
+          "name": "x"
+        }
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "the old format: an array of screens",
+      "app": "com.example.app",
+      "pack": [
+        {
+          "name": "x",
+          "packages": [
+            "com.example.app"
+          ]
+        }
+      ],
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen that is not an object",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          "x"
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "the app is not a package name",
+      "app": "notapackage",
+      "pack": {
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen without a name",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "when": [
+              "id:a"
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "two screens with one name",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x"
+          },
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown pack key",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x"
+          }
+        ],
+        "packages": [
+          "com.example.app"
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown screen key",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "whenPresent": [
+              "id:a"
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown part key",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "selector": "id:a"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a part without a selector",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown role",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "button"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an icon on an action",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "icon": "home"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a scroll on a field",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "field",
+                "scroll": "drag"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a total on an action",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "total": 4
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a tone on a tab",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "tab",
+                "tone": "primary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a confirm on an option",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "option",
+                "confirm": "slide"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a label on hidden",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "hidden",
+                "label": "x"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a rule without a role or a label",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a label of 61 characters",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "label": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a label on two lines",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "label": "a\nb"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an empty label",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "label": " "
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown tone",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "tone": "rocket"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a tone in capitals",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "tone": "PRIMARY"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown confirm",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "confirm": "double-tap"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown perform",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "perform": "fling"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown keyboard",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "field",
+                "keyboard": "emoji"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown scroll",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "list",
+                "scroll": "fling"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown tab icon",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "tab",
+                "icon": "rocket"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a code length of 0",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "pin",
+                "total": 0
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a code length above 12",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "pin",
+                "total": 13
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "two titles",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "title"
+              },
+              {
+                "select": "id:b",
+                "as": "title"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "two lists",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "list"
+              },
+              {
+                "select": "id:b",
+                "as": "list"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a selector without kind:value",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "toolbar",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown selector kind",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "name:send",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an empty selector",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a selector of only a joiner",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": " & ",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a selector with an empty value",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a parenthesis left open",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "in(id:list",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a parenthesis never opened",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:list)",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an empty relation",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "in()",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown state",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "is:shiny",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a position of 0",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "nth:0",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a position that is not a number",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "nth:first",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a bad selector inside a relation",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "in(foo:bar)",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a bad selector in when",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "toolbar"
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a bad selector in a row's parts",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:row",
+                "as": "row",
+                "parts": "Label"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a bad selector in a row's press",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:row",
+                "as": "row",
+                "press": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an empty displayName",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "displayName": ""
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "displayName of 61 characters",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "displayName": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "displayName on two lines",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "displayName": "a\nb"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "priority that is not a number",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "priority": "high"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "secure that is not true or false",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": "yes"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "when that is not a list",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": "id:a"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "parts set to null",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": null
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "when set to null",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": null
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen name that is not an id",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "Send Screen"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false
+    },
+    {
+      "why": "a short accent colour",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#9ab"
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false
+    },
+    {
+      "why": "a full skin with hero, avatars and tab icons",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#5a78ff",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672",
+            "onAccent": "#ffffff"
+          },
+          "dark": {
+            "accent": "#7aa7ff",
+            "background": "#0f1114",
+            "surface": "#181b20",
+            "text": "#eef1f4",
+            "muted": "#9aa4b0"
+          },
+          "corners": "round",
+          "header": "plain",
+          "cards": "filled"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:amount",
+                "as": "hero"
+              },
+              {
+                "select": "id:tab_home",
+                "as": "tab",
+                "label": "Home",
+                "icon": "home"
+              },
+              {
+                "select": "id:contact",
+                "as": "person"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "an accent close to the destructive red",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#e53935"
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.accent"
+      ]
+    },
+    {
+      "why": "an orange accent is far enough from the red",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#ff8c00"
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "a nearly grey reddish accent",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#6b5f5f"
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "a palette without its muted colour",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#2f6fde",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "muted text too faint on the background",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#2f6fde",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#b0b0b0"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "a palette with no accent anywhere",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "a palette falls back to the theme's accent",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#2f6fde",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "a palette cannot borrow an accent the phone ignores",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#e53935",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.accent",
+        "theme.light"
+      ]
+    },
+    {
+      "why": "an accent too pale against the background",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672",
+            "accent": "#c8d4ff"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "a background that hides the destructive red",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#ffd54f",
+            "background": "#3a3a3a",
+            "surface": "#444444",
+            "text": "#ffffff",
+            "muted": "#c0c0c0"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "white on a mid blue is enough for button text",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672",
+            "accent": "#5a78ff",
+            "onAccent": "#ffffff"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "onAccent too faint on the accent",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672",
+            "accent": "#5a78ff",
+            "onAccent": "#c0c8ff"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "a palette colour that is not #RRGGBB",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "dark": {
+            "accent": "#7aa7ff",
+            "background": "#0f1114",
+            "surface": "#18b20",
+            "text": "#eef1f4",
+            "muted": "#9aa4b0"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.dark"
+      ]
+    },
+    {
+      "why": "unknown corners, header and cards",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "corners": "blob",
+          "header": "huge",
+          "cards": "glass"
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an unknown palette key",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#2f6fde",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672",
+            "border": "#000000"
+          }
+        },
+        "screens": [
+          {
+            "name": "x"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "where to look for what Relaid cannot read",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:map",
+                "as": "unread"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "unread takes no label",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:map",
+                "as": "unread",
+                "label": "Map"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    }
+  ]
+}

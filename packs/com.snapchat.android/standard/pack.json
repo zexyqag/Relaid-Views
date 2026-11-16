@@ -1,0 +1,11 @@
+{
+  "app": "com.snapchat.android",
+  "view": "standard",
+  "name": "Snapchat",
+  "version": 12,
+  "description": "The chat list: each chat as one item you can open, with its name, status and initials; Map, Chat, Camera, Stories and Spotlight as tabs. A chat: who wrote what, the pictures in it, and a field that sends with Enter. Snapchat ignores some taps and scrolls Relaid sends, so the pack asks to touch the screen there, and to show a chat's pictures.",
+  "permissions": [
+    "touch",
+    "pictures"
+  ]
+}

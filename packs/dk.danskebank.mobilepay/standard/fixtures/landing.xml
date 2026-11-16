@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.danskebank.mobilepay" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2400]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+    <node class="android.widget.LinearLayout" resource-id="dk.danskebank.mobilepay:id/action_bar_root" bounds="[0,0][1080,2400]">
+     <node class="android.widget.FrameLayout" resource-id="android:id/content" bounds="[0,0][1080,2400]">
+      <node class="b78" bounds="[0,0][1080,2400]">
+       <node class="android.view.View" bounds="[0,0][1080,2400]">
+        <node class="android.view.View" bounds="[0,0][1080,2400]">
+         <node class="android.view.View" bounds="[0,0][1080,2034]">
+          <node class="android.view.View" bounds="[0,0][1080,2034]">
+           <node class="android.view.View" bounds="[0,0][1080,2034]">
+            <node class="android.view.View" bounds="[0,0][1080,2034]">
+             <node class="android.view.View" bounds="[0,0][1080,2034]">
+              <node class="android.view.View" bounds="[0,0][1080,2034]">
+               <node class="android.widget.ScrollView" bounds="[0,0][1080,1964]">
+                <node class="android.view.View" bounds="[48,284][1032,980]">
+                 <node class="android.view.View" bounds="[48,284][1032,980]">
+                  <node class="android.view.View" bounds="[48,284][528,740]">
+                   <node class="android.view.View" bounds="[48,284][528,740]">
+                    <node class="android.view.View" content-desc="To-do list, Nothing to follow up!" bounds="[48,284][528,740]"/>
+                   </node>
+                  </node>
+                  <node class="android.view.View" resource-id="TAG_RECENT_CONVERSATION_TILE" bounds="[552,284][1032,500]" clickable="true" long-clickable="true">
+                   <node class="android.view.View" bounds="[588,320][732,464]"/>
+                   <node class="android.widget.TextView" text="Contact One" bounds="[768,325][996,459]"/>
+                  </node>
+                  <node class="android.view.View" resource-id="TAG_RECENT_CONVERSATION_TILE" bounds="[552,524][1032,740]" clickable="true" long-clickable="true">
+                   <node class="android.view.View" bounds="[588,560][732,704]"/>
+                   <node class="android.widget.TextView" text="Contact Two" bounds="[768,565][996,699]"/>
+                  </node>
+                  <node class="android.view.View" resource-id="TAG_RECENT_CONVERSATION_TILE" bounds="[48,764][528,980]" clickable="true" long-clickable="true">
+                   <node class="android.view.View" bounds="[84,800][228,944]"/>
+                   <node class="android.widget.TextView" text="Contact Three" bounds="[264,805][492,939]"/>
+                  </node>
+                  <node class="android.view.View" resource-id="TAG_RECENT_CONVERSATION_TILE" bounds="[552,764][1032,980]" clickable="true" long-clickable="true">
+                   <node class="android.view.View" bounds="[588,800][732,944]"/>
+                   <node class="android.widget.TextView" text="Contact Four" bounds="[768,805][996,939]"/>
+                  </node>
+                 </node>
+                </node>
+                <node class="android.view.View" bounds="[48,980][1032,1556]">
+                 <node class="android.view.View" bounds="[48,980][1032,1556]">
+                  <node class="android.view.View" bounds="[48,1064][1032,1544]" clickable="true">
+                   <node class="android.widget.TextView" text="Pay with MobilePay and win 2,000 kr. 🎉" bounds="[96,1112][816,1280]"/>
+                   <node class="android.view.View" bounds="[646,1352][984,1496]" clickable="true">
+                    <node class="android.widget.TextView" text="Sign me up!" bounds="[694,1394][936,1454]"/>
+                    <node class="android.widget.Button" bounds="[646,1370][984,1478]"/>
+                   </node>
+                   <node class="android.widget.ImageView" content-desc="Close" bounds="[864,1088][1008,1232]" clickable="true"/>
+                  </node>
+                 </node>
+                </node>
+               </node>
+               <node class="android.view.View" bounds="[480,0][600,368]">
+                <node class="android.view.View" bounds="[468,116][612,260]">
+                 <node class="android.view.View" bounds="[516,164][564,212]"/>
+                </node>
+               </node>
+              </node>
+              <node class="android.view.View" bounds="[0,80][1080,224]">
+               <node class="android.view.View" bounds="[348,80][492,224]"/>
+               <node class="android.view.View" bounds="[816,80][888,224]">
+                <node class="android.view.View" bounds="[816,80][888,224]"/>
+               </node>
+               <node class="android.view.View" bounds="[888,80][1032,224]">
+                <node class="android.view.View" bounds="[816,80][888,224]"/>
+                <node class="android.view.View" bounds="[888,80][1032,224]">
+                 <node class="android.view.View" resource-id="TAG_RADICAL_PROFILE_AVATAR" bounds="[888,80][1032,224]" clickable="true">
+                  <node class="android.view.View" bounds="[888,80][1032,224]">
+                   <node class="android.view.View" content-desc="Profile" bounds="[912,104][1008,200]"/>
+                  </node>
+                  <node class="android.widget.Button" bounds="[888,80][1032,224]"/>
+                 </node>
+                </node>
+                <node class="android.view.View" bounds="[942,26][1080,170]"/>
+               </node>
+              </node>
+              <node class="android.view.View" bounds="[186,1702][894,1986]">
+               <node class="android.view.View" bounds="[186,1702][894,1986]">
+                <node class="android.view.View" bounds="[186,1782][894,1986]">
+                 <node class="android.view.View" bounds="[186,1782][894,1986]">
+                  <node class="android.view.View" bounds="[186,1782][894,1986]">
+                   <node class="android.view.View" bounds="[234,1782][438,1986]">
+                    <node class="android.view.View" resource-id="TAG_ACTION_BUTTON_SEND" bounds="[234,1782][438,1986]" clickable="true" long-clickable="true">
+                     <node class="android.view.View" bounds="[300,1821][372,1893]"/>
+                     <node class="android.widget.TextView" text="Send" bounds="[292,1905][381,1959]"/>
+                     <node class="android.widget.Button" bounds="[234,1782][438,1986]"/>
+                    </node>
+                   </node>
+                   <node class="android.view.View" bounds="[438,1782][642,1986]">
+                    <node class="android.view.View" resource-id="TAG_ACTION_BUTTON_REQUEST" bounds="[438,1782][642,1986]" clickable="true" long-clickable="true">
+                     <node class="android.view.View" bounds="[504,1821][576,1893]"/>
+                     <node class="android.widget.TextView" text="Request" bounds="[467,1905][614,1959]"/>
+                     <node class="android.widget.Button" bounds="[438,1782][642,1986]"/>
+                    </node>
+                   </node>
+                   <node class="android.view.View" bounds="[642,1782][846,1986]">
+                    <node class="android.view.View" resource-id="TAG_ACTION_BUTTON_QR" bounds="[642,1782][846,1986]" clickable="true" long-clickable="true">
+                     <node class="android.view.View" bounds="[708,1821][780,1893]"/>
+                     <node class="android.widget.TextView" text="QR" bounds="[716,1905][773,1959]"/>
+                     <node class="android.widget.Button" bounds="[642,1782][846,1986]"/>
+                    </node>
+                   </node>
+                  </node>
+                 </node>
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node class="android.view.View" bounds="[0,2034][1080,2400]">
+          <node class="android.view.View" bounds="[0,2034][1080,2256]">
+           <node class="android.view.View" bounds="[0,2034][270,2256]" long-clickable="true">
+            <node class="android.view.View" resource-id="TAG_BOTTOM_NAV_ITEM_HOME" bounds="[0,2058][270,2256]" selected="true">
+             <node class="android.view.View" bounds="[51,2052][219,2196]"/>
+             <node class="android.widget.TextView" text="Home" bounds="[83,2184][187,2238]"/>
+             <node class="android.view.View" bounds="[99,2088][171,2160]"/>
+             <node class="android.view.View" bounds="[51,2052][219,2196]"/>
+             <node class="android.view.View" bounds="[0,2058][270,2256]"/>
+            </node>
+           </node>
+           <node class="android.view.View" bounds="[270,2034][540,2256]" long-clickable="true">
+            <node class="android.view.View" resource-id="TAG_BOTTOM_NAV_ITEM_PAYMENTS" bounds="[270,2058][540,2256]" clickable="true">
+             <node class="android.widget.TextView" text="Payments" bounds="[316,2184][493,2238]"/>
+             <node class="android.view.View" bounds="[369,2088][441,2160]"/>
+             <node class="android.view.View" bounds="[321,2052][489,2196]"/>
+             <node class="android.view.View" bounds="[270,2058][540,2256]"/>
+            </node>
+           </node>
+           <node class="android.view.View" bounds="[540,2034][810,2256]" long-clickable="true">
+            <node class="android.view.View" resource-id="TAG_BOTTOM_NAV_ITEM_SOCIAL" bounds="[540,2058][810,2256]" clickable="true">
+             <node class="android.widget.TextView" text="Groups" bounds="[611,2184][739,2238]"/>
+             <node class="android.view.View" bounds="[639,2088][711,2160]"/>
+             <node class="android.view.View" bounds="[591,2052][759,2196]"/>
+             <node class="android.view.View" bounds="[540,2058][810,2256]"/>
+            </node>
+           </node>
+           <node class="android.view.View" bounds="[810,2034][1080,2256]" long-clickable="true">
+            <node class="android.view.View" resource-id="TAG_BOTTOM_NAV_ITEM_WALLET" bounds="[810,2058][1080,2256]" clickable="true">
+             <node class="android.widget.TextView" text="Wallet" bounds="[888,2184][1001,2238]"/>
+             <node class="android.view.View" bounds="[909,2088][981,2160]"/>
+             <node class="android.view.View" bounds="[861,2052][1029,2196]"/>
+             <node class="android.view.View" bounds="[810,2058][1080,2256]"/>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+  <node class="android.view.View" resource-id="android:id/navigationBarBackground" bounds="[0,2256][1080,2400]"/>
+ </node>
+</snapshot>

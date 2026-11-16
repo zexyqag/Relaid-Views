@@ -1,0 +1,148 @@
+<snapshot package="com.snapchat.android" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="androidx.recyclerview.widget.RecyclerView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,260][1080,2046]" scrollable="true" scroll-forward="true" scroll-backward="true" collection="true">
+   <node class="android.widget.FrameLayout" bounds="[0,260][1080,404]">
+    <node class="android.view.View" bounds="[0,260][1080,404]">
+     <node class="android.view.View" resource-id="list-picker-pill-Unread" content-desc="" bounds="[24,284][286,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Unread" content-desc="Unread" bounds="[54,309][196,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+      <node class="android.widget.TextView" resource-id="list-picker-pill-Unread-badge" text="1" content-desc="1" bounds="[219,317][237,358]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-My AI" content-desc="" bounds="[286,284][538,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.view.View" resource-id="avatar" content-desc="" bounds="[322,308][382,368]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+      <node class="android.widget.TextView" resource-id="" text="My AI" content-desc="My AI" bounds="[394,309][508,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Games" content-desc="" bounds="[538,284][733,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Games" content-desc="Games" bounds="[568,309][703,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Near Me" content-desc="" bounds="[733,284][961,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Near Me" content-desc="Near Me" bounds="[763,309][932,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Groups" content-desc="" bounds="[877,284][1080,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Groups" content-desc="Groups" bounds="[937,309][1080,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Unreplied" content-desc="" bounds="[827,284][1080,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Unreplied" content-desc="Unreplied" bounds="[887,309][1080,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Best Friends" content-desc="" bounds="[782,284][1080,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Text 2" content-desc="Text 2" bounds="[842,309][1080,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-pill-Streaks" content-desc="" bounds="[879,284][1080,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="Streaks" content-desc="Streaks" bounds="[939,309][1080,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+     <node class="android.view.View" resource-id="list-picker-edit-list" content-desc="" bounds="[881,284][1080,392]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true">
+      <node class="android.widget.TextView" resource-id="" text="New" content-desc="New" bounds="[989,309][1080,366]" clickable="true" long-clickable="true" scroll-forward="true" scroll-backward="true"/>
+     </node>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,410][1080,601]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Opened" bounds="[0,410][1080,601]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,424][183,586]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,469][1059,541]" clickable="true"/>
+     <node class="javaClass" text="Friend One" content-desc="" bounds="[0,410][133,480]" clickable="true"/>
+     <node class="android.view.View" text="2131232947" content-desc="" bounds="[189,516][249,576]" clickable="true"/>
+     <node class="javaClass" text="Status 3" content-desc="" bounds="[249,522][702,571]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,604][1080,795]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Status 4" bounds="[0,604][1080,795]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,618][183,780]" clickable="true"/>
+     <node class="android.view.View" text="Status 5" content-desc="" bounds="[894,657][1059,741]" clickable="true"/>
+     <node class="javaClass" text="Friend Two" content-desc="" bounds="[0,604][449,674]" clickable="true"/>
+     <node class="javaClass" text="Status 6" content-desc="" bounds="[470,610][650,667]" clickable="true"/>
+     <node class="android.view.View" text="2131232940" content-desc="" bounds="[189,710][249,770]" clickable="true"/>
+     <node class="javaClass" text="Status 4" content-desc="" bounds="[249,716][776,765]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,798][1080,989]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Received" bounds="[0,798][1080,989]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,812][183,974]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,857][1059,929]" clickable="true"/>
+     <node class="javaClass" text="Team Snapchat" content-desc="" bounds="[0,798][358,868]" clickable="true"/>
+     <node class="android.view.View" text="Status 7" content-desc="" bounds="[379,809][427,857]" clickable="true"/>
+     <node class="android.view.View" text="2131232927" content-desc="" bounds="[189,904][249,964]" clickable="true"/>
+     <node class="javaClass" text="Received     1h" content-desc="" bounds="[249,910][489,959]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,992][1080,1183]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="New Chat" bounds="[0,992][1080,1183]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1006][183,1168]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,1051][1059,1123]" clickable="true"/>
+     <node class="javaClass" text="Friend Three" content-desc="" bounds="[0,992][446,1062]" clickable="true"/>
+     <node class="android.view.View" text="2131232939" content-desc="" bounds="[189,1098][249,1158]" clickable="true"/>
+     <node class="javaClass" text="New Chat     2h" content-desc="" bounds="[249,1104][502,1153]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1186][1080,1377]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Received" bounds="[0,1186][1080,1377]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1200][183,1362]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,1245][1059,1317]" clickable="true"/>
+     <node class="javaClass" text="Friend Four" content-desc="" bounds="[0,1186][133,1256]" clickable="true"/>
+     <node class="android.view.View" text="2131232929" content-desc="" bounds="[189,1292][249,1352]" clickable="true"/>
+     <node class="javaClass" text="Status 8" content-desc="" bounds="[249,1298][669,1347]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1380][1080,1571]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Opened" bounds="[0,1380][1080,1571]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1394][183,1556]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,1439][1059,1511]" clickable="true"/>
+     <node class="javaClass" text="Friend Five" content-desc="" bounds="[0,1380][244,1450]" clickable="true"/>
+     <node class="android.view.View" text="2131232945" content-desc="" bounds="[189,1486][249,1546]" clickable="true"/>
+     <node class="javaClass" text="Opened     1d" content-desc="" bounds="[249,1492][478,1541]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1574][1080,1765]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Saved in Chat" bounds="[0,1574][1080,1765]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1588][183,1750]" clickable="true"/>
+     <node class="android.view.View" text="Status 9" content-desc="" bounds="[738,1607][1059,1732]" clickable="true"/>
+     <node class="javaClass" text="Friend Six" content-desc="" bounds="[0,1574][321,1644]" clickable="true"/>
+     <node class="android.view.View" text="2131233301" content-desc="" bounds="[189,1680][249,1740]" clickable="true"/>
+     <node class="javaClass" text="Saved in Chat     6d" content-desc="" bounds="[249,1686][566,1735]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1768][1080,1959]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Status 10" bounds="[0,1768][1080,1959]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1782][183,1944]" clickable="true"/>
+     <node class="javaClass" text="Friend Seven" content-desc="" bounds="[0,1768][98,1838]" clickable="true"/>
+     <node class="android.view.View" text="2131231598" content-desc="" bounds="[189,1874][249,1934]" clickable="true"/>
+     <node class="javaClass" text="Status 11" content-desc="" bounds="[249,1880][677,1929]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.widget.FrameLayout" bounds="[0,1962][1080,2046]">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/ff_item" content-desc="Status 12" bounds="[0,1962][1080,2046]">
+     <node class="android.view.View" text="avatar_container" content-desc="" bounds="[21,1976][183,2046]" clickable="true"/>
+     <node class="android.view.View" content-desc="Camera Reply" bounds="[885,2021][1059,2046]" clickable="true"/>
+     <node class="javaClass" text="Friend Eight" content-desc="" bounds="[0,1962][145,2032]" clickable="true"/>
+    </node>
+   </node>
+  </node>
+  <node class="android.widget.RelativeLayout" bounds="[885,1842][1053,2010]" clickable="true"/>
+  <node class="android.widget.FrameLayout" bounds="[0,2046][1080,2400]" clickable="true">
+   <node class="android.view.ViewGroup" resource-id="com.snapchat.android:id/ngs_map_icon_container" content-desc="Map" bounds="[0,2070][244,2250]" clickable="true" long-clickable="true"/>
+   <node class="android.view.ViewGroup" resource-id="com.snapchat.android:id/ngs_chat_icon_container" content-desc="Chat" bounds="[244,2070][440,2250]" clickable="true" long-clickable="true">
+    <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[361,2143][382,2188]">
+     <node class="javaClass" text="1" content-desc="" bounds="[361,2143][382,2188]" clickable="true"/>
+    </node>
+   </node>
+   <node class="android.view.ViewGroup" resource-id="com.snapchat.android:id/ngs_camera_icon_container" content-desc="Camera" bounds="[440,2070][636,2250]" clickable="true" long-clickable="true">
+    <node class="android.view.View" content-desc="Camera" bounds="[490,2136][586,2232]"/>
+   </node>
+   <node class="android.view.ViewGroup" resource-id="com.snapchat.android:id/ngs_community_icon_container" content-desc="Stories" bounds="[636,2070][832,2250]" clickable="true" long-clickable="true"/>
+   <node class="android.view.ViewGroup" resource-id="com.snapchat.android:id/ngs_spotlight_icon_container" content-desc="Spotlight" bounds="[832,2070][1076,2250]" clickable="true" long-clickable="true"/>
+  </node>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[0,80][159,242]" clickable="true">
+   <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/neon_header_avatar" content-desc="Text 13" bounds="[30,104][138,212]"/>
+  </node>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/hova_header_search_icon" content-desc="Search" bounds="[174,98][294,218]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" text="Chat" bounds="[475,80][605,242]" clickable="true"/>
+  <node class="android.widget.FrameLayout" bounds="[639,98][759,218]" clickable="true">
+   <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Notification" bounds="[663,122][735,194]"/>
+  </node>
+  <node class="android.widget.FrameLayout" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[933,98][1053,218]" clickable="true"/>
+  <node class="android.widget.FrameLayout" bounds="[786,98][906,218]" clickable="true">
+   <node class="android.widget.ImageView" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" content-desc="Add Friends" bounds="[801,110][897,200]"/>
+   <node class="android.view.View" resource-id="com.snapchat.android:id/0_resource_name_obfuscated" bounds="[886,110][906,140]">
+    <node class="javaClass" text="1" content-desc="" bounds="[886,92][907,140]" clickable="true"/>
+   </node>
+  </node>
+ </node>
+</snapshot>

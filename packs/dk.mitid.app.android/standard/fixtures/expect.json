@@ -1,0 +1,43 @@
+[
+  {
+    "why": "PIN: masked progress read from the app's own indicator (counts only, never digits)",
+    "fixture": "pin.xml",
+    "screen": "mitid-pin",
+    "secure": true,
+    "progress": {
+      "filled": 3,
+      "total": 6,
+      "counted": false
+    }
+  },
+  {
+    "why": "Every other screen is marked secure by the catch-all recipe (MitID is secure throughout)",
+    "fixture": "active.xml",
+    "screen": "mitid-screens",
+    "secure": true,
+    "shows": [
+      "Ready for use",
+      "Menu"
+    ]
+  },
+  {
+    "fixture": "welcome.xml",
+    "screen": "mitid-screens",
+    "secure": true,
+    "shows": [
+      "GET STARTED"
+    ]
+  },
+  {
+    "why": "The approve step of a login in code mode (texts replaced). MitID's approve control is a slider that also takes a click; it shows as the screen's action, needing a deliberate slide, with MitID's own label.",
+    "fixture": "approve.xml",
+    "screen": "mitid-screens",
+    "secure": true,
+    "actions": [
+      "Approve"
+    ],
+    "slides": [
+      "Approve"
+    ]
+  }
+]

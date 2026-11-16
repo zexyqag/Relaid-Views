@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.danskebank.mobilepay" width="1080" height="2400">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.widget.EditText" resource-id="TAG_UNIFIED_SEARCH_INPUT_FIELD" bounds="[50,150][1030,260]" editable="true"/>
+  <node class="android.view.View" resource-id="TAG_SUGGESTION_PERSON" text="Recipient One" bounds="[50,400][1030,520]" clickable="true"/>
+  <node class="android.view.View" resource-id="TAG_SUGGESTION_PERSON" text="Recipient Two" bounds="[50,540][1030,660]" clickable="true"/>
+  <node class="android.view.View" resource-id="TAG_SUGGESTION_PERSON" text="Recipient Three" bounds="[50,680][1030,800]" clickable="true"/>
+ </node>
+</snapshot>
