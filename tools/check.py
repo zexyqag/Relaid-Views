@@ -4,7 +4,7 @@
     python3 tools/check.py              check every pack, and that index.json is current
     python3 tools/check.py --write      the same, then write index.json
     python3 tools/check.py --base REF   also: a pack whose view.json changed since REF has a higher version
-    python3 tools/check.py --self-test  run tools/conformance.json
+    python3 tools/check.py --self-test  run tools/conformance.json, and the view names no pack may take
 
 Standard library only, Python 3.8 or newer.
 
@@ -34,7 +34,8 @@ FORMAT = 3
 
 PACKAGE = re.compile(r"[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+")
 VIEW = re.compile(r"[a-z][a-z0-9-]{0,31}")
-BUILT_IN = {"generic", "pictures"}  # Relaid's own views of every app; no pack may take one
+# Relaid's own views (its relaid.json views.plain, views.pictures and views.video): no pack may take one of these names.
+BUILT_IN = {"plain", "pictures", "video"}
 SELECTOR_KINDS = ("id", "id~", "text", "text~", "desc", "desc~", "class", "is", "nth")
 SELECTOR_RELATIONS = ("in", "parent", "has", "not")
 SELECTOR_STATES = ("clickable", "long-clickable", "editable", "scrollable", "checkable", "checked", "selected", "focused", "heading", "password")
@@ -492,6 +493,15 @@ def check_fixtures(d, names, p):
             p.mistake(f"{where}/{f.name}", "is not used in expect.json")
 
 
+def view_name_problem(view):
+    """Why a pack may not be called [view], or None when it may."""
+    if not VIEW.fullmatch(view):
+        return f"view '{view}' must be lowercase letters, digits and dashes"
+    if view in BUILT_IN:
+        return f"view '{view}' is one of Relaid's own"
+    return None
+
+
 def build_index(p):
     """Check every pack and return the index they make."""
     files = tracked_files()
@@ -521,11 +531,9 @@ def build_index(p):
         if meta["view"] != d.name:
             p.refused(f"{where}/pack.json", f"declares view {meta['view']}, but the folder is {d.name}")
             continue
-        if not VIEW.fullmatch(meta["view"]):
-            p.refused(f"{where}/pack.json", f"view '{meta['view']}' must be lowercase letters, digits and dashes")
-            continue
-        if meta["view"] in BUILT_IN:
-            p.refused(f"{where}/pack.json", f"view '{meta['view']}' is one of Relaid's own")
+        why = view_name_problem(meta["view"])
+        if why:
+            p.refused(f"{where}/pack.json", why)
             continue
         if meta["version"] < 1:
             p.refused(f"{where}/pack.json", "version must be at least 1")
@@ -665,17 +673,20 @@ def self_test():
             wrong.append(f"{c['why']}: got {got}; problems: {[m for _, _, m in p.items]}")
         elif "ignored" in c and ignored_theme_parts(c["pack"]) != sorted(c["ignored"]):
             wrong.append(f"{c['why']}: the phone would ignore {ignored_theme_parts(c['pack'])}, expected {sorted(c['ignored'])}")
-    for w in wrong:
+    # The view names a phone refuses for a pack (Relaid's own views), and some it takes.
+    names = {"plain": False, "pictures": False, "video": False, "Full": False, "full": True, "generic": True, "lite-2": True}
+    named = [f"a pack called '{n}': expected the phone to {'accept' if ok else 'refuse'} it" for n, ok in names.items() if (view_name_problem(n) is None) != ok]
+    for w in wrong + named:
         print("conformance:", w)
-    print(f"{len(cases) - len(wrong)} of {len(cases)} conformance cases agree")
-    return 1 if wrong else 0
+    print(f"{len(cases) - len(wrong)} of {len(cases)} conformance cases agree, and {len(names) - len(named)} of {len(names)} view names")
+    return 1 if wrong or named else 0
 
 
 def main():
     ap = argparse.ArgumentParser(description="Check the packs and build index.json.")
     ap.add_argument("--write", action="store_true", help="write index.json")
     ap.add_argument("--base", help="git ref to compare versions against (a pull request's target)")
-    ap.add_argument("--self-test", action="store_true", help="run tools/conformance.json")
+    ap.add_argument("--self-test", action="store_true", help="run tools/conformance.json, and the view names no pack may take")
     args = ap.parse_args()
     if args.self_test:
         return self_test()
