@@ -9,8 +9,9 @@ run anything on the phone.
 
 An app can have several views side by side: a full one, a minimal one with only chats, and so on.
 Each comes as a pack. The owner installs the ones they like, picks each app's default, and can open
-or pin any view on its own. Relaid adds two views of every app itself: `plain` (no pack) and
-`pictures` (the whole screen as a live picture, where the owner allows it). What any installed view
+or pin any view on its own. Relaid adds views of every app itself: `plain` (no pack), `pictures`
+(the whole screen as a live picture, where the owner allows it) and, on a computer, `video` (the
+phone's own screen in a scrcpy window, where the owner set it up). What any installed view
 guards (a screen kept secure, a slide to approve, the code entry) holds in every view of its app.
 
 ## Layout
@@ -24,7 +25,7 @@ tools/check.py                            the check (Python 3, standard library 
 ```
 
 A view's name (the folder, and `view` in pack.json) is lowercase letters, digits and dashes, and
-never `plain` or `pictures`. A pack's `name` is what people see, so an app's views need distinct
+never `plain`, `pictures` or `video`. A pack's `name` is what people see, so an app's views need distinct
 names ("Snapchat", "Snapchat, chats only").
 
 A phone installs a pack only if its view.json matches the hash in index.json, then checks the
