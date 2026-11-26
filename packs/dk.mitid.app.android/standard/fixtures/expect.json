@@ -41,7 +41,7 @@
     ]
   },
   {
-    "why": "The approve step in MitID 3.8 (texts replaced): the slider is no longer clickable and holds no Button; only its thumb takes a click (TalkBack's way to approve). The thumb shows as the screen's action, needing a deliberate slide, labelled by the view as the thumb has no words.",
+    "why": "The approve step in MitID 3.8 (texts replaced): the slider is no longer clickable and holds no Button, and a click on its thumb does nothing (tried, 2026-11-26). It shows as the screen's action in MitID's own word, a slide the person drags, which Relaid performs as a swipe across the slider (the pack's touch permission; allowed on a secure screen only for a control the app names, behind a slide).",
     "fixture": "approve-thumb.xml",
     "screen": "mitid-screens",
     "secure": true,
@@ -49,6 +49,9 @@
       "Approve"
     ],
     "slides": [
+      "Approve"
+    ],
+    "gestures": [
       "Approve"
     ]
   }

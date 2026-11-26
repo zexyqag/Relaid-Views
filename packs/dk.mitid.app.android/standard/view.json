@@ -30,10 +30,14 @@
           "confirm": "slide"
         },
         {
-          "select": "class:android.view.View & is:clickable & nth:2 & not(in(is:clickable)) & has(class:android.view.View & has(class:android.view.View)) & parent(class:android.view.View & not(is:clickable) & parent(class:android.view.View & not(is:clickable) & not(has(class:android.widget.TextView))))",
+          "select": "class:android.view.View & desc:Godkend & not(is:clickable) & has(class:android.view.View & is:clickable)",
           "as": "action",
-          "confirm": "slide",
-          "label": "Approve"
+          "perform": "swipe-right"
+        },
+        {
+          "select": "class:android.view.View & desc:Approve & not(is:clickable) & has(class:android.view.View & is:clickable)",
+          "as": "action",
+          "perform": "swipe-right"
         }
       ]
     }

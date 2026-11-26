@@ -435,7 +435,7 @@ PROGRESS_EXPECT = {"filled": "int", "total": "int?", "counted": "bool"}
 EXPECT = {
     "why": "str?", "fixture": "str", "screen": "str?", "secure": "bool", "title": "str?",
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
-    "slides": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
+    "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs",
 }
 

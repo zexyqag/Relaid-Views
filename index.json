@@ -41,16 +41,18 @@
             "app": "dk.mitid.app.android",
             "view": "standard",
             "name": "MitID",
-            "version": 6,
+            "version": 7,
             "format": 1,
-            "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there.",
+            "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
             "path": "packs/dk.mitid.app.android/standard/view.json",
-            "sha256": "efc53578e2f64412da52141a18b5d1b970e2cfd904eaef890cc2a714bd89dea7",
+            "sha256": "594278febd7febb5e6c75c28d565fa1e2f6b5a068f062f31df797451b90b4364",
             "screens": [
                 "mitid-pin",
                 "mitid-screens"
             ],
-            "permissions": []
+            "permissions": [
+                "touch"
+            ]
         }
     ]
 }
