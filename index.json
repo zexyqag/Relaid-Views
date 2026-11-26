@@ -41,11 +41,11 @@
             "app": "dk.mitid.app.android",
             "view": "standard",
             "name": "MitID",
-            "version": 5,
+            "version": 6,
             "format": 1,
             "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there.",
             "path": "packs/dk.mitid.app.android/standard/view.json",
-            "sha256": "d3719176bc427d8805d6768eb40fe19785d6fba1cafeb1d77c20a0adb003046e",
+            "sha256": "efc53578e2f64412da52141a18b5d1b970e2cfd904eaef890cc2a714bd89dea7",
             "screens": [
                 "mitid-pin",
                 "mitid-screens"

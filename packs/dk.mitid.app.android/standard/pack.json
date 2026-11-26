@@ -2,6 +2,6 @@
   "app": "dk.mitid.app.android",
   "view": "standard",
   "name": "MitID",
-  "version": 5,
+  "version": 6,
   "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there."
 }

@@ -28,6 +28,12 @@
           "select": "class:android.view.View & is:clickable & has(class:android.view.View & is:clickable) & has(class:android.widget.Button)",
           "as": "action",
           "confirm": "slide"
+        },
+        {
+          "select": "class:android.view.View & is:clickable & nth:2 & not(in(is:clickable)) & has(class:android.view.View & has(class:android.view.View)) & parent(class:android.view.View & not(is:clickable) & parent(class:android.view.View & not(is:clickable) & not(has(class:android.widget.TextView))))",
+          "as": "action",
+          "confirm": "slide",
+          "label": "Approve"
         }
       ]
     }
