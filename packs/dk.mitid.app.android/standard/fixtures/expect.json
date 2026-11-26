@@ -21,6 +21,7 @@
     ]
   },
   {
+    "why": "The start screen, secure like every MitID screen; the view's skin (MitID's colours, small corners, a plain header, outlined cards) reaches it whole, as it reaches every screen of the app (Relaid's fixture test checks the skin on each fixture)",
     "fixture": "welcome.xml",
     "screen": "mitid-screens",
     "secure": true,

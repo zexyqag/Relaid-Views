@@ -2,8 +2,8 @@
   "app": "dk.mitid.app.android",
   "view": "standard",
   "name": "MitID",
-  "version": 7,
-  "description": "PIN entry shown as masked progress dots (how many digits, never which); every MitID screen marked secure, so no recipe can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
+  "version": 8,
+  "description": "MitID's own colours in light and dark (its blue, white, navy and greys), small corners, a plain header and outlined cards; PIN entry as masked progress dots (how many digits, never which); every MitID screen marked secure, so no view can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
   "permissions": [
     "touch"
   ]

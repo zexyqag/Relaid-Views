@@ -1,6 +1,24 @@
 {
   "theme": {
-    "accent": "#0060e6"
+    "accent": "#0060e6",
+    "light": {
+      "background": "#ffffff",
+      "surface": "#ffffff",
+      "text": "#333333",
+      "muted": "#687484",
+      "onAccent": "#ffffff"
+    },
+    "dark": {
+      "accent": "#9ac4ff",
+      "background": "#001c44",
+      "surface": "#001c44",
+      "text": "#ffffff",
+      "muted": "#adb5bd",
+      "onAccent": "#001c44"
+    },
+    "corners": "square",
+    "header": "plain",
+    "cards": "outlined"
   },
   "screens": [
     {
