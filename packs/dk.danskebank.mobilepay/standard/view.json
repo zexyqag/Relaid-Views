@@ -3,17 +3,17 @@
     "accent": "#5a78ff",
     "light": {
       "background": "#ffffff",
-      "surface": "#f3f4f8",
-      "text": "#14151a",
-      "muted": "#5b5f6b",
+      "surface": "#f9f6f6",
+      "text": "#000000",
+      "muted": "#666666",
       "onAccent": "#ffffff"
     },
     "dark": {
       "accent": "#5a78ff",
-      "background": "#0e0f12",
-      "surface": "#1a1b20",
-      "text": "#f1f2f5",
-      "muted": "#a4a8b3",
+      "background": "#00051f",
+      "surface": "#161b31",
+      "text": "#ffffff",
+      "muted": "#96a3e1",
       "onAccent": "#ffffff"
     },
     "corners": "round",
