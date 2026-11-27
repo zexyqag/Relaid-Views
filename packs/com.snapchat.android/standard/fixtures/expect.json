@@ -44,7 +44,7 @@
     ]
   },
   {
-    "why": "A chat. Snapchat offers a click on every message and on who wrote it: the senders (ME, TEAM SNAPCHAT) become headings and the messages text, the title is the chat's name, and the field sends with Enter. Camera, voice note, Stickers, Memories and Games are left out: none of them works from another phone.",
+    "why": "A chat. Snapchat offers a click on every message and on who wrote it: the senders (ME, TEAM SNAPCHAT) become headings and the messages text, the title is the chat's name, and the field sends with Enter. Camera, voice note, Stickers, Memories and Games are left out: none of them works from another phone. Team Snapchat's message is the screen's body text, and the bar's own lines (its name, the line under it) are drawn at the device's own sizes.",
     "fixture": "chat.xml",
     "screen": "snapchat-chat",
     "secure": false,
@@ -64,6 +64,11 @@
     "actions": [],
     "fields": {
       "Send a chat": null
+    },
+    "sizes": {
+      "Team Snapchat": "body",
+      "Powered by My AI": "body",
+      "I can only answer questions about Snapchat features. For any other questions, you can chat with My AI instead.": "body"
     }
   },
   {

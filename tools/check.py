@@ -436,8 +436,10 @@ EXPECT = {
     "why": "str?", "fixture": "str", "screen": "str?", "secure": "bool", "title": "str?",
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
-    "avatars": "strs", "headings": "strs",
+    "avatars": "strs", "headings": "strs", "sizes": "map",
 }
+# The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
+SIZES = ("small", "body", "large", "larger", "largest")
 
 
 def check_fixtures(d, names, p):
@@ -472,6 +474,10 @@ def check_fixtures(d, names, p):
             continue
         name = c["fixture"]
         used.add(name)
+        sizes = c.get("sizes")
+        for label, step in sizes.items() if isinstance(sizes, dict) else []:
+            if step not in SIZES:
+                p.mistake(at, f"sizes: '{label}' is drawn at no size Relaid knows ('{step}'; one of {', '.join(SIZES)})")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():
             p.mistake(at, f"no fixture '{name}'")
         if isinstance(c.get("screen"), str) and c["screen"] not in names:
