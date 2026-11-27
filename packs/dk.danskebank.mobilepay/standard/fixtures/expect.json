@@ -1,6 +1,6 @@
 [
   {
-    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials. Its tiles stand as the app draws them, from its own boxes: the to-do tile beside the first two contacts, one above the other, then the other two side by side, every cell alike (no shares); the promotion with its two buttons inside it stands where it is. Profile, given after the page though drawn over what it holds, opens the reading and sits at the end of the top bar; Send and Request sit in the middle of the bar along the bottom at their own widths, as the app draws its run of three.",
+    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials. Its tiles stand as the app draws them, from its own boxes: the to-do tile beside the first two contacts, one above the other, then the other two side by side, every cell alike (no shares); the promotion with its two buttons inside it stands where it is. Profile, given after the page though drawn over what it holds, opens the reading and sits at the end of the top bar; Send and Request sit in the middle of the bar along the bottom at their own widths, as the app draws its run of three. Sign me up!, a small control the app draws at its own width at its line's start, is drawn so (width fit).",
     "fixture": "landing.xml",
     "screen": "mobilepay-home",
     "secure": false,
@@ -47,6 +47,9 @@
       "Profile": "end",
       "Send": "center",
       "Request": "center"
+    },
+    "widths": {
+      "Sign me up!": "fit"
     }
   },
   {
@@ -64,7 +67,7 @@
     "rows": []
   },
   {
-    "why": "Amount: labelled fields with a number keyboard, the amount as hero, Next, the calculator keys hidden",
+    "why": "Amount: labelled fields with a number keyboard, the amount as hero, Next, the calculator keys hidden. Next, which the app draws across the window, is drawn across the bar of actions.",
     "fixture": "amount.xml",
     "screen": "mobilepay-amount",
     "secure": false,
@@ -85,7 +88,10 @@
       "Back",
       "Send to"
     ],
-    "rows": []
+    "rows": [],
+    "widths": {
+      "Next": "full"
+    }
   },
   {
     "why": "Confirm: the amount as title and hero, the swipe-to-send as a slide in the app's own words, nothing hidden",
@@ -104,7 +110,7 @@
     "rows": []
   },
   {
-    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept. Relaid's own keypad, its keys where the app draws them (Delete at the bottom right, nothing at the left); the code named nothing, as the screen's title says what it is right above it. Forgot code?, which the app centres at its own width, is drawn so.",
+    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept. Relaid's own keypad, its keys where the app draws them (Delete at the bottom right, nothing at the left); the code named nothing, as the screen's title says what it is right above it. Forgot code?, a link under the dots that the app centres at its own width, is drawn so (width fit).",
     "fixture": "pin.xml",
     "screen": "mobilepay-pin",
     "secure": true,
@@ -139,6 +145,9 @@
     "entry": null,
     "align": {
       "Forgot code?": "center"
+    },
+    "widths": {
+      "Forgot code?": "fit"
     }
   }
 ]

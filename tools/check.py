@@ -447,7 +447,7 @@ EXPECT = {
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
-    "align": "words", "places": "words", "tiles": "tiles", "pad": "pad", "entry": "str?",
+    "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "pad": "pad", "entry": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -459,8 +459,10 @@ SHARE_MOST = 4
 SHARE_FIT = 0
 # Where a part sits along its line ("start" for none, or one of relaid.json's aligns), where the screen's title stands ("bar" for none,
 # or page), where a control sits (relaid.json's top, bottom and back), the most hundredths of its line's width a tile is tall
-# (tiles.tallest, and 100 wide), and how many places a keypad has (keys.order).
+# (tiles.tallest, and 100 wide), how wide a part is drawn on its line ("none", or one of relaid.json's widths), and how many places
+# a keypad has (keys.order).
 ALIGNS = ("start", "center", "end")
+WIDTHS = ("none", "fit", "full")
 TITLE_PLACES = ("bar", "page")
 CONTROL_PLACES = ("top", "bottom", "back")
 TILE_TALLEST = 200
@@ -559,6 +561,10 @@ def check_fixtures(d, names, p):
         for label, shape in tiles.items() if isinstance(tiles, dict) else []:
             if isinstance(shape, list) and len(shape) == 2 and not (1 <= shape[0] <= 100 and 1 <= shape[1] <= TILE_TALLEST):
                 p.mistake(at, f"tiles: '{label}' is {shape[0]} by {shape[1]} hundredths of its line's width (1 to 100 wide, 1 to {TILE_TALLEST} tall)")
+        widths = c.get("widths")
+        for label, width in widths.items() if isinstance(widths, dict) else []:
+            if width not in WIDTHS:
+                p.mistake(at, f"widths: '{label}' is drawn at a width Relaid does not know ('{width}'; one of {', '.join(WIDTHS)})")
         if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
             p.mistake(at, f"pad: a keypad has {PAD} places, a label or null each, not {len(c['pad'])}")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():

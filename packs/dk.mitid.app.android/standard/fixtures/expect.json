@@ -31,7 +31,7 @@
     }
   },
   {
-    "why": "MitID 3.8's PIN screen (the holder's name replaced): the name, large and centred in the page under the app's Close, stays there as the screen's title, the bar naming the app. The code is named by the app's own words above it (Enter PIN), which then show only as its name. Close, which the app draws at the top right, sits at the end of the bar, and Forgot PIN?, a link the app centres at its own width under the dots, is drawn so. Relaid's own keypad, its keys where the app draws them: the fingerprint button the app draws at the bottom left of its pad stands there, 0 in the middle and Delete at the right.",
+    "why": "MitID 3.8's PIN screen (the holder's name replaced): the name, large and centred in the page under the app's Close, stays there as the screen's title, the bar naming the app. The code is named by the app's own words above it (Enter PIN), which then show only as its name. Close, which the app draws at the top right, sits at the end of the bar, and Forgot PIN?, a link the app centres at its own width under the dots, is drawn so (width fit). Relaid's own keypad, its keys where the app draws them: the fingerprint button the app draws at the bottom left of its pad stands there, 0 in the middle and Delete at the right.",
     "fixture": "pin-3.8.xml",
     "screen": "mitid-pin",
     "secure": true,
@@ -73,7 +73,10 @@
       "Close",
       "Forgot PIN?"
     ],
-    "rows": []
+    "rows": [],
+    "widths": {
+      "Forgot PIN?": "fit"
+    }
   },
   {
     "why": "The one-time code screen: its heading at the top of the page, under the app's Help and Close, stays in the page as the screen's title, at its start. It names the screen right above the code, so the code itself is named nothing (no PIN). The keypad as the app's: Delete at the bottom left, 0 in the middle, NEXT (not usable until the code is in) at the right. Help and Close, which the app draws at the top right, sit at the end of the bar.",
@@ -144,7 +147,7 @@
     }
   },
   {
-    "why": "The start screen, secure like every MitID screen; the view's skin (MitID's colours, small corners, a plain header, outlined cards) reaches it whole, as it reaches every screen of the app (Relaid's fixture test checks the skin on each fixture). Its title on 96 px lines against its body text's 72 (three to a paragraph): larger, the body text body. Its title is drawn in its page under the app's Menu, so it stays there, at its start, the bar naming the app. Menu sits at the end of the top bar, where the app draws it, and GET STARTED, the app's last control, under its page in the window's lowest quarter, in the bar along the bottom, in its own tone (none: not filled).",
+    "why": "The start screen, secure like every MitID screen; the view's skin (MitID's colours, small corners, a plain header, outlined cards) reaches it whole, as it reaches every screen of the app (Relaid's fixture test checks the skin on each fixture). Its title on 96 px lines against its body text's 72 (three to a paragraph): larger, the body text body. Its title is drawn in its page under the app's Menu, so it stays there, at its start, the bar naming the app. Menu sits at the end of the top bar, where the app draws it, and GET STARTED, the app's last control, under its page in the window's lowest quarter, in the bar along the bottom, in its own tone (none: not filled). GET STARTED, which the app draws across the window at its bottom, is drawn across the bar of actions, on a line of its own.",
     "fixture": "welcome.xml",
     "screen": "mitid-screens",
     "secure": true,
@@ -165,6 +168,9 @@
     "align": {
       "Activate your MitID": "start",
       "Menu": "end"
+    },
+    "widths": {
+      "GET STARTED": "full"
     }
   },
   {
@@ -343,7 +349,7 @@
     }
   },
   {
-    "why": "How to approve, a sheet over the screen: its heading is the sheet's own, in its page, under what closes the sheet. Its OK, under the sheet's list in the window's lowest quarter, is in the bar along the bottom.",
+    "why": "How to approve, a sheet over the screen: its heading is the sheet's own, in its page, under what closes the sheet. Its OK, under the sheet's list in the window's lowest quarter, is in the bar along the bottom. OK, across the sheet's bottom as the app draws it, is drawn across the bar of actions.",
     "fixture": "howto-sheet.xml",
     "screen": "mitid-screens",
     "secure": true,
@@ -356,7 +362,10 @@
       "OK",
       "Read more about how to approve in the app"
     ],
-    "rows": []
+    "rows": [],
+    "widths": {
+      "OK": "full"
+    }
   },
   {
     "why": "The approve step in MitID 3.8 with Reject in place of Cancel (texts replaced): Reject, which the app draws at the top right, sits at the end of the bar; the slider is the screen's action, a slide; the service's name stays in the page, centred.",

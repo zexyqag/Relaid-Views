@@ -1906,6 +1906,26 @@
       "check": false
     },
     {
+      "why": "a part that says how wide it is drawn: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:login",
+                "as": "action",
+                "width": "full"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
       "why": "a screen that says its layout: arrangement is measured from the app, never a view's",
       "app": "com.example.app",
       "pack": {
