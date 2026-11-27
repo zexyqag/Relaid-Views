@@ -1,6 +1,6 @@
 [
   {
-    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials. Its tiles stand as the app draws them, from its own boxes: the to-do tile beside the first two contacts, one above the other, then the other two side by side, every cell alike (no shares); the promotion with its two buttons inside it, and Profile, given after the page though drawn over it, stand where they are.",
+    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials. Its tiles stand as the app draws them, from its own boxes: the to-do tile beside the first two contacts, one above the other, then the other two side by side, every cell alike (no shares); the promotion with its two buttons inside it stands where it is. Profile, given after the page though drawn over what it holds, opens the reading and sits at the end of the top bar; Send and Request sit in the middle of the bar along the bottom at their own widths, as the app draws its run of three.",
     "fixture": "landing.xml",
     "screen": "mobilepay-home",
     "secure": false,
@@ -39,7 +39,15 @@
         "Contact Three",
         "Contact Four"
       ]
-    ]
+    ],
+    "places": {
+      "Profile": "top"
+    },
+    "align": {
+      "Profile": "end",
+      "Send": "center",
+      "Request": "center"
+    }
   },
   {
     "why": "Choose recipient: the unlabelled search field gets a label, suggestions get initials",
@@ -96,7 +104,7 @@
     "rows": []
   },
   {
-    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept. Relaid's own keypad, its keys where the app draws them (Delete at the bottom right, nothing at the left); the code named nothing, as the screen's title says what it is right above it.",
+    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept. Relaid's own keypad, its keys where the app draws them (Delete at the bottom right, nothing at the left); the code named nothing, as the screen's title says what it is right above it. Forgot code?, which the app centres at its own width, is drawn so.",
     "fixture": "pin.xml",
     "screen": "mobilepay-pin",
     "secure": true,
@@ -128,6 +136,9 @@
       "0",
       "Delete"
     ],
-    "entry": null
+    "entry": null,
+    "align": {
+      "Forgot code?": "center"
+    }
   }
 ]

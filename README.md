@@ -167,12 +167,15 @@ large, larger or largest, `body` for none; only texts, headings and the screen's
 draws side by side, in reading order: a list of its cells, each a label, or a list for a stack of parts one above the other,
 which may hold a row; `[]` for none; more than 4 cells only where all of them are fit), `shares` (a cell's label to its share
 of its row, 2 to 4, or 0 for a fit cell, which takes only its own width, where it is not 1; a stack's by its first part),
-`align` (label to where it sits along its line: `start`, `center` or `end`; the screen's title's label for where the title sits),
-`places` (the screen's title's label to where it stands: `bar`, or `page` where the app draws it in its page rather than in its
-top bar), `pad` (the keypad's 12 places as the app lays out its own pad, each the label of the key or of the app's part there,
-null for an empty one; null for a keypad laid out in Relaid's own order), `entry` (the code entry's name, null for none), and
-labels it `shows` or `hides`. Rows, shares, aligns, places and a keypad's places are measured from the app's own boxes, never
-set by a pack; with `rows` or `shares`, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
+`align` (label to where it sits along its line: `start`, `center` or `end`; the screen's title's label for where the title sits;
+a fit cell's label for where its row sits), `places` (the screen's title's label to where it stands: `bar`, or `page` where the
+app draws it in its page rather than in its top bar; a control's label to where it sits: `top` in the top bar, `bottom` in the
+bar along the bottom, or `back` for the app's own way back at the bar's start, which a device presses with its own back; one at
+most), `tiles` (a control's label to the shape of the card the app draws it as, large on its own line: its width and height in
+hundredths of the window's width, 1 to 100 wide and 1 to 200 tall), `pad` (the keypad's 12 places as the app lays out its own
+pad, each the label of the key or of the app's part there, null for an empty one; null for a keypad laid out in Relaid's own
+order), `entry` (the code entry's name, null for none), and labels it `shows` or `hides`. Rows, shares, aligns, places, tiles
+and a keypad's places are measured from the app's own boxes, never set by a pack; with `rows` or `shares`, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
 its real pipeline, so a change to Relaid or to a pack that breaks a screen shows up before anyone
 installs it. Relaid itself knows no app; this is where that knowledge lives.
 

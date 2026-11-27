@@ -225,6 +225,8 @@ def type_ok(v, t):
         return isinstance(v, dict) and all(isinstance(x, str) for x in v.values())
     if base == "pad":
         return v is None or isinstance(v, list) and all(x is None or isinstance(x, str) for x in v)
+    if base == "tiles":
+        return isinstance(v, dict) and all(isinstance(x, list) and len(x) == 2 and all(is_int(y) for y in x) for x in v.values())
     if isinstance(base, list):
         return isinstance(v, list) and all(isinstance(x, dict) for x in v)
     if isinstance(base, tuple):
@@ -445,7 +447,7 @@ EXPECT = {
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
-    "align": "words", "places": "words", "pad": "pad", "entry": "str?",
+    "align": "words", "places": "words", "tiles": "tiles", "pad": "pad", "entry": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -456,9 +458,12 @@ CELLS_MOST = 4
 SHARE_MOST = 4
 SHARE_FIT = 0
 # Where a part sits along its line ("start" for none, or one of relaid.json's aligns), where the screen's title stands ("bar" for none,
-# or one of its places), and how many places a keypad has (keys.order).
+# or page), where a control sits (relaid.json's top, bottom and back), the most hundredths of its line's width a tile is tall
+# (tiles.tallest, and 100 wide), and how many places a keypad has (keys.order).
 ALIGNS = ("start", "center", "end")
-PLACES = ("bar", "page")
+TITLE_PLACES = ("bar", "page")
+CONTROL_PLACES = ("top", "bottom", "back")
+TILE_TALLEST = 200
 PAD = 12
 
 
@@ -543,10 +548,17 @@ def check_fixtures(d, names, p):
                 p.mistake(at, f"align: '{label}' sits nowhere Relaid knows ('{where}'; one of {', '.join(ALIGNS)})")
         places = c.get("places")
         for label, where in places.items() if isinstance(places, dict) else []:
-            if where not in PLACES:
-                p.mistake(at, f"places: '{label}' stands nowhere Relaid knows ('{where}'; one of {', '.join(PLACES)})")
-            elif isinstance(c.get("title"), str) and label != c["title"]:
-                p.mistake(at, f"places: '{label}' is not the screen's title ('{c['title']}'), the only part with a place")
+            if where not in TITLE_PLACES + CONTROL_PLACES:
+                p.mistake(at, f"places: '{label}' stands nowhere Relaid knows ('{where}'; one of {', '.join(TITLE_PLACES + CONTROL_PLACES)})")
+            elif isinstance(c.get("title"), str) and (label == c["title"]) != (where in TITLE_PLACES):
+                p.mistake(at, f"places: '{label}' is {'the' if label == c['title'] else 'not the'} screen's title ('{c['title']}'): "
+                              f"the title is in the bar or the page, a control at the top, the bottom or the way back")
+        if isinstance(places, dict) and list(places.values()).count("back") > 1:
+            p.mistake(at, "places: a screen has one way back at most")
+        tiles = c.get("tiles")
+        for label, shape in tiles.items() if isinstance(tiles, dict) else []:
+            if isinstance(shape, list) and len(shape) == 2 and not (1 <= shape[0] <= 100 and 1 <= shape[1] <= TILE_TALLEST):
+                p.mistake(at, f"tiles: '{label}' is {shape[0]} by {shape[1]} hundredths of its line's width (1 to 100 wide, 1 to {TILE_TALLEST} tall)")
         if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
             p.mistake(at, f"pad: a keypad has {PAD} places, a label or null each, not {len(c['pad'])}")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():

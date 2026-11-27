@@ -1,0 +1,45 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.view.View" bounds="[72,102][288,242]"/>
+       <node class="android.view.View" bounds="[704,101][1008,242]">
+        <node class="android.view.View" bounds="[704,101][1008,242]" clickable="true">
+         <node class="android.view.View" content-desc="Reject" bounds="[704,125][1008,221]"/>
+         <node class="android.view.View" bounds="[692,101][836,242]"/>
+         <node class="android.view.View" bounds="[818,137][960,209]"/>
+         <node class="android.widget.Button" bounds="[704,125][1008,221]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,242][1080,2256]">
+        <node class="android.widget.ScrollView" bounds="[0,242][1080,1896]">
+         <node class="android.view.View" bounds="[72,615][1008,1524]">
+          <node class="android.view.View" bounds="[315,750][765,894]"/>
+          <node class="android.widget.TextView" text="Service One" bounds="[379,981][702,1077]" heading="true"/>
+          <node class="android.widget.TextView" text="Can you approve?" bounds="[168,1224][666,1320]" heading="true"/>
+          <node class="android.widget.TextView" text="Log on" bounds="[168,1344][346,1428]"/>
+         </node>
+        </node>
+        <node class="android.view.View" bounds="[72,1896][1008,2088]">
+         <node class="android.view.View" content-desc="Approve" bounds="[144,1896][936,2088]">
+          <node class="android.view.View" bounds="[156,1908][924,2076]">
+           <node class="android.view.View" bounds="[324,1956][924,2028]"/>
+           <node class="android.view.View" bounds="[156,1908][324,2076]" clickable="true">
+            <node class="android.view.View" bounds="[156,1908][324,2076]">
+             <node class="android.view.View" bounds="[168,1920][312,2064]"/>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

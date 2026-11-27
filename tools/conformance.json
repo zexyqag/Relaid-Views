@@ -1863,6 +1863,29 @@
       "check": false
     },
     {
+      "why": "a part that says its tile: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:guide",
+                "as": "text",
+                "tile": {
+                  "width": 56,
+                  "height": 56
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
       "why": "a part that says its slot in a keypad: where the app draws its keys is measured from the app, never a view's",
       "app": "com.example.app",
       "pack": {

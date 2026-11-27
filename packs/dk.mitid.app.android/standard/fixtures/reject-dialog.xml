@@ -1,0 +1,24 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="v7.m">
+ <node class="android.widget.FrameLayout" bounds="[0,842][1080,1494]">
+  <node class="android.view.ViewGroup" bounds="[0,842][1080,1494]">
+   <node class="android.view.View" bounds="[54,842][1026,1494]">
+    <node class="android.view.View" bounds="[54,842][1026,1494]">
+     <node class="android.view.View" bounds="[126,914][954,1422]">
+      <node class="android.widget.ScrollView" bounds="[126,914][954,1422]">
+       <node class="android.widget.TextView" text="Do you want to reject?" bounds="[186,974][843,1060]"/>
+       <node class="android.widget.TextView" text="Do you want to reject the request from Service One?" bounds="[186,1096][894,1230]"/>
+       <node class="android.view.View" bounds="[459,1254][668,1398]" clickable="true">
+        <node class="android.widget.TextView" text="BACK" bounds="[495,1291][632,1361]"/>
+        <node class="android.widget.Button" bounds="[459,1266][668,1386]"/>
+       </node>
+       <node class="android.view.View" bounds="[668,1254][930,1398]" clickable="true">
+        <node class="android.widget.TextView" text="REJECT" bounds="[704,1291][894,1361]"/>
+        <node class="android.widget.Button" bounds="[668,1266][930,1386]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>
