@@ -1,0 +1,73 @@
+{
+  "theme": {
+    "accent": "#0929ce",
+    "light": {
+      "accent": "#0929ce",
+      "background": "#ffffff",
+      "surface": "#ffffff",
+      "text": "#333333",
+      "muted": "#666666",
+      "onAccent": "#ffffff"
+    },
+    "dark": {
+      "accent": "#7b8fff",
+      "background": "#0b1240",
+      "surface": "#151d55",
+      "text": "#ffffff",
+      "muted": "#b4bdf0",
+      "onAccent": "#0b1240"
+    },
+    "corners": "round",
+    "header": "accent",
+    "cards": "flat"
+  },
+  "screens": [
+    {
+      "name": "rejsekort-welcome",
+      "displayName": "Welcome",
+      "when": [
+        "id:moreDetailsButton"
+      ],
+      "parts": [
+        {
+          "select": "id:continueButton",
+          "as": "action",
+          "tone": "primary"
+        },
+        {
+          "select": "id:moreDetailsButton",
+          "as": "action",
+          "tone": "secondary"
+        }
+      ]
+    },
+    {
+      "name": "rejsekort-how-to",
+      "displayName": "How to travel with the app",
+      "when": [
+        "id:how_it_works"
+      ],
+      "parts": [
+        {
+          "select": "id:bottomContinueButton",
+          "as": "action",
+          "tone": "primary"
+        }
+      ]
+    },
+    {
+      "name": "rejsekort-location",
+      "displayName": "Location",
+      "when": [
+        "id:locationHeader"
+      ],
+      "parts": [
+        {
+          "select": "id:continueButton",
+          "as": "action",
+          "tone": "primary"
+        }
+      ]
+    }
+  ]
+}

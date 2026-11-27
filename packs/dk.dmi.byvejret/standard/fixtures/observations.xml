@@ -1,0 +1,29 @@
+<snapshot package="dk.dmi.byvejret" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.view.View" bounds="[0,80][1080,2047]">
+   <node class="android.view.View" bounds="[0,80][1080,2047]">
+    <node class="android.widget.ScrollView" bounds="[34,464][1046,1619]">
+     <node class="android.widget.TextView" text="Slå lokalisering til for at se nærmeste station" bounds="[102,1094][978,1221]"/>
+     <node class="android.widget.TextView" text="Du skal tillade brug af lokalisering, for at nærmeste målinger kan vises. Slå til i Indstillinger. Alternativ kan du også søge efter en lokation manuelt i søge feltet." bounds="[102,1232][978,1483]"/>
+    </node>
+    <node class="android.view.View" bounds="[0,80][1080,260]">
+     <node class="android.widget.TextView" text="Målinger" bounds="[45,136][256,204]"/>
+    </node>
+    <node class="android.view.View" bounds="[34,283][1046,441]">
+     <node class="android.widget.EditText" text="" bounds="[34,283][1046,441]" clickable="true" long-clickable="true" editable="true" ime-enter="true">
+      <node class="android.view.View" content-desc="Search" bounds="[34,283][1046,441]"/>
+      <node class="android.view.View" content-desc="Search" bounds="[79,329][147,397]"/>
+      <node class="android.widget.TextView" text="Søg lokation" bounds="[180,328][448,396]"/>
+     </node>
+    </node>
+   </node>
+  </node>
+  <node class="android.view.ViewGroup" bounds="[0,2047][1080,2205]" collection="true">
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/weather_tab" content-desc="Vejr" bounds="[0,2047][216,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/map_tab" content-desc="Kort &amp; Radar" bounds="[216,2047][432,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/observations_tab" content-desc="Målinger" bounds="[432,2047][648,2205]" selected="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/warnings_tab" content-desc="Varsler" bounds="[648,2047][864,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/settings_tab" content-desc="Indstillinger" bounds="[864,2047][1080,2205]" clickable="true"/>
+  </node>
+ </node>
+</snapshot>

@@ -1,0 +1,63 @@
+[
+  {
+    "why": "The intro, signed out, over the app's photo (a tree with where its words sit). Its headline, drawn three times the body's height at the head of a page with no toolbar, stays in the page as the screen's title, largest and centred. Apply for new account, the pill the app fills, is the primary action, and Log in with MitID, its other pill, the second; both span the window, so each stands on a line of its own in the bar of actions, stacked as the app stacks them. The country picker stays an item, and the two legal lines stay centred as the app draws them. The unlabelled control the app lays over its logo (a press and a hold with no words) is left out.",
+    "fixture": "intro.xml",
+    "screen": "lunar-intro",
+    "secure": false,
+    "title": "The smarter way to bank.",
+    "actions": [
+      "Apply for new account",
+      "Log in with MitID"
+    ],
+    "shows": [
+      "Denmark",
+      "By continuing, you acknowledge that you have read and understood our Privacy Policy.",
+      "See Lunar’s Accessibility Statement."
+    ],
+    "sizes": {
+      "The smarter way to bank.": "largest"
+    },
+    "rows": [],
+    "places": {
+      "The smarter way to bank.": "page"
+    },
+    "align": {
+      "The smarter way to bank.": "center",
+      "By continuing, you acknowledge that you have read and understood our Privacy Policy.": "center",
+      "See Lunar’s Accessibility Statement.": "center"
+    },
+    "widths": {
+      "Apply for new account": "full",
+      "Log in with MitID": "full"
+    }
+  },
+  {
+    "why": "Choosing an account. The app draws Select your account and a back arrow in its header but tells Android neither, so the header's bare box gets the app's words as the screen's title, in the bar. Each card is one item of the list, its heading as its name and the rest (what it is, its price, its link) as its second line; the card's photo is left out, as a plain reading leaves it.",
+    "fixture": "account.xml",
+    "screen": "lunar-account",
+    "secure": false,
+    "title": "Select your account",
+    "places": {
+      "Select your account": "bar"
+    },
+    "actions": [],
+    "shows": [
+      "Personal account",
+      "Business account"
+    ],
+    "rows": []
+  },
+  {
+    "why": "The country dropdown, a window of its own over the intro: its three countries as the main list. It has no title, as the app shows none.",
+    "fixture": "country.xml",
+    "screen": "lunar-country",
+    "secure": false,
+    "actions": [],
+    "shows": [
+      "Denmark",
+      "Sweden",
+      "Norway"
+    ],
+    "rows": []
+  }
+]

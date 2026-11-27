@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="com.lunarway.app" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="androidx.compose.ui.platform.ComposeView" resource-id="com.lunarway.app:id/activity_compose_view" bounds="[0,0][1080,2340]">
+   <node class="android.view.View" bounds="[0,0][1080,2340]">
+    <node class="android.view.View" bounds="[0,0][1080,2340]">
+     <node class="android.view.View" bounds="[0,0][1080,1006]">
+      <node class="android.view.View" bounds="[0,0][1080,1006]">
+       <node class="android.view.View" bounds="[0,0][1080,1006]"/>
+      </node>
+      <node class="android.view.View" bounds="[0,0][1080,1006]"/>
+      <node class="android.view.View" bounds="[363,260][717,282]"/>
+     </node>
+     <node class="android.view.View" bounds="[0,1006][1080,2340]" clickable="true">
+      <node class="android.widget.ScrollView" bounds="[0,1006][1080,2340]">
+       <node class="android.view.View" bounds="[0,1006][1080,1375]">
+        <node class="android.widget.TextView" text="The smarter way to bank." bounds="[45,1006][1035,1330]" drawn-lines="[137,1006][945,1163] [122,1163][960,1330]"/>
+       </node>
+       <node class="android.view.View" bounds="[0,1375][1080,1555]">
+        <node class="android.widget.EditText" text="Denmark" bounds="[45,1375][1035,1555]" clickable="true" long-clickable="true" focused="true" ime-enter="true">
+         <node class="android.view.View" bounds="[45,1375][1035,1555]"/>
+         <node class="android.view.View" bounds="[57,1398][192,1533]">
+          <node class="android.view.View" bounds="[90,1431][158,1499]"/>
+          <node class="android.view.View" bounds="[57,1398][192,1533]"/>
+         </node>
+         <node class="android.widget.TextView" text="Country" bounds="[203,1398][345,1449]"/>
+         <node class="android.view.View" bounds="[203,1455][889,1512]"/>
+         <node class="android.widget.Spinner" bounds="[45,1375][1035,1555]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,1555][1080,2160]">
+        <node class="android.view.View" bounds="[0,1600][1080,1735]" clickable="true">
+         <node class="android.view.View" bounds="[298,1600][782,1735]">
+          <node class="android.widget.TextView" text="Apply for new account" bounds="[309,1639][771,1696]"/>
+         </node>
+         <node class="android.widget.Button" bounds="[0,1600][1080,1735]"/>
+        </node>
+        <node class="android.view.View" bounds="[0,1769][1080,1905]" clickable="true">
+         <node class="android.view.View" bounds="[330,1770][750,1905]">
+          <node class="android.widget.TextView" text="Log in with MitID" bounds="[409,1809][750,1866]"/>
+         </node>
+         <node class="android.widget.Button" bounds="[0,1769][1080,1905]"/>
+        </node>
+        <node class="android.view.View" bounds="[45,1934][1035,2044]" clickable="true">
+         <node class="android.widget.TextView" text="By continuing, you acknowledge that you have read and understood our Privacy Policy." bounds="[45,1950][1035,2044]" drawn-lines="[78,1950][1003,2001] [229,2001][853,2052]"/>
+         <node class="android.widget.Button" bounds="[45,1950][1035,2052]"/>
+        </node>
+        <node class="android.view.View" bounds="[45,2044][1035,2179]" clickable="true">
+         <node class="android.widget.TextView" text="See Lunar’s Accessibility Statement." bounds="[215,2086][866,2137]"/>
+         <node class="android.widget.Button" bounds="[45,2086][1035,2137]"/>
+        </node>
+       </node>
+      </node>
+     </node>
+     <node class="android.view.View" bounds="[0,0][1080,260]">
+      <node class="android.widget.Button" bounds="[135,125][1080,260]" clickable="true" long-clickable="true"/>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

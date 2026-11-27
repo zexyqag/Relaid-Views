@@ -1,0 +1,127 @@
+[
+  {
+    "why": "Vejr with location denied (signed out): the location's name (the app's title node) is empty, so the screen has no title. The arrows the app draws at the sides of its page, with no words of their own, become Forrige lokation and Næste lokation in the bar of actions, outlined as the app draws them (no fill). Search, graphs and the favourite switch stay where the app's boxes put them, the switch keeping its state. The bottom navigation as tabs with Relaid's icons (no sun, map or warning in its set: home, grid, chart, bell, settings).",
+    "fixture": "weather.xml",
+    "screen": "dmi-weather",
+    "secure": false,
+    "actions": [
+      "Forrige lokation",
+      "Næste lokation"
+    ],
+    "options": [],
+    "tabs": [
+      "Vejr",
+      "Kort & Radar",
+      "Målinger",
+      "Varsler",
+      "Indstillinger"
+    ],
+    "headings": [],
+    "shows": [
+      "søg",
+      "grafer",
+      "favorit",
+      "Slå lokalisering til for at se nærmeste lokationer"
+    ]
+  },
+  {
+    "why": "Målinger (a Compose screen, no ids but the tabs', told apart by its selected tab): the title in the bar at its start, as the app draws it in its header band. The search field is named by the words the app shows in it (Søg lokation), not by the English description its icon gives (Search), which is left out. Nothing stands side by side.",
+    "fixture": "observations.xml",
+    "screen": "dmi-observations",
+    "secure": false,
+    "title": "Målinger",
+    "fields": {
+      "Søg lokation": null
+    },
+    "actions": [],
+    "options": [],
+    "tabs": [
+      "Vejr",
+      "Kort & Radar",
+      "Målinger",
+      "Varsler",
+      "Indstillinger"
+    ],
+    "hides": [
+      "Search"
+    ],
+    "rows": [],
+    "places": {
+      "Målinger": "bar"
+    },
+    "align": {
+      "Målinger": "start"
+    }
+  },
+  {
+    "why": "Varsler with no warnings: the title in the bar, larger than the body as the app draws it. INGEN VARSLER, the app's small capitals over its text, is a heading. The app's info icon at the end of its bar goes to the menu, as a header's icon does; the app draws no toolbar nor page that Relaid could measure its header band by, so it is not placed in the bar.",
+    "fixture": "warnings.xml",
+    "screen": "dmi-warnings",
+    "secure": false,
+    "title": "Varsler",
+    "actions": [],
+    "options": [
+      "info"
+    ],
+    "tabs": [
+      "Vejr",
+      "Kort & Radar",
+      "Målinger",
+      "Varsler",
+      "Indstillinger"
+    ],
+    "headings": [
+      "INGEN VARSLER"
+    ],
+    "shows": [
+      "Her vises alle aktuelle vejrvarsler for regioner og kommuner i Danmark."
+    ],
+    "rows": [],
+    "places": {
+      "Varsler": "bar"
+    },
+    "align": {
+      "Varsler": "start"
+    },
+    "sizes": {
+      "Varsler": "larger"
+    }
+  },
+  {
+    "why": "Indstillinger: the app's rows with a chevron each (Buttons in a scroll view that does not scroll) as the screen's list, so each is an item to open, as the app draws them, not a button. OM APP'EN, the app's small capitals between them, is a heading, the title not taken from it. The version centred under the rows, as the app draws it.",
+    "fixture": "settings.xml",
+    "screen": "dmi-settings",
+    "secure": false,
+    "title": "Indstillinger",
+    "actions": [],
+    "options": [],
+    "tabs": [
+      "Vejr",
+      "Kort & Radar",
+      "Målinger",
+      "Varsler",
+      "Indstillinger"
+    ],
+    "headings": [
+      "OM APP'EN"
+    ],
+    "shows": [
+      "Varsler",
+      "Lokalitetsindstillinger",
+      "Indsamling af vejrdata",
+      "Om DMI",
+      "Privatlivspolitik",
+      "Hjælp",
+      "Tilgængelighed",
+      "2.6.6 V - 180"
+    ],
+    "rows": [],
+    "places": {
+      "Indstillinger": "bar"
+    },
+    "align": {
+      "Indstillinger": "start",
+      "2.6.6 V - 180": "center"
+    }
+  }
+]

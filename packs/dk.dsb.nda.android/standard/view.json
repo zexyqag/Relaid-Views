@@ -1,0 +1,176 @@
+{
+  "theme": {
+    "accent": "#00233c",
+    "light": {
+      "background": "#fafafa",
+      "surface": "#ffffff",
+      "text": "#212529",
+      "muted": "#6a6e70",
+      "onAccent": "#ffffff"
+    },
+    "dark": {
+      "accent": "#8db6d6",
+      "background": "#121416",
+      "surface": "#1d2023",
+      "text": "#f1f3f5",
+      "muted": "#a9aeb2",
+      "onAccent": "#00233c"
+    },
+    "corners": "square",
+    "header": "plain",
+    "cards": "outlined"
+  },
+  "screens": [
+    {
+      "name": "dsb-start",
+      "displayName": "Start",
+      "when": [
+        "id:NAV_TAB_START & is:selected"
+      ],
+      "parts": [
+        {
+          "select": "class:TextView & parent(class:ScrollView)",
+          "as": "heading"
+        },
+        {
+          "select": "id:NAV_TAB_START",
+          "as": "tab",
+          "icon": "search"
+        },
+        {
+          "select": "id:NAV_TAB_TRIPS",
+          "as": "tab",
+          "icon": "card"
+        },
+        {
+          "select": "id:NAV_TAB_BOARDS",
+          "as": "tab",
+          "icon": "list"
+        },
+        {
+          "select": "id~:NAV_TAB_PROFILE",
+          "as": "tab",
+          "icon": "person"
+        }
+      ]
+    },
+    {
+      "name": "dsb-trips",
+      "displayName": "Your trips",
+      "when": [
+        "id:NAV_TAB_TRIPS & is:selected"
+      ],
+      "parts": [
+        {
+          "select": "id:NAV_TAB_START",
+          "as": "tab",
+          "icon": "search"
+        },
+        {
+          "select": "id:NAV_TAB_TRIPS",
+          "as": "tab",
+          "icon": "card"
+        },
+        {
+          "select": "id:NAV_TAB_BOARDS",
+          "as": "tab",
+          "icon": "list"
+        },
+        {
+          "select": "id~:NAV_TAB_PROFILE",
+          "as": "tab",
+          "icon": "person"
+        }
+      ]
+    },
+    {
+      "name": "dsb-departures",
+      "displayName": "Departures",
+      "when": [
+        "id:NAV_TAB_BOARDS & is:selected"
+      ],
+      "parts": [
+        {
+          "select": "desc:Search & parent(class:EditText)",
+          "as": "hidden"
+        },
+        {
+          "select": "id:NAV_TAB_START",
+          "as": "tab",
+          "icon": "search"
+        },
+        {
+          "select": "id:NAV_TAB_TRIPS",
+          "as": "tab",
+          "icon": "card"
+        },
+        {
+          "select": "id:NAV_TAB_BOARDS",
+          "as": "tab",
+          "icon": "list"
+        },
+        {
+          "select": "id~:NAV_TAB_PROFILE",
+          "as": "tab",
+          "icon": "person"
+        }
+      ]
+    },
+    {
+      "name": "dsb-profile",
+      "displayName": "Profile",
+      "when": [
+        "id~:NAV_TAB_PROFILE & is:selected"
+      ],
+      "parts": [
+        {
+          "select": "id:BUTTON_CTA_PRIMARY",
+          "as": "action",
+          "tone": "primary"
+        },
+        {
+          "select": "id:NAV_TAB_START",
+          "as": "tab",
+          "icon": "search"
+        },
+        {
+          "select": "id:NAV_TAB_TRIPS",
+          "as": "tab",
+          "icon": "card"
+        },
+        {
+          "select": "id:NAV_TAB_BOARDS",
+          "as": "tab",
+          "icon": "list"
+        },
+        {
+          "select": "id~:NAV_TAB_PROFILE",
+          "as": "tab",
+          "icon": "person"
+        }
+      ]
+    },
+    {
+      "name": "dsb-sheet",
+      "displayName": "Sheet",
+      "when": [
+        "desc:Close sheet"
+      ],
+      "parts": [
+        {
+          "select": "desc:Close sheet",
+          "as": "hidden"
+        },
+        {
+          "select": "class:TextView & parent(has(desc:Close))",
+          "as": "title"
+        },
+        {
+          "select": "class:Button & in(class:ScrollView) & parent(is:clickable & has(class:TextView))",
+          "as": "action",
+          "tone": "primary"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<snapshot package="dk.rejsekort.digitalrejsekort" width="1080" height="2125" screen="com.fairtiq.androidkit.signup.StartupActivity">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.ScrollView" resource-id="dk.rejsekort.digitalrejsekort:id/scrollView" bounds="[0,80][1080,2340]" scrollable="true" scroll-forward="true">
+   <node class="android.widget.ImageView" content-desc="Fairtiq. Public transport made easy" bounds="[23,207][1057,320]"/>
+   <node class="android.widget.Button" resource-id="dk.rejsekort.digitalrejsekort:id/continueButton" text="Continue" bounds="[45,1847][1035,1982]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.rejsekort.digitalrejsekort:id/moreDetailsButton" text="How to travel with the app" content-desc="How to travel with the app&#10;&#10;&#10;Shows a brief description of how the app works.&#10;" bounds="[45,2027][1035,2182]" clickable="true"/>
+  </node>
+ </node>
+</snapshot>

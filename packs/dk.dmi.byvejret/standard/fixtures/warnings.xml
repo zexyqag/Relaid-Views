@@ -1,0 +1,15 @@
+<snapshot package="dk.dmi.byvejret" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.TextView" text="Varsler" bounds="[45,121][228,197]"/>
+  <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/action_info" content-desc="info" bounds="[944,91][1080,226]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/warningsEmptyTitle" text="INGEN VARSLER" bounds="[34,272][373,333]"/>
+  <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/warningsEmptyBody" text="Her vises alle aktuelle vejrvarsler for regioner og kommuner i Danmark." bounds="[34,344][1046,461]"/>
+  <node class="android.view.ViewGroup" bounds="[0,2047][1080,2205]" collection="true">
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/weather_tab" content-desc="Vejr" bounds="[0,2047][216,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/map_tab" content-desc="Kort &amp; Radar" bounds="[216,2047][432,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/observations_tab" content-desc="Målinger" bounds="[432,2047][648,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/warnings_tab" content-desc="Varsler" bounds="[648,2047][864,2205]" selected="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/settings_tab" content-desc="Indstillinger" bounds="[864,2047][1080,2205]" clickable="true"/>
+  </node>
+ </node>
+</snapshot>

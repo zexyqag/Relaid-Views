@@ -2,6 +2,22 @@
     "format": 3,
     "packs": [
         {
+            "app": "com.lunarway.app",
+            "view": "standard",
+            "name": "Lunar",
+            "version": 1,
+            "format": 1,
+            "description": "Lunar's own colours in light and dark (near-black and white, its light grey page and white cards), round corners, a plain header and filled cards. On the intro, Apply for new account as the filled primary action with Log in with MitID under it; the account choice named in the app's own words, which its header does not say; the country list as a list.",
+            "path": "packs/com.lunarway.app/standard/view.json",
+            "sha256": "ac5af9fe7025c6da6bfa9a0da17ee3bb7ab5b3efc2481b177b11ac54922604f8",
+            "screens": [
+                "lunar-intro",
+                "lunar-account",
+                "lunar-country"
+            ],
+            "permissions": []
+        },
+        {
             "app": "com.snapchat.android",
             "view": "standard",
             "name": "Snapchat",
@@ -18,6 +34,35 @@
                 "touch",
                 "pictures"
             ]
+        },
+        {
+            "app": "com.valvesoftware.android.steam.community",
+            "view": "standard",
+            "name": "Steam",
+            "version": 1,
+            "format": 1,
+            "description": "Steam's own dark look in both colour schemes (its slate page, darker boxes, light grey words and blue button), small corners, a plain header and filled cards; on the sign-in screen, Sign in as the main action and the account name and password fields named.",
+            "path": "packs/com.valvesoftware.android.steam.community/standard/view.json",
+            "sha256": "b456330b27c6e64cb2677de0f48127fb1f37b30ef4052b20adf984341e337085",
+            "screens": [
+                "steam-sign-in"
+            ],
+            "permissions": []
+        },
+        {
+            "app": "de.hafas.android.rejseplanen",
+            "view": "standard",
+            "name": "Rejseplan",
+            "version": 1,
+            "format": 1,
+            "description": "Rejseplan's colours in light and dark (its navy, light grey and dark text), round corners, a plain header and outlined cards; the welcome and the getting-started steps named, with Continue as the primary action, filled as the app fills it.",
+            "path": "packs/de.hafas.android.rejseplanen/standard/view.json",
+            "sha256": "05518461f341712b0ea0e94b60a27e7aaf2e0af8427a0b3e97f289105f7de503",
+            "screens": [
+                "rejseplan-welcome",
+                "rejseplan-onboarding"
+            ],
+            "permissions": []
         },
         {
             "app": "dk.danskebank.mobilepay",
@@ -38,6 +83,41 @@
             "permissions": []
         },
         {
+            "app": "dk.dmi.byvejret",
+            "view": "standard",
+            "name": "DMI",
+            "version": 1,
+            "format": 1,
+            "description": "DMI's own colours: its blue page, navy bars and white text (in the light scheme a shade darker, so Relaid's red stays visible), round corners and flat rows; Vejr, Kort & Radar, Målinger, Varsler and Indstillinger as tabs with icons; the arrows between locations as actions in Danish; the search field in the app's own words; section headings, Varsler's info in the menu, the settings as a list.",
+            "path": "packs/dk.dmi.byvejret/standard/view.json",
+            "sha256": "5c12c7b981f46ee1833a8bbe0730f84a4c9ed88223eba8957f100feb3590210a",
+            "screens": [
+                "dmi-weather",
+                "dmi-observations",
+                "dmi-warnings",
+                "dmi-settings"
+            ],
+            "permissions": []
+        },
+        {
+            "app": "dk.dsb.nda.android",
+            "view": "standard",
+            "name": "DSB",
+            "version": 1,
+            "format": 1,
+            "description": "DSB's light greys, white cards and dark text, with its navy as the accent (Relaid keeps red for what destroys), in light and dark; small corners, a plain header and outlined cards. Start, Your trips, Departures and Profile as tabs with icons; Log in and a sheet's main button filled as the screen's action; a sheet's heading as its title; the departures search named in the app's own words.",
+            "path": "packs/dk.dsb.nda.android/standard/view.json",
+            "sha256": "0bf996125af87c22a8eef6dc53d34c6961221a737a01322180fab3034c58f80f",
+            "screens": [
+                "dsb-start",
+                "dsb-trips",
+                "dsb-departures",
+                "dsb-profile",
+                "dsb-sheet"
+            ],
+            "permissions": []
+        },
+        {
             "app": "dk.mitid.app.android",
             "view": "standard",
             "name": "MitID",
@@ -53,6 +133,37 @@
             "permissions": [
                 "touch"
             ]
+        },
+        {
+            "app": "dk.rejsekort.digitalrejsekort",
+            "view": "standard",
+            "name": "Rejsekort",
+            "version": 1,
+            "format": 1,
+            "description": "Rejsekort's colours in light and dark (its blue header band, white pages and charcoal text), round buttons and flat sections; Continue as the primary action on the welcome page, its guide to travelling with the app and the location screen, with How to travel with the app beside it on the welcome page.",
+            "path": "packs/dk.rejsekort.digitalrejsekort/standard/view.json",
+            "sha256": "616fc202922cfb58d209e480849fd87cb39ff9566e34c009e8b7adb3f3c783c9",
+            "screens": [
+                "rejsekort-welcome",
+                "rejsekort-how-to",
+                "rejsekort-location"
+            ],
+            "permissions": []
+        },
+        {
+            "app": "dk.rekom.nightpay",
+            "view": "standard",
+            "name": "NightPay",
+            "version": 1,
+            "format": 2,
+            "description": "NightPay's own colours: white words and round white buttons on its blue (in light a deep navy, so Relaid's red still stands out; in dark its own blue), a plain header and outlined cards. The welcome and log-in screens named, its logo as a picture where the owner shows what Relaid cannot read, and its unnamed MobilePay and Google log-in buttons named and filled as the screen's actions.",
+            "path": "packs/dk.rekom.nightpay/standard/view.json",
+            "sha256": "a954baebc94f51efbd23573ce12d97b01c5acce4961064778528ba497ffc6ba3",
+            "screens": [
+                "nightpay-welcome",
+                "nightpay-login"
+            ],
+            "permissions": []
         }
     ]
 }

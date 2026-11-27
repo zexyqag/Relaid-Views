@@ -1,0 +1,31 @@
+<snapshot package="de.hafas.android.rejseplanen" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="androidx.compose.ui.platform.ComposeView" bounds="[0,0][1080,2340]">
+   <node class="android.view.View" bounds="[0,0][1080,2340]">
+    <node class="android.view.View" bounds="[0,0][1080,2340]">
+     <node class="android.view.View" bounds="[0,80][1080,2002]" collection="true">
+      <node class="android.widget.ScrollView" bounds="[0,80][1080,1314]" focused="true">
+       <node class="android.view.View" bounds="[0,125][1080,1269]">
+        <node class="android.view.View" bounds="[124,125][956,828]"/>
+        <node class="android.view.View" bounds="[46,873][1034,1077]">
+         <node class="android.widget.TextView" text="Welcome to the new Rejseplan" bounds="[46,873][1034,1077]" heading="true"/>
+        </node>
+        <node class="android.view.View" bounds="[46,1110][1034,1258]">
+         <node class="android.widget.TextView" text="Experience a new and improved way to find your way from A to B." content-desc="Experience a new and improved way to find your way from A to B." bounds="[46,1110][1034,1258]"/>
+        </node>
+       </node>
+      </node>
+     </node>
+     <node class="android.view.View" bounds="[0,2002][1080,2340]">
+      <node class="android.view.View" bounds="[0,2002][1080,2340]">
+       <node class="android.view.View" bounds="[45,2036][1035,2171]" clickable="true">
+        <node class="android.widget.TextView" text="Continue" bounds="[446,2076][635,2132]"/>
+        <node class="android.widget.Button" bounds="[45,2036][1035,2171]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

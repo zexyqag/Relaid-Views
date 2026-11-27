@@ -1,0 +1,7 @@
+{
+  "app": "com.lunarway.app",
+  "view": "standard",
+  "name": "Lunar",
+  "version": 1,
+  "description": "Lunar's own colours in light and dark (near-black and white, its light grey page and white cards), round corners, a plain header and filled cards. On the intro, Apply for new account as the filled primary action with Log in with MitID under it; the account choice named in the app's own words, which its header does not say; the country list as a list."
+}

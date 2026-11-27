@@ -1,0 +1,23 @@
+<snapshot package="dk.dmi.byvejret" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.TextView" text="Indstillinger" bounds="[45,121][351,197]"/>
+  <node class="android.widget.ScrollView" bounds="[0,238][1080,2047]">
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsPushNotifications" text="Varsler" bounds="[0,238][1080,373]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsLocationSettings" text="Lokalitetsindstillinger" bounds="[0,373][1080,508]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsWeatherData" text="Indsamling af vejrdata" bounds="[0,508][1080,643]" clickable="true"/>
+   <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/settingsAboutHeader" text="OM APP'EN" bounds="[34,744][1046,805]"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsAbout" text="Om DMI" bounds="[0,822][1080,957]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsPrivacyPolicy" text="Privatlivspolitik" bounds="[0,957][1080,1092]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsHelp" text="Hjælp" bounds="[0,1092][1080,1227]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsUrl" text="Tilgængelighed" bounds="[0,1227][1080,1362]" clickable="true"/>
+   <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/fragmentSettingsTvVersion" text="2.6.6 V - 180" bounds="[437,1956][643,2002]"/>
+  </node>
+  <node class="android.view.ViewGroup" bounds="[0,2047][1080,2205]" collection="true">
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/weather_tab" content-desc="Vejr" bounds="[0,2047][216,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/map_tab" content-desc="Kort &amp; Radar" bounds="[216,2047][432,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/observations_tab" content-desc="Målinger" bounds="[432,2047][648,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/warnings_tab" content-desc="Varsler" bounds="[648,2047][864,2205]" clickable="true"/>
+   <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/settings_tab" content-desc="Indstillinger" bounds="[864,2047][1080,2205]" selected="true"/>
+  </node>
+ </node>
+</snapshot>

@@ -1,0 +1,64 @@
+{
+  "theme": {
+    "accent": "#294ad3",
+    "light": {
+      "accent": "#ffffff",
+      "background": "#111f58",
+      "surface": "#111f58",
+      "text": "#ffffff",
+      "muted": "#bfc9f2",
+      "onAccent": "#222222"
+    },
+    "dark": {
+      "accent": "#ffffff",
+      "background": "#2440b8",
+      "surface": "#2440b8",
+      "text": "#ffffff",
+      "muted": "#bfc9f2",
+      "onAccent": "#222222"
+    },
+    "corners": "round",
+    "header": "plain",
+    "cards": "outlined"
+  },
+  "screens": [
+    {
+      "name": "nightpay-welcome",
+      "displayName": "Welcome",
+      "when": [
+        "desc:Already have an account?"
+      ],
+      "parts": [
+        {
+          "select": "class:android.widget.ImageView & nth:1",
+          "as": "unread"
+        }
+      ]
+    },
+    {
+      "name": "nightpay-login",
+      "displayName": "Log in",
+      "when": [
+        "desc:Choose how you want to log in:"
+      ],
+      "parts": [
+        {
+          "select": "class:android.widget.ImageView & nth:1",
+          "as": "unread"
+        },
+        {
+          "select": "class:android.widget.ImageView & is:clickable & nth:3",
+          "as": "action",
+          "label": "Log in with MobilePay",
+          "tone": "primary"
+        },
+        {
+          "select": "class:android.widget.ImageView & is:clickable & nth:4",
+          "as": "action",
+          "label": "Log in with Google",
+          "tone": "primary"
+        }
+      ]
+    }
+  ]
+}

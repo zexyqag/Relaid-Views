@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.rekom.nightpay" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2205]" focused="true">
+   <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+    <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+     <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+      <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+       <node class="android.widget.ImageView" resource-id="" bounds="[115,420][852,958]" clickable="true"/>
+       <node class="android.view.View" resource-id="" content-desc="Create a free profile:" bounds="[302,1288][778,1339]"/>
+       <node class="android.widget.ImageView" resource-id="" content-desc="Get started with MobilePay" bounds="[135,1384][945,1536]" clickable="true"/>
+       <node class="android.widget.Button" resource-id="" content-desc="Hide alternatives" bounds="[332,1536][748,1671]" clickable="true"/>
+       <node class="android.widget.ImageView" resource-id="" content-desc="Get started with " bounds="[191,1671][889,1794]" clickable="true"/>
+       <node class="android.view.View" resource-id="" content-desc="Already have an account?" bounds="[226,1862][854,1918]"/>
+       <node class="android.widget.Button" resource-id="" content-desc="Log in" bounds="[191,1952][889,2076]" clickable="true"/>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

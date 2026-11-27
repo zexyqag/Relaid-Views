@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="com.lunarway.app" width="1080" height="2125">
+ <node class="android.view.ViewGroup" resource-id="android:id/content" bounds="[45,1555][443,2024]">
+  <node class="android.view.View" bounds="[45,1555][443,2024]">
+   <node class="android.view.View" bounds="[45,1555][443,2024]">
+    <node class="android.view.View" bounds="[45,1555][443,2024]">
+     <node class="android.widget.ScrollView" bounds="[45,1578][443,2001]">
+      <node class="android.view.View" bounds="[45,1578][443,1719]" clickable="true">
+       <node class="android.view.View" bounds="[90,1609][169,1688]"/>
+       <node class="android.widget.TextView" text="Denmark" bounds="[214,1620][398,1677]"/>
+      </node>
+      <node class="android.view.View" bounds="[45,1719][443,1860]" clickable="true">
+       <node class="android.view.View" bounds="[90,1750][169,1829]"/>
+       <node class="android.widget.TextView" text="Sweden" bounds="[214,1761][398,1818]"/>
+      </node>
+      <node class="android.view.View" bounds="[45,1860][443,2001]" clickable="true">
+       <node class="android.view.View" bounds="[90,1891][169,1970]"/>
+       <node class="android.widget.TextView" text="Norway" bounds="[214,1902][398,1959]"/>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

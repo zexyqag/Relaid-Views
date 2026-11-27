@@ -1,0 +1,63 @@
+[
+  {
+    "why": "The welcome, signed out (NightPay 3.2.26, a Flutter app: no view ids, its words given as descriptions). It has no top bar, so no title: a device names it by the app. Its logo, a picture with no words, is left out unless the owner shows what Relaid cannot read, then shown as the one picture of the screen. Everything else stands in the page in the app's order, each lead-in above its buttons: the MobilePay sign-up, the link to more ways, the question and Log in, the last two controls in the middle of their lines as the app draws them. Nothing stands side by side.",
+    "fixture": "welcome.xml",
+    "screen": "nightpay-welcome",
+    "secure": false,
+    "actions": [],
+    "shows": [
+      "Create a free profile:",
+      "Get started with MobilePay",
+      "More ways to get started",
+      "Already have an account?",
+      "Log in"
+    ],
+    "rows": [],
+    "align": {
+      "More ways to get started": "center",
+      "Log in": "center"
+    }
+  },
+  {
+    "why": "The welcome with more ways to get started open: the same screen, the Google sign-up under Hide alternatives. The app names that button only \"Get started with \" (its G is drawn, not said), and a view cannot rename a control that has words of its own, so it reads so.",
+    "fixture": "welcome-more.xml",
+    "screen": "nightpay-welcome",
+    "secure": false,
+    "actions": [],
+    "shows": [
+      "Create a free profile:",
+      "Get started with MobilePay",
+      "Hide alternatives",
+      "Get started with",
+      "Already have an account?",
+      "Log in"
+    ],
+    "rows": [],
+    "align": {
+      "Hide alternatives": "center",
+      "Log in": "center"
+    }
+  },
+  {
+    "why": "Choosing how to log in: the app draws its two log-in buttons as pictures (the MobilePay mark, Google's G) and names neither, so plain they are left out and the screen offers only Back. The view names them for MobilePay and Google, in the app's own phrasing of its sign-up, as the screen's actions, filled as the app fills them (tone primary); as the app stacks its wide buttons one above the other, each stands on a line of its own across the bar of actions. Back, the app's quiet link under them in the middle of its line, stays in the page there, muted.",
+    "fixture": "login.xml",
+    "screen": "nightpay-login",
+    "secure": false,
+    "actions": [
+      "Log in with MobilePay",
+      "Log in with Google"
+    ],
+    "shows": [
+      "Choose how you want to log in:",
+      "Back"
+    ],
+    "rows": [],
+    "align": {
+      "Back": "center"
+    },
+    "widths": {
+      "Log in with MobilePay": "full",
+      "Log in with Google": "full"
+    }
+  }
+]

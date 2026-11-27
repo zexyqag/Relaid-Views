@@ -1,0 +1,51 @@
+{
+  "theme": {
+    "accent": "#2479c3",
+    "light": {
+      "accent": "#2479c3",
+      "background": "#23242b",
+      "surface": "#16171c",
+      "text": "#dfe3e6",
+      "muted": "#8d949b",
+      "onAccent": "#dfe3e6"
+    },
+    "dark": {
+      "accent": "#2479c3",
+      "background": "#2a2c34",
+      "surface": "#1f2127",
+      "text": "#dfe3e6",
+      "muted": "#8d949b",
+      "onAccent": "#dfe3e6"
+    },
+    "corners": "square",
+    "header": "plain",
+    "cards": "filled"
+  },
+  "screens": [
+    {
+      "name": "steam-sign-in",
+      "displayName": "Sign in",
+      "when": [
+        "class:EditText & is:password",
+        "class:EditText & not(is:password)"
+      ],
+      "parts": [
+        {
+          "select": "text:Sign in & not(nth:1 & parent(class:ScrollView))",
+          "as": "action",
+          "tone": "primary"
+        },
+        {
+          "select": "class:EditText & not(is:password)",
+          "as": "field",
+          "label": "Steam account name"
+        },
+        {
+          "select": "class:EditText & is:password",
+          "as": "field",
+          "label": "Password"
+        }
+      ]
+    }
+  ]
+}

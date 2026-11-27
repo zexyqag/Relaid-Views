@@ -1,0 +1,64 @@
+{
+  "theme": {
+    "accent": "#002942",
+    "light": {
+      "background": "#f5f6f7",
+      "surface": "#f5f6f7",
+      "text": "#25252c",
+      "muted": "#4b4b53",
+      "onAccent": "#ffffff"
+    },
+    "dark": {
+      "accent": "#8fc3e8",
+      "background": "#001a2b",
+      "surface": "#002942",
+      "text": "#f5f6f7",
+      "muted": "#b4b4b8",
+      "onAccent": "#002942"
+    },
+    "corners": "round",
+    "header": "plain",
+    "cards": "outlined"
+  },
+  "screens": [
+    {
+      "name": "rejseplan-welcome",
+      "displayName": "Welcome",
+      "when": [
+        "is:heading & text~:rejseplan & in(class:ScrollView)",
+        "is:clickable & has(class:android.widget.Button)"
+      ],
+      "parts": [
+        {
+          "select": "is:clickable & has(class:android.widget.Button)",
+          "as": "action",
+          "tone": "primary"
+        }
+      ]
+    },
+    {
+      "name": "rejseplan-onboarding",
+      "displayName": "Getting started",
+      "when": [
+        "is:heading & in(class:ScrollView)",
+        "class:ProgressBar & has(class:android.view.View)",
+        "is:clickable & has(class:android.widget.Button)"
+      ],
+      "parts": [
+        {
+          "select": "parent(class:ProgressBar) & nth:1",
+          "as": "hidden"
+        },
+        {
+          "select": "class:ProgressBar & has(class:android.view.View)",
+          "label": "Step"
+        },
+        {
+          "select": "is:clickable & has(class:android.widget.Button)",
+          "as": "action",
+          "tone": "primary"
+        }
+      ]
+    }
+  ]
+}

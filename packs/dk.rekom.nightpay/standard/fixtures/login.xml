@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<snapshot package="dk.rekom.nightpay" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2205]">
+   <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+    <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+     <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+      <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
+       <node class="android.widget.ImageView" resource-id="" bounds="[115,420][852,958]" clickable="true"/>
+       <node class="android.view.View" resource-id="" content-desc="Choose how you want to log in:" bounds="[168,1288][912,1344]"/>
+       <node class="android.widget.ImageView" resource-id="" bounds="[248,1401][833,1524]" clickable="true"/>
+       <node class="android.widget.ImageView" resource-id="" bounds="[248,1569][833,1693]" clickable="true"/>
+       <node class="android.widget.Button" resource-id="" content-desc="Back" bounds="[450,1749][630,1884]" clickable="true"/>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

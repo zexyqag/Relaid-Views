@@ -1,0 +1,22 @@
+<snapshot package="com.valvesoftware.android.steam.community" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.ScrollView" bounds="[0,80][1080,2205]" scrollable="true">
+   <node class="android.widget.TextView" text="SIGN IN" bounds="[0,136][1080,246]"/>
+   <node class="android.widget.TextView" text="STEAM ACCOUNT NAME" bounds="[56,359][1024,408]"/>
+   <node class="android.widget.EditText" text="" hint="" bounds="[67,442][1012,578]" clickable="true" long-clickable="true" editable="true"/>
+   <node class="android.widget.TextView" text="PASSWORD" bounds="[56,645][1024,694]"/>
+   <node class="android.widget.EditText" text="" hint="" bounds="[67,728][1012,864]" clickable="true" long-clickable="true" editable="true" password="true"/>
+   <node class="android.widget.TextView" text="Sign in" bounds="[449,964][629,1035]"/>
+   <node class="android.view.ViewGroup" content-desc="I need help signing in" bounds="[56,1070][1024,1238]" clickable="true">
+    <node class="android.widget.TextView" text="I need help signing in" bounds="[112,1126][967,1182]"/>
+   </node>
+   <node class="android.view.ViewGroup" content-desc="Don't have a Steam account?" bounds="[56,1239][1024,1393]" clickable="true">
+    <node class="android.widget.TextView" text="Don't have a Steam account?" bounds="[56,1329][1024,1393]"/>
+   </node>
+   <node class="android.widget.TextView" text="It's free and easy. Discover thousands of PC games to play with millions of new friends." bounds="[56,1483][1024,1594]"/>
+   <node class="android.view.ViewGroup" content-desc="Learn more about Steam" bounds="[56,1594][1024,1673]" clickable="true">
+    <node class="android.widget.TextView" text="Learn more about Steam" bounds="[56,1616][1024,1672]"/>
+   </node>
+  </node>
+ </node>
+</snapshot>

@@ -1,0 +1,207 @@
+{
+  "theme": {
+    "accent": "#0c2d83",
+    "light": {
+      "accent": "#ffffff",
+      "background": "#091f59",
+      "surface": "#061743",
+      "text": "#ffffff",
+      "muted": "#c2cae0",
+      "onAccent": "#0c2d83"
+    },
+    "dark": {
+      "accent": "#ffffff",
+      "background": "#0c2d83",
+      "surface": "#09205b",
+      "text": "#ffffff",
+      "muted": "#c2cae0",
+      "onAccent": "#0c2d83"
+    },
+    "corners": "round",
+    "header": "bar",
+    "cards": "flat"
+  },
+  "screens": [
+    {
+      "name": "dmi-weather",
+      "displayName": "Vejr",
+      "when": [
+        "id:fragmentWeatherScrollView"
+      ],
+      "parts": [
+        {
+          "select": "id:fragmentWeatherTvTitle",
+          "as": "title"
+        },
+        {
+          "select": "id:fragmentWeatherPrevBtn",
+          "as": "action",
+          "label": "Forrige lokation",
+          "tone": "secondary"
+        },
+        {
+          "select": "id:fragmentWeatherNextBtn",
+          "as": "action",
+          "label": "Næste lokation",
+          "tone": "secondary"
+        },
+        {
+          "select": "id:weather_tab",
+          "as": "tab",
+          "icon": "home"
+        },
+        {
+          "select": "id:map_tab",
+          "as": "tab",
+          "icon": "grid"
+        },
+        {
+          "select": "id:observations_tab",
+          "as": "tab",
+          "icon": "chart"
+        },
+        {
+          "select": "id:warnings_tab",
+          "as": "tab",
+          "icon": "bell"
+        },
+        {
+          "select": "id:settings_tab",
+          "as": "tab",
+          "icon": "settings"
+        }
+      ]
+    },
+    {
+      "name": "dmi-observations",
+      "displayName": "Målinger",
+      "when": [
+        "id:observations_tab & is:selected"
+      ],
+      "parts": [
+        {
+          "select": "desc:Search & parent(class:EditText)",
+          "as": "hidden"
+        },
+        {
+          "select": "id:weather_tab",
+          "as": "tab",
+          "icon": "home"
+        },
+        {
+          "select": "id:map_tab",
+          "as": "tab",
+          "icon": "grid"
+        },
+        {
+          "select": "id:observations_tab",
+          "as": "tab",
+          "icon": "chart"
+        },
+        {
+          "select": "id:warnings_tab",
+          "as": "tab",
+          "icon": "bell"
+        },
+        {
+          "select": "id:settings_tab",
+          "as": "tab",
+          "icon": "settings"
+        }
+      ]
+    },
+    {
+      "name": "dmi-warnings",
+      "displayName": "Varsler",
+      "when": [
+        "id:warnings_tab & is:selected",
+        "id:action_info"
+      ],
+      "parts": [
+        {
+          "select": "class:TextView & nth:1 & parent(class:FrameLayout)",
+          "as": "title"
+        },
+        {
+          "select": "id:action_info",
+          "as": "option"
+        },
+        {
+          "select": "id:warningsEmptyTitle",
+          "as": "heading"
+        },
+        {
+          "select": "id:weather_tab",
+          "as": "tab",
+          "icon": "home"
+        },
+        {
+          "select": "id:map_tab",
+          "as": "tab",
+          "icon": "grid"
+        },
+        {
+          "select": "id:observations_tab",
+          "as": "tab",
+          "icon": "chart"
+        },
+        {
+          "select": "id:warnings_tab",
+          "as": "tab",
+          "icon": "bell"
+        },
+        {
+          "select": "id:settings_tab",
+          "as": "tab",
+          "icon": "settings"
+        }
+      ]
+    },
+    {
+      "name": "dmi-settings",
+      "displayName": "Indstillinger",
+      "when": [
+        "id:fragmentSettingsAbout"
+      ],
+      "parts": [
+        {
+          "select": "class:TextView & nth:1 & parent(class:FrameLayout)",
+          "as": "title"
+        },
+        {
+          "select": "class:ScrollView & has(id:fragmentSettingsAbout)",
+          "as": "list"
+        },
+        {
+          "select": "id:settingsAboutHeader",
+          "as": "heading"
+        },
+        {
+          "select": "id:weather_tab",
+          "as": "tab",
+          "icon": "home"
+        },
+        {
+          "select": "id:map_tab",
+          "as": "tab",
+          "icon": "grid"
+        },
+        {
+          "select": "id:observations_tab",
+          "as": "tab",
+          "icon": "chart"
+        },
+        {
+          "select": "id:warnings_tab",
+          "as": "tab",
+          "icon": "bell"
+        },
+        {
+          "select": "id:settings_tab",
+          "as": "tab",
+          "icon": "settings"
+        }
+      ]
+    }
+  ]
+}

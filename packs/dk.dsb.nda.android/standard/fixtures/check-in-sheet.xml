@@ -1,0 +1,42 @@
+<snapshot package="dk.dsb.nda.android" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="androidx.compose.ui.platform.ComposeView" bounds="[0,0][1080,2340]">
+   <node class="android.view.View" bounds="[0,0][1080,2340]">
+    <node class="android.view.View" content-desc="Close sheet" bounds="[0,0][1080,600]" clickable="true"/>
+    <node class="android.view.View" bounds="[0,600][1080,2340]">
+     <node class="android.view.View" bounds="[0,600][1080,2205]">
+      <node class="android.widget.TextView" text="Check in with DSB App" bounds="[45,674][571,729]"/>
+      <node class="android.view.View" bounds="[911,634][1046,769]" clickable="true">
+       <node class="android.view.View" content-desc="Close" bounds="[945,668][1013,735]"/>
+       <node class="android.widget.Button" bounds="[922,645][1035,758]"/>
+      </node>
+      <node class="android.widget.ScrollView" bounds="[45,803][1035,2160]">
+       <node class="android.view.View" bounds="[259,848][822,1253]"/>
+       <node class="android.view.View" bounds="[45,1298][1035,1462]">
+        <node class="android.view.View" bounds="[45,1313][180,1448]"/>
+        <node class="android.widget.TextView" text="For all public transport" bounds="[214,1298][662,1346]"/>
+        <node class="android.widget.TextView" text="Bus, Metro, Lightrail, S-train and train (not in Bornholm, yet)" bounds="[214,1357][1035,1462]"/>
+       </node>
+       <node class="android.view.View" bounds="[45,1507][1035,1671]">
+        <node class="android.view.View" bounds="[45,1522][180,1657]"/>
+        <node class="android.widget.TextView" text="Automatic check out" bounds="[214,1507][622,1555]"/>
+        <node class="android.widget.TextView" text="Choose between automatic check out or a reminder" bounds="[214,1566][1035,1671]"/>
+       </node>
+       <node class="android.view.View" bounds="[45,1716][1035,1880]">
+        <node class="android.view.View" bounds="[45,1731][180,1866]"/>
+        <node class="android.widget.TextView" text="Automatic payment" bounds="[214,1716][604,1764]"/>
+        <node class="android.widget.TextView" text="When you check out, your trip is automatically paid" bounds="[214,1775][1035,1880]"/>
+       </node>
+       <node class="android.view.View" bounds="[45,1970][1035,2115]" clickable="true">
+        <node class="android.view.View" bounds="[68,1975][1012,2110]">
+         <node class="android.widget.TextView" text="Okay, let me try" bounds="[357,2015][723,2070]"/>
+        </node>
+        <node class="android.widget.Button" bounds="[45,1970][1035,2115]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

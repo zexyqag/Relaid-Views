@@ -1,0 +1,50 @@
+<snapshot package="de.hafas.android.rejseplanen" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="androidx.compose.ui.platform.ComposeView" bounds="[0,0][1080,2340]">
+   <node class="android.view.View" bounds="[0,0][1080,2340]">
+    <node class="android.view.View" bounds="[0,0][1080,2340]">
+     <node class="android.view.View" bounds="[0,80][1080,1911]" collection="true">
+      <node class="android.widget.ScrollView" bounds="[0,80][1080,1461]" focused="true">
+       <node class="android.view.View" bounds="[0,125][1080,1416]">
+        <node class="android.view.View" bounds="[124,125][956,828]"/>
+        <node class="android.view.View" bounds="[46,857][1034,992]">
+         <node class="android.widget.TextView" text="Enable tracking and analysis" bounds="[46,873][1012,975]" heading="true"/>
+        </node>
+        <node class="android.view.View" bounds="[46,1008][1034,1304]">
+         <node class="android.widget.TextView" text="Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy." content-desc="Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy." bounds="[46,1008][1034,1304]"/>
+        </node>
+        <node class="android.view.View" bounds="[46,1304][1034,1439]">
+         <node class="android.view.View" bounds="[46,1304][350,1439]" clickable="true">
+          <node class="android.widget.TextView" text="Show more" bounds="[46,1339][271,1404]"/>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+     <node class="android.view.View" bounds="[0,1911][1080,2340]">
+      <node class="android.view.View" bounds="[0,1911][1080,2340]">
+       <node class="android.view.View" bounds="[45,1906][1035,2036]">
+        <node class="android.widget.ProgressBar" bounds="[45,1965][908,1982]" range="1.0,0.0,3.0">
+         <node class="android.view.View" content-desc="1 of 3" bounds="[45,1965][908,1982]"/>
+         <node class="android.view.View" bounds="[45,1906][328,2036]">
+          <node class="android.view.View" bounds="[45,1906][328,2036]"/>
+         </node>
+         <node class="android.view.View" bounds="[336,1906][618,2036]">
+          <node class="android.view.View" bounds="[336,1906][618,2036]"/>
+         </node>
+         <node class="android.view.View" bounds="[626,1906][908,2036]">
+          <node class="android.view.View" bounds="[626,1906][908,2036]"/>
+         </node>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[45,2036][1035,2171]" clickable="true">
+        <node class="android.widget.TextView" text="Continue" bounds="[491,2076][680,2132]"/>
+        <node class="android.widget.Button" bounds="[45,2036][1035,2171]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

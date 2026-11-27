@@ -1,0 +1,72 @@
+<snapshot package="dk.dsb.nda.android" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="androidx.compose.ui.platform.ComposeView" bounds="[0,0][1080,2340]">
+   <node class="android.view.View" bounds="[0,0][1080,2340]">
+    <node class="android.view.View" bounds="[0,0][1080,2340]">
+     <node class="android.view.View" bounds="[0,0][1080,1979]">
+      <node class="android.view.View" bounds="[0,0][1080,1979]">
+       <node class="android.widget.ScrollView" bounds="[0,0][1080,1979]" scrollable="true" scroll-forward="true">
+        <node class="android.widget.TextView" text="See departure times" bounds="[45,360][506,415]" heading="true"/>
+        <node class="android.view.View" bounds="[259,641][822,1046]"/>
+        <node class="android.widget.TextView" text="Save stations and stops that&#10;you travel from frequently." bounds="[229,1091][851,1214]"/>
+        <node class="android.view.View" bounds="[45,438][1035,596]">
+         <node class="android.widget.EditText" text="" bounds="[45,438][1035,596]" clickable="true" long-clickable="true" editable="true" ime-enter="true">
+          <node class="android.view.View" content-desc="Search" bounds="[45,438][1035,596]"/>
+          <node class="android.view.View" bounds="[56,450][191,585]"/>
+          <node class="android.view.View" bounds="[191,450][889,585]"/>
+          <node class="android.view.View" bounds="[191,450][746,585]">
+           <node class="android.widget.TextView" text="Search for station or stop" bounds="[191,490][746,545]"/>
+          </node>
+         </node>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,0][1080,360]">
+        <node class="android.view.View" bounds="[0,0][1080,360]"/>
+       </node>
+       <node class="android.widget.TextView" text="Departures" bounds="[45,158][483,253]"/>
+      </node>
+     </node>
+     <node class="android.view.View" bounds="[0,1979][1080,2340]">
+      <node class="android.view.View" bounds="[0,1980][1080,2340]">
+       <node class="android.view.View" bounds="[0,1980][1080,2205]" collection="true">
+        <node class="android.view.View" resource-id="NAV_TAB_START" bounds="[0,1980][252,2205]" clickable="true">
+         <node class="android.view.View" bounds="[59,2070][194,2205]">
+          <node class="android.widget.TextView" text="Start" bounds="[93,2120][159,2155]"/>
+         </node>
+         <node class="android.view.View" bounds="[92,2030][160,2098]"/>
+         <node class="android.view.View" bounds="[47,1997][205,2132]"/>
+         <node class="android.view.View" bounds="[0,1980][252,2205]"/>
+        </node>
+        <node class="android.view.View" resource-id="NAV_TAB_TRIPS" bounds="[275,1980][528,2205]" clickable="true">
+         <node class="android.view.View" bounds="[334,2070][469,2205]">
+          <node class="android.widget.TextView" text="Your trips" bounds="[336,2120][467,2155]"/>
+         </node>
+         <node class="android.view.View" bounds="[367,2030][435,2098]"/>
+         <node class="android.view.View" bounds="[322,1997][480,2132]"/>
+         <node class="android.view.View" bounds="[275,1980][528,2205]"/>
+        </node>
+        <node class="android.view.View" resource-id="NAV_TAB_BOARDS" bounds="[551,1980][804,2205]" selected="true" enabled="false">
+         <node class="android.view.View" bounds="[598,1997][756,2132]"/>
+         <node class="android.view.View" bounds="[602,2070][752,2205]">
+          <node class="android.widget.TextView" text="Departures" bounds="[602,2120][752,2155]"/>
+         </node>
+         <node class="android.view.View" bounds="[643,2030][711,2098]"/>
+         <node class="android.view.View" bounds="[598,1997][756,2132]"/>
+         <node class="android.view.View" bounds="[551,1980][804,2205]"/>
+        </node>
+        <node class="android.view.View" resource-id="NAV_TAB_PROFILE/{ShopItemIdArg}" bounds="[827,1980][1080,2205]" clickable="true">
+         <node class="android.view.View" bounds="[886,2070][1021,2205]">
+          <node class="android.widget.TextView" text="Profile" bounds="[909,2120][998,2155]"/>
+         </node>
+         <node class="android.view.View" bounds="[919,2030][987,2098]"/>
+         <node class="android.view.View" bounds="[874,1997][1032,2132]"/>
+         <node class="android.view.View" bounds="[827,1980][1080,2205]"/>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

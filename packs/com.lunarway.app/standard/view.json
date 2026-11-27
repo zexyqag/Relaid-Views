@@ -1,0 +1,83 @@
+{
+  "theme": {
+    "accent": "#17181c",
+    "light": {
+      "accent": "#17181c",
+      "background": "#f3f3f5",
+      "surface": "#ffffff",
+      "text": "#17181c",
+      "muted": "#6b6b71",
+      "onAccent": "#ffffff"
+    },
+    "dark": {
+      "accent": "#f8f8fa",
+      "background": "#111215",
+      "surface": "#1d1e21",
+      "text": "#f8f8fa",
+      "muted": "#aaabae",
+      "onAccent": "#0d0d0f"
+    },
+    "corners": "round",
+    "header": "plain",
+    "cards": "filled"
+  },
+  "screens": [
+    {
+      "name": "lunar-intro",
+      "displayName": "Welcome",
+      "when": [
+        "class:EditText & has(class:Spinner) & in(class:ScrollView)",
+        "is:clickable & nth:1 & parent(nth:3 & parent(class:ScrollView))"
+      ],
+      "parts": [
+        {
+          "select": "class:Button & is:long-clickable",
+          "as": "hidden"
+        },
+        {
+          "select": "is:clickable & nth:1 & parent(nth:3 & parent(class:ScrollView))",
+          "as": "action",
+          "tone": "primary"
+        },
+        {
+          "select": "is:clickable & nth:2 & parent(nth:3 & parent(class:ScrollView))",
+          "as": "action",
+          "tone": "secondary"
+        }
+      ]
+    },
+    {
+      "name": "lunar-account",
+      "displayName": "Select your account",
+      "when": [
+        "text:Personal account",
+        "text:Business account"
+      ],
+      "parts": [
+        {
+          "select": "nth:2 & parent(has(is:scrollable)) & not(has(class:TextView))",
+          "label": "Select your account"
+        },
+        {
+          "select": "nth:2 & parent(has(is:scrollable))",
+          "as": "title"
+        }
+      ]
+    },
+    {
+      "name": "lunar-country",
+      "displayName": "Country",
+      "when": [
+        "id:content",
+        "is:clickable & parent(class:ScrollView) & has(text~:mark)",
+        "is:clickable & parent(class:ScrollView) & has(text~:nor)"
+      ],
+      "parts": [
+        {
+          "select": "class:ScrollView",
+          "as": "list"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "why": "The welcome, the first screen after install: its title, drawn large at the head of the app's page under no bar, stays in the page at its start, the bar naming the app; Continue, which the app fills in its navy across the window under its page, is the primary action, drawn across the bar of actions. Nothing stands beside anything. The capture has no drawn lines, so the title's two lines are a guess from its box and it is given no size.",
+    "fixture": "welcome.xml",
+    "screen": "rejseplan-welcome",
+    "secure": false,
+    "title": "Welcome to the new Rejseplan",
+    "actions": [
+      "Continue"
+    ],
+    "shows": [
+      "Experience a new and improved way to find your way from A to B."
+    ],
+    "rows": [],
+    "places": {
+      "Welcome to the new Rejseplan": "page"
+    },
+    "align": {
+      "Welcome to the new Rejseplan": "start"
+    },
+    "widths": {
+      "Continue": "full"
+    }
+  },
+  {
+    "why": "The first of the getting-started steps (tracking and analysis): its title, larger than its body text on one line, stays in the page at its start; Show more, a small control at the start of its line, is drawn at its own width there; the app's segmented bar over Continue is a meter named Step at 1 of 3 (its own words, 1 of 3, only repeated where it stands, so left out); Continue, filled in the app's navy across the window, is the primary action, drawn across the bar of actions. Nothing stands beside anything.",
+    "fixture": "tracking.xml",
+    "screen": "rejseplan-onboarding",
+    "secure": false,
+    "title": "Enable tracking and analysis",
+    "actions": [
+      "Continue"
+    ],
+    "shows": [
+      "Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy.",
+      "Show more",
+      "Step"
+    ],
+    "hides": [
+      "1 of 3"
+    ],
+    "sizes": {
+      "Enable tracking and analysis": "larger",
+      "Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy.": "body"
+    },
+    "rows": [],
+    "places": {
+      "Enable tracking and analysis": "page"
+    },
+    "align": {
+      "Enable tracking and analysis": "start",
+      "Show more": "start"
+    },
+    "widths": {
+      "Continue": "full",
+      "Show more": "fit"
+    }
+  }
+]

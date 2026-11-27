@@ -1,0 +1,35 @@
+<snapshot package="dk.rejsekort.digitalrejsekort" width="1080" height="2125">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+  <node class="android.widget.ScrollView" resource-id="dk.rejsekort.digitalrejsekort:id/scrollView" bounds="[0,80][1080,2340]" scrollable="true" scroll-backward="true">
+   <node class="androidx.compose.ui.platform.ComposeView" resource-id="dk.rejsekort.digitalrejsekort:id/how_it_works" bounds="[0,80][1080,1980]">
+    <node class="android.view.View" bounds="[0,-225][1080,1980]">
+     <node class="android.view.View" bounds="[0,-225][1080,235]">
+      <node class="android.view.View" bounds="[45,-107][340,118]"/>
+      <node class="android.widget.TextView" text="With the app, you can travel all over Denmark, except Bornholm." bounds="[385,-32][1035,145]"/>
+     </node>
+     <node class="android.view.View" bounds="[0,238][1080,698]">
+      <node class="android.widget.TextView" text="Start your journey" bounds="[45,328][592,408]" heading="true"/>
+      <node class="android.widget.TextView" text="Check in with a swipe before you enter a bus, train, metro or light rail." content-desc="To start a journey activate the toggle button before boarding" bounds="[45,431][695,608]"/>
+      <node class="android.view.View" bounds="[740,356][1035,581]"/>
+     </node>
+     <node class="android.view.View" bounds="[0,701][1080,1106]">
+      <node class="android.view.View" bounds="[45,791][340,1016]"/>
+      <node class="android.widget.TextView" text="Ticket inspection" bounds="[385,793][910,873]" heading="true"/>
+      <node class="android.widget.TextView" text="Tap 'Show ticket' to present your ticket to the conductor." content-desc="Select the ticket symbol to display your ticket to the conductor" bounds="[385,896][1035,1014]"/>
+     </node>
+     <node class="android.view.View" bounds="[0,1109][1080,1514]">
+      <node class="android.widget.TextView" text="Stopping a journey" bounds="[45,1201][614,1281]" heading="true"/>
+      <node class="android.widget.TextView" text="Swipe again to check out once you are done travelling." content-desc="Swipe again to check out once you are done travelling." bounds="[45,1304][695,1422]"/>
+      <node class="android.view.View" bounds="[740,1199][1035,1424]"/>
+     </node>
+     <node class="android.view.View" bounds="[0,1517][1080,1977]">
+      <node class="android.view.View" bounds="[45,1635][340,1860]"/>
+      <node class="android.widget.TextView" text="Check your price" bounds="[385,1607][902,1687]" heading="true"/>
+      <node class="android.widget.TextView" text="The app automatically calculates your price at the end of your journey." bounds="[385,1710][1035,1887]"/>
+     </node>
+    </node>
+   </node>
+   <node class="android.widget.Button" resource-id="dk.rejsekort.digitalrejsekort:id/bottomContinueButton" text="Continue" bounds="[45,2025][1035,2160]" clickable="true"/>
+  </node>
+ </node>
+</snapshot>

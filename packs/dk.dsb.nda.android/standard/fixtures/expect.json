@@ -1,0 +1,155 @@
+[
+  {
+    "why": "Start, signed out. The screen is told by its chosen tab. Its four tabs with icons from Relaid's set as near DSB's as it has: a magnifier for Start (search), a ticket for Your trips (card), a list for Departures (DSB draws a clock), a person for Profile. Plan and buy, a section's head drawn as the app draws Check in now (which the app marks a heading), is a heading too. The title, large at the top of the page with no bar, stays in the page. Get started here, the app's outlined button across its card with its words in its middle, is drawn so (centre, across its line) in the page's accent outline, not filled, as the app draws it.",
+    "fixture": "start.xml",
+    "screen": "dsb-start",
+    "secure": false,
+    "title": "Start",
+    "places": {
+      "Start": "page"
+    },
+    "align": {
+      "Start": "start",
+      "Get started here": "center"
+    },
+    "sizes": {
+      "Start": "largest"
+    },
+    "headings": [
+      "Plan and buy",
+      "Check in now"
+    ],
+    "actions": [],
+    "tabs": [
+      "Start",
+      "Your trips",
+      "Departures",
+      "Profile"
+    ],
+    "shows": [
+      "From",
+      "To",
+      "Reverse direction",
+      "Now",
+      "1 Adult, 0 add-ons",
+      "Get started here"
+    ],
+    "widths": {
+      "Get started here": "full"
+    },
+    "rows": []
+  },
+  {
+    "why": "Your trips, signed out: its title in the page, the tabs with their icons. Tickets and Previous trips, which the app draws on one line (the section's head at its start, the link at its end), stand side by side.",
+    "fixture": "trips.xml",
+    "screen": "dsb-trips",
+    "secure": false,
+    "title": "Your trips",
+    "places": {
+      "Your trips": "page"
+    },
+    "actions": [],
+    "tabs": [
+      "Start",
+      "Your trips",
+      "Departures",
+      "Profile"
+    ],
+    "shows": [
+      "Previous trips",
+      "Once you purchase tickets,\n they will be displayed here"
+    ],
+    "rows": [
+      [
+        "Tickets",
+        "Previous trips"
+      ]
+    ]
+  },
+  {
+    "why": "Departures, signed out: its title in the page, the app's own heading over its search field, the tabs with their icons. The field is named by the words the app draws in it (Search for station or stop), not by the bare Search the app also gives the whole field as a description, which is left out.",
+    "fixture": "departures.xml",
+    "screen": "dsb-departures",
+    "secure": false,
+    "title": "Departures",
+    "places": {
+      "Departures": "page"
+    },
+    "headings": [
+      "See departure times"
+    ],
+    "fields": {
+      "Search for station or stop": null
+    },
+    "actions": [],
+    "tabs": [
+      "Start",
+      "Your trips",
+      "Departures",
+      "Profile"
+    ],
+    "rows": []
+  },
+  {
+    "why": "Profile, signed out. Log in, DSB's filled button (its id says it is the primary one), is the screen's action, filled, across the bar of actions as the app draws it across the window. Settings, a pill the app draws at its own width at its line's start, is drawn so (width fit). The picture whose description repeats the words under it is left out.",
+    "fixture": "profile.xml",
+    "screen": "dsb-profile",
+    "secure": false,
+    "title": "Profile",
+    "places": {
+      "Profile": "page"
+    },
+    "actions": [
+      "Log in"
+    ],
+    "tabs": [
+      "Start",
+      "Your trips",
+      "Departures",
+      "Profile"
+    ],
+    "shows": [
+      "Settings",
+      "Sign in to see your tickets, or create a free profile to get perks and points"
+    ],
+    "align": {
+      "Settings": "start"
+    },
+    "widths": {
+      "Settings": "fit",
+      "Log in": "full"
+    },
+    "rows": []
+  },
+  {
+    "why": "A sheet over Start, offering check-in. Its heading, beside the sheet's Close, is the screen's title, in the sheet's page at its start. The dimmed space above the sheet, which the app makes a control that closes it, is left out: Close does the same. Okay, let me try, the sheet's filled button across it, is the screen's action, filled, across the bar of actions. The three points it makes, each a line in bold over what it says, stay as text.",
+    "fixture": "check-in-sheet.xml",
+    "screen": "dsb-sheet",
+    "secure": false,
+    "title": "Check in with DSB App",
+    "places": {
+      "Check in with DSB App": "page"
+    },
+    "align": {
+      "Check in with DSB App": "start"
+    },
+    "actions": [
+      "Okay, let me try"
+    ],
+    "tabs": [],
+    "shows": [
+      "Close",
+      "For all public transport",
+      "Bus, Metro, Lightrail, S-train and train (not in Bornholm, yet)",
+      "Automatic check out",
+      "Automatic payment"
+    ],
+    "hides": [
+      "Close sheet"
+    ],
+    "widths": {
+      "Okay, let me try": "full"
+    },
+    "rows": []
+  }
+]
