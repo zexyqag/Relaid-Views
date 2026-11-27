@@ -1,6 +1,6 @@
 [
   {
-    "why": "The chat list (names replaced; status lines kept only where they are Snapchat's own words, times and streaks). Snapchat offers a click on each part of a row (avatar, name, status, Camera Reply) but on no row itself: each row becomes one item named by the chat, its status as the detail line, and the parts that are not text are left out. The filter buttons above the list (Unread, Groups, Streaks...) are left out, the header's \"Chat\" is the title, and Search, Notification and Add Friends go to the options.",
+    "why": "The chat list (names replaced; status lines kept only where they are Snapchat's own words, times and streaks). Snapchat offers a click on each part of a row (avatar, name, status, Camera Reply) but on no row itself: each row becomes one item named by the chat, its status as the detail line, and the parts that are not text are left out. The filter buttons above the list (Unread, Groups, Streaks...) are left out, the header's \"Chat\" is the title, and Search, Notification and Add Friends go to the options. Its title sits in the middle of its own top bar, so in the middle of Relaid's.",
     "fixture": "chats.xml",
     "screen": "snapchat-chats",
     "secure": false,
@@ -42,7 +42,13 @@
       "Notification",
       "Add Friends"
     ],
-    "rows": []
+    "rows": [],
+    "align": {
+      "Chat": "center"
+    },
+    "places": {
+      "Chat": "bar"
+    }
   },
   {
     "why": "A chat. Snapchat offers a click on every message and on who wrote it: the senders (ME, TEAM SNAPCHAT) become headings and the messages text, the title is the chat's name, and the field sends with Enter. Camera, voice note, Stickers, Memories and Games are left out: none of them works from another phone. Team Snapchat's message is the screen's body text, and the bar's own lines (its name, the line under it) are drawn at the device's own sizes.",

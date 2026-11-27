@@ -31,8 +31,7 @@
       "parts": [
         {
           "select": "desc~:digits entered",
-          "as": "pin",
-          "label": "PIN"
+          "as": "pin"
         }
       ]
     },

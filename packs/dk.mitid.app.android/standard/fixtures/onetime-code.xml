@@ -1,0 +1,76 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.widget.ScrollView" bounds="[0,272][1080,1497]">
+       <node class="android.widget.TextView" text="Enter one-time code" bounds="[96,272][783,368]" heading="true"/>
+       <node class="android.view.View" content-desc="" bounds="[96,416][984,584]">
+        <node class="android.view.View" content-desc="0 out of 4 digits entered" bounds="[96,416][984,584]" clickable="true" long-clickable="true"/>
+       </node>
+       <node class="android.widget.TextView" text="Enter the one-time passcode shown on the screen where you entered your user ID." bounds="[96,680][984,896]"/>
+       <node class="android.widget.TextView" text="Notice!" bounds="[96,992][257,1064]"/>
+       <node class="android.widget.TextView" text="Never enter codes you have been told over the phone or otherwise by others" bounds="[96,1088][984,1232]"/>
+      </node>
+      <node class="android.view.View" content-desc="Showing numeric keyboard" bounds="[99,1497][981,2157]">
+       <node class="android.view.View" resource-id="digit-field-1" bounds="[99,1497][385,1653]" clickable="true">
+        <node class="android.widget.TextView" text="1" bounds="[219,1524][266,1627]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-2" bounds="[397,1497][683,1653]" clickable="true">
+        <node class="android.widget.TextView" text="2" bounds="[517,1524][564,1627]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-3" bounds="[695,1497][981,1653]" clickable="true">
+        <node class="android.widget.TextView" text="3" bounds="[815,1524][862,1627]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-4" bounds="[99,1665][385,1821]" clickable="true">
+        <node class="android.widget.TextView" text="4" bounds="[219,1692][266,1795]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-5" bounds="[397,1665][683,1821]" clickable="true">
+        <node class="android.widget.TextView" text="5" bounds="[517,1692][564,1795]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-6" bounds="[695,1665][981,1821]" clickable="true">
+        <node class="android.widget.TextView" text="6" bounds="[815,1692][862,1795]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-7" bounds="[99,1833][385,1989]" clickable="true">
+        <node class="android.widget.TextView" text="7" bounds="[219,1860][266,1963]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-8" bounds="[397,1833][683,1989]" clickable="true">
+        <node class="android.widget.TextView" text="8" bounds="[517,1860][564,1963]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-9" bounds="[695,1833][981,1989]" clickable="true">
+        <node class="android.widget.TextView" text="9" bounds="[815,1860][862,1963]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-Delete" bounds="[99,2001][385,2157]" clickable="true">
+        <node class="android.view.View" content-desc="Delete" bounds="[206,2043][278,2115]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-0" bounds="[397,2001][683,2157]" clickable="true">
+        <node class="android.widget.TextView" text="0" bounds="[517,2028][564,2131]"/>
+       </node>
+       <node class="android.view.View" resource-id="digit-field-Next" bounds="[695,2001][981,2157]" enabled="false">
+        <node class="android.widget.TextView" text="NEXT" content-desc="Next" bounds="[785,2052][891,2107]"/>
+       </node>
+      </node>
+      <node class="android.view.View" bounds="[0,0][1080,272]">
+       <node class="android.view.View" bounds="[0,80][1080,272]">
+        <node class="android.view.View" bounds="[468,104][612,248]"/>
+        <node class="android.view.View" bounds="[780,104][924,248]">
+         <node class="android.view.View" resource-id="helpButton" bounds="[780,104][924,248]" clickable="true">
+          <node class="android.view.View" content-desc="Help" bounds="[780,104][924,248]"/>
+          <node class="android.widget.Button" bounds="[780,104][924,248]"/>
+         </node>
+        </node>
+        <node class="android.view.View" bounds="[924,104][1068,248]">
+         <node class="android.view.View" resource-id="closeButton" bounds="[924,104][1068,248]" clickable="true">
+          <node class="android.view.View" content-desc="Close" bounds="[924,104][1068,248]"/>
+          <node class="android.widget.Button" bounds="[924,104][1068,248]"/>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

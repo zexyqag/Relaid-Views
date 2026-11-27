@@ -86,7 +86,7 @@ screen needs.
 | `tab` | The app's bottom navigation, in rule order. A tab with nothing to press is the current one | `label` where the app shows none; `icon`: `home`, `list`, `people`, `person`, `wallet`, `card`, `search`, `settings`, `bell`, `chart`, `star`, `chat`, `grid` |
 | `person` | A row about a person, shown with a round avatar of its own initials | |
 | `row` | A list row the app builds from separately pressable parts (an avatar, a name, a status) with none of them the row: shown as one item, the first part its title, the rest its second line | `parts`: the nodes whose text it shows (default every text); `press`: the node whose control a press goes to |
-| `pin` | The app's own "N of M entered" node: only the counts cross over, never digits. If the app reports no count, select the code field and give `total`: the phone counts the person's own key presses. A code field with visible text is never replaced | `label`, `total` (1 to 12) |
+| `pin` | The app's own "N of M entered" node: only the counts cross over, never digits. If the app reports no count, select the code field and give `total`: the phone counts the person's own key presses. A code field with visible text is never replaced | `label` (without one, the app's own words drawn right above it name it, if any, but never the screen's title), `total` (1 to 12) |
 | `unread` | Where on this screen Relaid looks for what it cannot read (photos drawn in a view of their own, a map, a chart), to show as pictures, where the owner chose that for the app. A screen a view knows gets such pictures only inside its `unread` parts, and none without them; screens no view knows, anywhere. An `unread` part inside a pressable list row is that row's thumbnail (a photo, album art). It only narrows the owner's choice, so it needs no permission. Pack format 2 | |
 
 `title`, `hero`, `list` and `pin` appear at most once per screen.
@@ -165,9 +165,14 @@ them. With the app shared and in front on a host, save one with
 `keypad`, `progress`, `hero`, `avatars`, `headings`, `sizes` (label to the step the app draws it at: small, body,
 large, larger or largest, `body` for none; only texts, headings and the screen's title), `rows` (every row of parts the app
 draws side by side, in reading order: a list of its cells, each a label, or a list for a stack of parts one above the other,
-which may hold a row; `[]` for none), `shares` (a cell's label to its share of its row, 2 to 4, where it is not 1; a stack's by
-its first part), and labels it `shows` or `hides`. Rows and shares are measured from the app's own boxes, never set by a pack;
-with either key, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
+which may hold a row; `[]` for none; more than 4 cells only where all of them are fit), `shares` (a cell's label to its share
+of its row, 2 to 4, or 0 for a fit cell, which takes only its own width, where it is not 1; a stack's by its first part),
+`align` (label to where it sits along its line: `start`, `center` or `end`; the screen's title's label for where the title sits),
+`places` (the screen's title's label to where it stands: `bar`, or `page` where the app draws it in its page rather than in its
+top bar), `pad` (the keypad's 12 places as the app lays out its own pad, each the label of the key or of the app's part there,
+null for an empty one; null for a keypad laid out in Relaid's own order), `entry` (the code entry's name, null for none), and
+labels it `shows` or `hides`. Rows, shares, aligns, places and a keypad's places are measured from the app's own boxes, never
+set by a pack; with `rows` or `shares`, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
 its real pipeline, so a change to Relaid or to a pack that breaks a screen shows up before anyone
 installs it. Relaid itself knows no app; this is where that knowledge lives.
 

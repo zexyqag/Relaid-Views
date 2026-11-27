@@ -41,11 +41,11 @@
             "app": "dk.mitid.app.android",
             "view": "standard",
             "name": "MitID",
-            "version": 8,
+            "version": 9,
             "format": 1,
-            "description": "MitID's own colours in light and dark (its blue, white, navy and greys), small corners, a plain header and outlined cards; PIN entry as masked progress dots (how many digits, never which); every MitID screen marked secure, so no view can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
+            "description": "MitID's own colours in light and dark (its blue, white, navy and greys), small corners, a plain header and outlined cards; codes as masked progress dots (how many digits, never which); every MitID screen marked secure, so no view can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
             "path": "packs/dk.mitid.app.android/standard/view.json",
-            "sha256": "769db2ad4cde10d5eb350dc913b9b0d030725d4eaf826d055d3d233ca6b3a399",
+            "sha256": "1dfb9b55fdd6a355bed3fd2f5bbb22615c32943ab2cef12e25b041760e5daba1",
             "screens": [
                 "mitid-pin",
                 "mitid-screens"

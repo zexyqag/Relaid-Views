@@ -1,0 +1,51 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.widget.ScrollView" resource-id="menu" bounds="[0,272][1080,1613]">
+        <node class="android.widget.TextView" text="Profile" bounds="[240,344][465,440]" heading="true"/>
+        <node class="android.view.View" bounds="[0,488][1080,815]" clickable="true">
+         <node class="android.view.View" content-desc="User ID. View or change your username" bounds="[0,488][1080,815]"/>
+         <node class="android.view.View" bounds="[96,560][308,656]"/>
+         <node class="android.view.View" bounds="[96,668][755,740]"/>
+         <node class="android.widget.Button" bounds="[0,488][1080,815]"/>
+        </node>
+        <node class="android.view.View" bounds="[0,815][1080,1214]" clickable="true">
+         <node class="android.view.View" content-desc="Change phone number. Change the phone number you use for MitID" bounds="[0,815][1080,1214]"/>
+         <node class="android.view.View" bounds="[96,887][732,983]"/>
+         <node class="android.view.View" bounds="[96,995][912,1139]"/>
+         <node class="android.widget.Button" bounds="[0,815][1080,1214]"/>
+        </node>
+        <node class="android.view.View" bounds="[0,1214][1080,1613]" clickable="true">
+         <node class="android.view.View" content-desc="Messages from MitID. View your messages from MitID and your activities" bounds="[0,1214][1080,1613]"/>
+         <node class="android.view.View" bounds="[96,1286][688,1382]"/>
+         <node class="android.view.View" bounds="[96,1394][912,1538]"/>
+         <node class="android.widget.Button" bounds="[0,1214][1080,1613]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,0][1080,272]">
+        <node class="android.view.View" bounds="[0,80][1080,272]">
+         <node class="android.view.View" bounds="[12,104][320,248]" clickable="true">
+          <node class="android.view.View" content-desc="Back to Menu" bounds="[12,104][320,248]"/>
+          <node class="android.view.View" bounds="[156,140][278,212]"/>
+          <node class="android.widget.Button" bounds="[12,104][320,248]"/>
+         </node>
+         <node class="android.view.View" bounds="[468,104][612,248]"/>
+         <node class="android.view.View" bounds="[924,104][1068,248]">
+          <node class="android.view.View" resource-id="closeButton" bounds="[924,104][1068,248]" clickable="true">
+           <node class="android.view.View" content-desc="Close" bounds="[924,104][1068,248]"/>
+           <node class="android.widget.Button" bounds="[924,104][1068,248]"/>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

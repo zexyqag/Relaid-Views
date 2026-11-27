@@ -221,6 +221,10 @@ def type_ok(v, t):
         return isinstance(v, list)
     if base == "shares":
         return isinstance(v, dict) and all(is_int(x) for x in v.values())
+    if base == "words":
+        return isinstance(v, dict) and all(isinstance(x, str) for x in v.values())
+    if base == "pad":
+        return v is None or isinstance(v, list) and all(x is None or isinstance(x, str) for x in v)
     if isinstance(base, list):
         return isinstance(v, list) and all(isinstance(x, dict) for x in v)
     if isinstance(base, tuple):
@@ -441,24 +445,39 @@ EXPECT = {
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
+    "align": "words", "places": "words", "pad": "pad", "entry": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
-# Parts the app draws side by side (Relaid's relaid.json frames.arrangement): a row holds 2 to CELLS_MOST cells, and a cell takes
-# 1 to SHARE_MOST shares of its row, a fixture's shares saying only those that are not 1.
+# Parts the app draws side by side (Relaid's relaid.json frames.arrangement): a row with a cell that shares holds 2 to CELLS_MOST
+# cells, one of fit cells alone 2 or more; a cell takes 1 to SHARE_MOST shares of its row, or is fit (SHARE_FIT), a fixture's shares
+# saying only those that are not 1.
 CELLS_MOST = 4
 SHARE_MOST = 4
+SHARE_FIT = 0
+# Where a part sits along its line ("start" for none, or one of relaid.json's aligns), where the screen's title stands ("bar" for none,
+# or one of its places), and how many places a keypad has (keys.order).
+ALIGNS = ("start", "center", "end")
+PLACES = ("bar", "page")
+PAD = 12
 
 
-def rows_problems(rows):
-    """What is wrong with a fixture's rows: each a row of 2 to CELLS_MOST cells, a cell a label (null for a part with no words) or a
-    stack of 2 or more items, an item a label or a row. Yields the problems found."""
+def rows_problems(rows, fit=()):
+    """What is wrong with a fixture's rows: each a row of 2 or more cells, at most CELLS_MOST unless every cell's first label is in
+    [fit] (the fit cells: a row of them alone has any number), a cell a label (null for a part with no words) or a stack of 2 or more
+    items, an item a label or a row. Yields the problems found."""
     def label(x):
         return x is None or isinstance(x, str)
 
+    def first(cell):
+        return cell if label(cell) else first(cell[0]) if isinstance(cell, list) and cell else None
+
     def row(r, where):
-        if not isinstance(r, list) or not 2 <= len(r) <= CELLS_MOST:
-            yield f"{where} must be a row of 2 to {CELLS_MOST} cells"
+        if not isinstance(r, list) or len(r) < 2:
+            yield f"{where} must be a row of 2 or more cells"
+            return
+        if len(r) > CELLS_MOST and not all(first(c) in fit for c in r):
+            yield f"{where} has {len(r)} cells: more than {CELLS_MOST} only where every one is fit (shares 0)"
             return
         for j, cell in enumerate(r):
             if label(cell):
@@ -510,13 +529,26 @@ def check_fixtures(d, names, p):
         for label, step in sizes.items() if isinstance(sizes, dict) else []:
             if step not in SIZES:
                 p.mistake(at, f"sizes: '{label}' is drawn at no size Relaid knows ('{step}'; one of {', '.join(SIZES)})")
-        if isinstance(c.get("rows"), list):
-            for m in rows_problems(c["rows"]):
-                p.mistake(at, f"rows: {m}")
         shares = c.get("shares")
+        fit = {label for label, share in shares.items() if share == SHARE_FIT} if isinstance(shares, dict) else set()
+        if isinstance(c.get("rows"), list):
+            for m in rows_problems(c["rows"], fit):
+                p.mistake(at, f"rows: {m}")
         for label, share in shares.items() if isinstance(shares, dict) else []:
-            if not 2 <= share <= SHARE_MOST:
-                p.mistake(at, f"shares: '{label}' takes {share} shares (2 to {SHARE_MOST}: a cell that takes one is not listed)")
+            if share != SHARE_FIT and not 2 <= share <= SHARE_MOST:
+                p.mistake(at, f"shares: '{label}' takes {share} shares (2 to {SHARE_MOST}, or {SHARE_FIT} for a fit cell: one that takes one is not listed)")
+        align = c.get("align")
+        for label, where in align.items() if isinstance(align, dict) else []:
+            if where not in ALIGNS:
+                p.mistake(at, f"align: '{label}' sits nowhere Relaid knows ('{where}'; one of {', '.join(ALIGNS)})")
+        places = c.get("places")
+        for label, where in places.items() if isinstance(places, dict) else []:
+            if where not in PLACES:
+                p.mistake(at, f"places: '{label}' stands nowhere Relaid knows ('{where}'; one of {', '.join(PLACES)})")
+            elif isinstance(c.get("title"), str) and label != c["title"]:
+                p.mistake(at, f"places: '{label}' is not the screen's title ('{c['title']}'), the only part with a place")
+        if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
+            p.mistake(at, f"pad: a keypad has {PAD} places, a label or null each, not {len(c['pad'])}")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():
             p.mistake(at, f"no fixture '{name}'")
         if isinstance(c.get("screen"), str) and c["screen"] not in names:
@@ -722,11 +754,14 @@ def self_test():
     names = {"plain": False, "pictures": False, "video": False, "Full": False, "full": True, "generic": True, "lite-2": True}
     named = [f"a pack called '{n}': expected the phone to {'accept' if ok else 'refuse'} it" for n, ok in names.items() if (view_name_problem(n) is None) != ok]
     # A fixture's rows, well formed and not: a row of 2 to CELLS_MOST cells, a stack of 2 or more, which may hold a row.
+    five = ["A", "B", "C", "D", "E"]
     shapes = [
-        ([["A", "B"]], True), ([["A", ["B", "C"]], ["D", "E"]], True), ([["A", ["B", ["C", "D"]]]], True), ([[None, "B"]], True), ([], True),
-        ([["A"]], False), ([["A", "B", "C", "D", "E"]], False), ([["A", ["B"]]], False), ([["A", 3]], False), ([["A", ["B", ["C"]]]], False),
+        ([["A", "B"]], (), True), ([["A", ["B", "C"]], ["D", "E"]], (), True), ([["A", ["B", ["C", "D"]]]], (), True), ([[None, "B"]], (), True),
+        ([], (), True), ([five], set(five), True),
+        ([["A"]], (), False), ([five], (), False), ([five], {"A", "B"}, False), ([["A", ["B"]]], (), False), ([["A", 3]], (), False),
+        ([["A", ["B", ["C"]]]], (), False),
     ]
-    shaped = [f"rows {r}: expected them {'well formed' if ok else 'refused'}" for r, ok in shapes if (not list(rows_problems(r))) != ok]
+    shaped = [f"rows {r} (fit {sorted(f)}): expected them {'well formed' if ok else 'refused'}" for r, f, ok in shapes if (not list(rows_problems(r, f))) != ok]
     for w in wrong + named + shaped:
         print("conformance:", w)
     print(f"{len(cases) - len(wrong)} of {len(cases)} conformance cases agree, {len(names) - len(named)} of {len(names)} view names, "

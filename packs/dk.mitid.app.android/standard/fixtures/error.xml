@@ -1,0 +1,24 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="v7.m">
+ <node class="android.widget.FrameLayout" bounds="[0,770][1080,1566]">
+  <node class="android.view.ViewGroup" bounds="[0,770][1080,1566]">
+   <node class="android.view.View" bounds="[54,770][1026,1566]">
+    <node class="android.view.View" bounds="[54,770][1026,1566]">
+     <node class="android.view.View" bounds="[126,842][954,1494]">
+      <node class="android.widget.ScrollView" bounds="[126,842][954,1494]">
+       <node class="android.widget.TextView" text="An error has occurred" bounds="[186,902][823,988]"/>
+       <node class="android.widget.TextView" text="Please try again. If the issue persists, you can try restarting the app.&#10;Error code: " bounds="[186,1024][894,1302]"/>
+       <node class="android.view.View" bounds="[223,1326][698,1470]" clickable="true">
+        <node class="android.widget.TextView" text="GET MORE HELP" bounds="[259,1363][662,1433]"/>
+        <node class="android.widget.Button" bounds="[223,1338][698,1458]"/>
+       </node>
+       <node class="android.view.View" bounds="[698,1326][930,1470]" clickable="true">
+        <node class="android.widget.TextView" text="CLOSE" bounds="[734,1363][894,1433]"/>
+        <node class="android.widget.Button" bounds="[698,1338][930,1458]"/>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

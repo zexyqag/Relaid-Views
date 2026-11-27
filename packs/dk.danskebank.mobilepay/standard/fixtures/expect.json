@@ -96,7 +96,7 @@
     "rows": []
   },
   {
-    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept",
+    "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept. Relaid's own keypad, its keys where the app draws them (Delete at the bottom right, nothing at the left); the code named nothing, as the screen's title says what it is right above it.",
     "fixture": "pin.xml",
     "screen": "mobilepay-pin",
     "secure": true,
@@ -113,6 +113,21 @@
     "shows": [
       "Forgot code?"
     ],
-    "rows": []
+    "rows": [],
+    "pad": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      null,
+      "0",
+      "Delete"
+    ],
+    "entry": null
   }
 ]
