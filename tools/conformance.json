@@ -2796,6 +2796,266 @@
       "check": true,
       "ignored": [],
       "format": 3
+    },
+    {
+      "why": "an action, an option and a control where it stands that need the phone itself, each for one of Relaid's reasons: pack format 4",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:scan",
+                "as": "action",
+                "phone": "camera"
+              },
+              {
+                "select": "id:browser",
+                "as": "option",
+                "phone": "app"
+              },
+              {
+                "select": "id:passport",
+                "phone": "chip"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 4
+    },
+    {
+      "why": "a whole screen that needs the phone itself: pack format 4",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "phone": "fingerprint"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 4
+    },
+    {
+      "why": "a secure screen's own controls that need the phone itself: the mark only adds caution, so it holds there too",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "secure": true,
+            "parts": [
+              {
+                "select": "id:photo",
+                "phone": "file"
+              },
+              {
+                "select": "id:allow",
+                "as": "action",
+                "tone": "primary",
+                "phone": "permission"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 4
+    },
+    {
+      "why": "a reason Relaid does not know on a control (its words would be the view's)",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "phone": "go to the counter"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a reason Relaid does not know on a screen",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "phone": "nfc"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a slide that needs the phone (its own slide guards it)",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "confirm": "slide",
+                "phone": "camera"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a swipe that needs the phone",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "perform": "swipe-right",
+                "phone": "camera"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a field that needs the phone (only a control that takes a press is marked)",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "field",
+                "phone": "camera"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a code entry that needs the phone",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "pin",
+                "phone": "fingerprint"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen with no when that needs the phone would say so of every screen of the app",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "phone": "camera",
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "confirm": "slide"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a rule without a role with a phone and no label or tone: format 4",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "phone": "app"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 4
     }
   ]
 }

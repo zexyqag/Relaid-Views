@@ -44,6 +44,9 @@ PERFORMS = {"click", "swipe-right", "swipe-left", "swipe-up", "swipe-down"}
 TONES = {"primary", "secondary", "muted", "destructive"}
 KEYBOARDS = {"number", "phone", "email", "text"}
 SCROLLS = {"drag"}
+# Why a control or a screen needs the phone itself (Relaid's relaid.json frames.phone.reasons): Relaid's own reasons, each said in
+# Relaid's own words on every device, never a view's.
+PHONES = ("camera", "chip", "fingerprint", "app", "file", "permission")
 HEX_COLOR = re.compile(r"#[0-9a-fA-F]{6}")
 SCREEN_NAME = re.compile(r"[a-z0-9][a-z0-9._-]{0,63}")
 CONTROL = re.compile(r"[\x00-\x1f\x7f]")
@@ -51,20 +54,21 @@ INT = re.compile(r"[+-]?[0-9]+")
 
 # Field types, as Relaid reads them. "?" marks a field that may also be null.
 PART = {"select": "str", "as": "str?", "label": "str?", "tone": "str?", "confirm": "str?", "perform": "str?", "icon": "str?",
-        "keyboard": "str?", "scroll": "str?", "parts": "str?", "press": "str?", "total": "int?"}
+        "keyboard": "str?", "scroll": "str?", "parts": "str?", "press": "str?", "total": "int?", "phone": "str?"}
 PALETTE = {"accent": "str?", "background": "str?", "surface": "str?", "text": "str?", "muted": "str?", "onAccent": "str?"}
 THEME = {"accent": "str?", "light": (PALETTE,), "dark": (PALETTE,), "corners": "str?", "header": "str?", "cards": "str?"}
-SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "parts": [PART]}
+SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "phone": "str?", "parts": [PART]}
 PACK = {"theme": (THEME,), "screens": [SCREEN]}
-# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label or a tone where the part stands).
+# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label, a tone or a
+# phone where the part stands).
 ROLES = {
-    None: {"label", "tone"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
-    "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform"},
-    "option": {"label", "tone"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
+    None: {"label", "tone", "phone"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
+    "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform", "phone"},
+    "option": {"label", "tone", "phone"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
     "unread": set(),
 }
 SINGLE = {"title", "hero", "list", "pin"}
-OPTIONS = ("label", "tone", "confirm", "perform", "icon", "keyboard", "scroll", "parts", "press", "total")
+OPTIONS = ("label", "tone", "confirm", "perform", "icon", "keyboard", "scroll", "parts", "press", "total", "phone")
 PACK_META = {"app": "str", "view": "str", "name": "str", "version": "int", "description": "str", "permissions": "strs"}
 # What a pack may ask for beyond shaping screens (Relaid's Packs.PERMISSIONS); the owner grants it.
 PERMISSIONS = ("touch", "pictures")
@@ -366,6 +370,11 @@ def check_pack(app, pack, where, p):
         names.append(name)
         if not s.get("when") and not (s.get("secure") is True and all(protective(x) for x in s.get("parts", []))):
             p.refused(at, "a screen with no when claims every screen of the app: give it when, or mark it secure with only slides, swipes and the code entry")
+        if s.get("phone") is not None:
+            if s["phone"] not in PHONES:
+                p.refused(at, f"unknown phone '{s['phone']}' (use: {', '.join(PHONES)})")
+            if not s.get("when"):
+                p.refused(at, "a screen with no when takes no phone: it would say so of every screen of the app")
         if not SCREEN_NAME.fullmatch(name):
             p.mistake(at, "name should be lowercase letters, digits and dashes (it is the screen's stable id)")
         shown = s.get("displayName")
@@ -391,15 +400,17 @@ def check_pack(app, pack, where, p):
             for opt in OPTIONS:
                 if x.get(opt) is not None and opt not in ROLES[role]:
                     p.refused(pat, f"'{role or 'label'}' takes no '{opt}'")
-            if role is None and x.get("label") is None and x.get("tone") is None:
-                p.refused(pat, "a rule without a role needs a label or a tone")
+            if role is None and x.get("label") is None and x.get("tone") is None and x.get("phone") is None:
+                p.refused(pat, "a rule without a role needs a label, a tone or a phone")
             label = x.get("label")
             if label is not None and (not label.strip() or utf16_len(label) > 60 or "\n" in label):
                 p.refused(pat, "a label must be one line, at most 60 characters")
             for opt, allowed in (("tone", TONES), ("confirm", CONFIRMS), ("perform", PERFORMS), ("icon", set(ICONS)),
-                                 ("keyboard", KEYBOARDS), ("scroll", SCROLLS)):
+                                 ("keyboard", KEYBOARDS), ("scroll", SCROLLS), ("phone", set(PHONES))):
                 if x.get(opt) is not None and x[opt] not in allowed:
                     p.refused(pat, f"unknown {opt} '{x[opt]}' (use: {', '.join(sorted(allowed))})")
+            if x.get("phone") is not None and protective(x):
+                p.refused(pat, "a slide or a swipe takes no phone: its own deliberate slide guards it")
             if x.get("total") is not None and not 1 <= x["total"] <= 12:
                 p.refused(pat, "total must be 1 to 12")
             for opt in ("select", "parts", "press"):
@@ -449,7 +460,7 @@ EXPECT = {
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
     "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "tones": "words", "pad": "pad", "entry": "str?",
-    "values": "map",
+    "values": "map", "phones": "words", "phone": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -571,6 +582,12 @@ def check_fixtures(d, names, p):
         for label, tone in tones.items() if isinstance(tones, dict) else []:
             if tone not in TONES | {"none"}:
                 p.mistake(at, f"tones: '{label}' is drawn in a tone Relaid does not know ('{tone}'; one of {', '.join(sorted(TONES))} or none)")
+        phones = c.get("phones")
+        for label, reason in phones.items() if isinstance(phones, dict) else []:
+            if reason not in PHONES + ("none",):
+                p.mistake(at, f"phones: '{label}' needs the phone for a reason Relaid does not know ('{reason}'; one of {', '.join(PHONES)} or none)")
+        if isinstance(c.get("phone"), str) and c["phone"] not in PHONES:
+            p.mistake(at, f"phone: the screen needs the phone for a reason Relaid does not know ('{c['phone']}'; one of {', '.join(PHONES)}, or null)")
         if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
             p.mistake(at, f"pad: a keypad has {PAD} places, a label or null each, not {len(c['pad'])}")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():
@@ -696,6 +713,11 @@ FORMAT_SINCE = {
     "rule:none.tone": 3,
     "skin:red-accent": 3,
     "skin:red-picked": 3,
+    # What needs the phone itself: a control where it stands, an action, an option, a whole screen.
+    "rule:none.phone": 4,
+    "rule:action.phone": 4,
+    "rule:option.phone": 4,
+    "screens.phone": 4,
 }
 SELECTOR_PATHS = ("select", "when", "parts", "press")
 
