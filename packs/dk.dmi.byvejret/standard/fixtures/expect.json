@@ -1,6 +1,6 @@
 [
   {
-    "why": "Vejr with location denied (signed out): the location's name (the app's title node) is empty, so the screen has no title. The arrows the app draws at the sides of its page, with no words of their own, are named Forrige lokation and Næste lokation where they stand, in the secondary tone, outlined as the app draws them (no fill), each at its own width on the line they share. Search, graphs and the favourite switch stay where the app's boxes put them, the switch keeping its state. The bottom navigation as tabs with Relaid's icons (no sun, map or warning in its set: home, grid, chart, bell, settings).",
+    "why": "Vejr with location denied (signed out): the location's name (the app's title node) is empty, so the screen has no title. The arrows the app draws at the sides of its page, with no words of their own, are named Forrige lokation and Næste lokation where they stand, in the secondary tone, outlined as the app draws them (no fill), each at its own width on the line they share. Search, graphs and the favourite switch are the app's top bar, as it draws them over its page: søg at its start, grafer and the switch at its end, the switch keeping its state. The bottom navigation as tabs with Relaid's icons (no sun, map or warning in its set: home, grid, chart, bell, settings).",
     "fixture": "weather.xml",
     "screen": "dmi-weather",
     "secure": false,
@@ -22,6 +22,15 @@
       "favorit",
       "Slå lokalisering til for at se nærmeste lokationer"
     ],
+    "places": {
+      "søg": "top",
+      "grafer": "top",
+      "favorit": "top"
+    },
+    "align": {
+      "grafer": "end",
+      "favorit": "end"
+    },
     "tones": {
       "Forrige lokation": "secondary",
       "Næste lokation": "secondary"
@@ -59,7 +68,7 @@
     }
   },
   {
-    "why": "Varsler with no warnings: the title in the bar, larger than the body as the app draws it. INGEN VARSLER, the app's small capitals over its text, is a heading. The app's info icon at the end of its bar goes to the menu, as a header's icon does; the app draws no toolbar nor page that Relaid could measure its header band by, so it is not placed in the bar (a recapture with where its texts' words sit).",
+    "why": "Varsler with no warnings: the title in the bar, larger than the body as the app draws it. INGEN VARSLER, the app's small capitals over its text, is a heading. The app's info icon at the end of its bar, beside its title on a screen with no toolbar, list or page, sits at the end of the bar as an option the bar draws.",
     "fixture": "warnings.xml",
     "screen": "dmi-warnings",
     "secure": false,
@@ -83,10 +92,12 @@
     ],
     "rows": [],
     "places": {
-      "Varsler": "bar"
+      "Varsler": "bar",
+      "info": "top"
     },
     "align": {
-      "Varsler": "start"
+      "Varsler": "start",
+      "info": "end"
     },
     "sizes": {
       "Varsler": "larger"

@@ -277,7 +277,7 @@
     }
   },
   {
-    "why": "The menu: its heading at the top of its list, under the app's Close, stays in the page, large, at its start; Close sits at the end of the bar. Its tall items are tiles across the window, each 37 hundredths of its width tall, as the app draws them; the small version line, the list's last, sits in its middle.",
+    "why": "The menu: its heading at the top of its list, under the app's Close, stays in the page, large, at its start; Close sits at the end of the bar. Its tall items are rows of its list, one under another, as the app draws them (a bold title, its line under it, a chevron), never tiles; the small version line, the list's last, sits in its middle.",
     "fixture": "menu.xml",
     "screen": "mitid-screens",
     "secure": true,
@@ -299,26 +299,14 @@
     ],
     "rows": [],
     "tiles": {
-      "Profile. User ID, phone number and messages from MitID": [
-        100,
-        37
-      ],
-      "App settings. PIN code, fingerprint, accessibility and other app settings": [
-        100,
-        37
-      ],
-      "Activate and block. Activate, reactivate, block and help someone else with MitID": [
-        100,
-        37
-      ],
-      "Help and support. Help to use MitID and the MitID app": [
-        100,
-        37
-      ]
+      "Profile. User ID, phone number and messages from MitID": null,
+      "App settings. PIN code, fingerprint, accessibility and other app settings": null,
+      "Activate and block. Activate, reactivate, block and help someone else with MitID": null,
+      "Help and support. Help to use MitID and the MitID app": null
     }
   },
   {
-    "why": "The profile: its heading in the page under the app's Back to Menu and Close. Back to Menu, the app's arrow back at the top start, is the screen's way back: a device presses it with its own back and shows it nowhere else. Close sits at the end of the bar. Its tall items are tiles across the window, as the app draws them.",
+    "why": "The profile: its heading in the page under the app's Back to Menu and Close. Back to Menu, the app's arrow back at the top start, is the screen's way back: a device presses it with its own back and shows it nowhere else. Close sits at the end of the bar. Its tall items are rows, one under another, as the app draws them, never tiles.",
     "fixture": "profile.xml",
     "screen": "mitid-screens",
     "secure": true,
@@ -334,29 +322,21 @@
     },
     "rows": [],
     "tiles": {
-      "User ID. View or change your username": [
-        100,
-        30
-      ],
-      "Change phone number. Change the phone number you use for MitID": [
-        100,
-        37
-      ],
-      "Messages from MitID. View your messages from MitID and your activities": [
-        100,
-        37
-      ]
+      "User ID. View or change your username": null,
+      "Change phone number. Change the phone number you use for MitID": null,
+      "Messages from MitID. View your messages from MitID and your activities": null
     }
   },
   {
-    "why": "How to approve, a sheet over the screen: its heading is the sheet's own, in its page, under what closes the sheet. Its OK, under the sheet's list in the window's lowest quarter, is in the bar along the bottom. OK, across the sheet's bottom as the app draws it, is drawn across the bar of actions.",
+    "why": "How to approve, a sheet over the screen: its heading is the sheet's own, in its page, under what closes the sheet: the dimmed space above it, which the app names Close sheet, the screen's way back. Its OK, under the sheet's list in the window's lowest quarter, is in the bar along the bottom. OK, across the sheet's bottom as the app draws it, is drawn across the bar of actions.",
     "fixture": "howto-sheet.xml",
     "screen": "mitid-screens",
     "secure": true,
     "title": "How to approve in the MitID app",
     "places": {
       "How to approve in the MitID app": "page",
-      "OK": "bottom"
+      "OK": "bottom",
+      "Close sheet": "back"
     },
     "shows": [
       "OK",

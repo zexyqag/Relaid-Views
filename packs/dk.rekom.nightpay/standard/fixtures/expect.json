@@ -1,6 +1,6 @@
 [
   {
-    "why": "The welcome, signed out (NightPay 3.2.26, a Flutter app: no view ids, its words given as descriptions). It has no top bar, so no title: a device names it by the app. Its logo, a picture with no words, is left out unless the owner shows what Relaid cannot read, then shown as the one picture of the screen. Everything else stands in the page in the app's order, each lead-in above its buttons: the MobilePay sign-up, the link to more ways, the question and Log in. The app fills its two white pills, Get started with MobilePay and Log in, so they are drawn filled where they stand, in the primary tone (NightPay's white on its blue); the link between them is not. The three controls sit in the middle of their lines as the app draws them. Nothing stands side by side.",
+    "why": "The welcome, signed out (NightPay 3.2.26, a Flutter app: no view ids, its words given as descriptions). It has no top bar, so no title: a device names it by the app. Its logo, a picture with no words, is left out unless the owner shows what Relaid cannot read, then shown as the one picture of the screen. Everything else stands in the page in the app's order, each lead-in above its buttons: the MobilePay sign-up, the link to more ways, the question and Log in. The app fills its two white pills, Get started with MobilePay and Log in, so they are drawn filled where they stand, in the primary tone (NightPay's white on its blue); the link between them is not. The three controls sit in the middle of their lines as the app draws them, and so do its two lead-ins (texts it gives as descriptions, their boxes their words' own). Nothing stands side by side.",
     "fixture": "welcome.xml",
     "screen": "nightpay-welcome",
     "secure": false,
@@ -16,7 +16,9 @@
     "align": {
       "Get started with MobilePay": "center",
       "More ways to get started": "center",
-      "Log in": "center"
+      "Log in": "center",
+      "Create a free profile:": "center",
+      "Already have an account?": "center"
     },
     "tones": {
       "Get started with MobilePay": "primary",
@@ -25,7 +27,7 @@
     }
   },
   {
-    "why": "The welcome with more ways to get started open: the same screen, the Google sign-up under Hide alternatives, a white pill filled where it stands as the MobilePay one is. The app names that button only \"Get started with \" (its G is drawn, not said), and a view cannot rename a control that has words of its own, so it reads so.",
+    "why": "The welcome with more ways to get started open: the same screen, the Google sign-up under Hide alternatives, a white pill filled where it stands as the MobilePay one is. The app names that button only \"Get started with \" (its G is drawn, not said), and a view cannot rename a control that has words of its own, so it reads so. Its lead-ins sit in the middle of their lines, as on the welcome.",
     "fixture": "welcome-more.xml",
     "screen": "nightpay-welcome",
     "secure": false,
@@ -43,7 +45,9 @@
       "Get started with MobilePay": "center",
       "Hide alternatives": "center",
       "Get started with": "center",
-      "Log in": "center"
+      "Log in": "center",
+      "Create a free profile:": "center",
+      "Already have an account?": "center"
     },
     "tones": {
       "Get started with MobilePay": "primary",
@@ -53,7 +57,7 @@
     }
   },
   {
-    "why": "Choosing how to log in (a recapture; NightPay gives no character locations): the app draws its two log-in buttons as pictures (the MobilePay mark, Google's G) and names neither, so plain they are left out and the screen offers only Back. The view names them where they stand, for MobilePay and Google, in the app's own phrasing of its sign-up, filled as the app fills them (tone primary), each in the middle of its line as the app draws it, one above the other. Back, the app's quiet link under them in the middle of its line, stays in the page there, muted.",
+    "why": "Choosing how to log in (a recapture; NightPay gives no character locations): the app draws its two log-in buttons as pictures (the MobilePay mark, Google's G) and names neither, so plain they are left out and the screen offers only Back. The view names them where they stand, for MobilePay and Google, in the app's own phrasing of its sign-up, filled as the app fills them (tone primary), each in the middle of its line as the app draws it, one above the other. Back, the app's quiet link under them in the middle of its line, stays in the page there, muted. Its lead-in, a text it gives as a description, sits in the middle of its line as the app draws it.",
     "fixture": "login.xml",
     "screen": "nightpay-login",
     "secure": false,
@@ -68,7 +72,8 @@
     "align": {
       "Log in with MobilePay": "center",
       "Log in with Google": "center",
-      "Back": "center"
+      "Back": "center",
+      "Choose how you want to log in:": "center"
     },
     "tones": {
       "Log in with MobilePay": "primary",

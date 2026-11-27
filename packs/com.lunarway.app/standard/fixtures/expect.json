@@ -51,7 +51,7 @@
     "rows": []
   },
   {
-    "why": "The country dropdown, a window of its own over the intro: its three countries as the main list. It has no title, as the app shows none.",
+    "why": "The country dropdown, a window of its own over the intro: its three countries as the main list, rows as the app draws them, never tiles (a popup's options are a list). It has no title, as the app shows none.",
     "fixture": "country.xml",
     "screen": "lunar-country",
     "secure": false,
@@ -61,6 +61,11 @@
       "Sweden",
       "Norway"
     ],
+    "tiles": {
+      "Denmark": null,
+      "Sweden": null,
+      "Norway": null
+    },
     "rows": []
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "why": "Signing in (signed out, a real capture: only Steam's own words). The password field makes the screen secure, so nothing on it is hidden or reshaped, and the password stays a password. Steam gives its two fields no words of their own (its labels are texts drawn above them): the view names them. Sign in, which Steam fills in its blue, is the screen's main action in the primary tone; while the fields are empty Steam draws it dimmed and offers no press, so it shows as not pressable until Steam does. Its words are the only part of it in Steam's tree, so it sits in the middle at its own width. SIGN IN, drawn large at the head of the page with no bar above it, stays in the page as the screen's title, centred as the app centres it; I need help signing in, a link inset evenly inside its row, and the paragraph under Don't have a Steam account? are centred (a recapture with where its texts' words sit).",
+    "why": "Signing in (signed out, a real capture: only Steam's own words). The password field makes the screen secure, so nothing on it is hidden or reshaped, and the password stays a password. Steam gives its two fields no words of their own (its labels are texts drawn above them): the view names them. Sign in, which Steam fills in its blue, is the screen's main action in the primary tone; while the fields are empty Steam draws it dimmed and offers no press, so it shows as not pressable until Steam does. Its words are the only part of it in Steam's tree, so it sits in the middle at its own width. SIGN IN, drawn large at the head of the page with no bar above it, stays in the page as the screen's title, centred as the app centres it, the largest step over the paragraph's lines (of the two heights holding as many lines where their words are drawn, the paragraph's holds more characters than the labels'), the labels a step under them; I need help signing in, a link inset evenly inside its row, and the paragraph under Don't have a Steam account? are centred (a recapture with where its texts' words sit).",
     "fixture": "sign-in.xml",
     "screen": "steam-sign-in",
     "secure": true,
@@ -20,6 +20,11 @@
       "It's free and easy. Discover thousands of PC games to play with millions of new friends.",
       "Learn more about Steam"
     ],
+    "sizes": {
+      "SIGN IN": "largest",
+      "STEAM ACCOUNT NAME": "small",
+      "PASSWORD": "small"
+    },
     "rows": [],
     "places": {
       "SIGN IN": "page"

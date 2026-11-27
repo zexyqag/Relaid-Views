@@ -193,7 +193,7 @@ a fit cell's label for where its row sits), `places` (the screen's title's label
 app draws it in its page rather than in its top bar; a control's label to where it sits: `top` in the top bar, `bottom` in the
 bar along the bottom, or `back` for the app's own way back at the bar's start, which a device presses with its own back; one at
 most), `tiles` (a control's label to the shape of the card the app draws it as, large on its own line: its width and height in
-hundredths of the window's width, 1 to 100 wide and 1 to 200 tall), `widths` (a part's label to how wide the app draws it on its
+hundredths of the window's width, 1 to 100 wide and 1 to 200 tall; null for a control drawn as no tile, a row of a list), `widths` (a part's label to how wide the app draws it on its
 line outside rows: `fit` at its own width, `full` across it, `none` as a device draws it), `tones` (a control's label to the tone it is
 drawn in: `primary`, `secondary`, `muted`, `destructive`, or `none`), `pad` (the keypad's 12 places as the app lays out its own
 pad, each the label of the key or of the app's part there, null for an empty one; null for a keypad laid out in Relaid's own

@@ -219,7 +219,7 @@ def type_ok(v, t):
     if base == "pad":
         return v is None or isinstance(v, list) and all(x is None or isinstance(x, str) for x in v)
     if base == "tiles":
-        return isinstance(v, dict) and all(isinstance(x, list) and len(x) == 2 and all(is_int(y) for y in x) for x in v.values())
+        return isinstance(v, dict) and all(x is None or isinstance(x, list) and len(x) == 2 and all(is_int(y) for y in x) for x in v.values())
     if isinstance(base, list):
         return isinstance(v, list) and all(isinstance(x, dict) for x in v)
     if isinstance(base, tuple):

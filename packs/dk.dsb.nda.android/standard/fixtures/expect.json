@@ -128,17 +128,19 @@
     "rows": []
   },
   {
-    "why": "A sheet over Start, offering check-in. Its heading, beside the sheet's Close, is the screen's title, in the sheet's page at its start. The dimmed space above the sheet, which the app makes a control that closes it, is left out: Close does the same. Okay, let me try, the sheet's filled button across it, stays where the app draws it at the sheet's end, filled in the primary tone, across its line with its words in its middle. The three points it makes, each a line in bold over what it says, stay as text.",
+    "why": "A sheet over Start, offering check-in. Its heading, beside the sheet's Close, is the screen's title, in the sheet's page at its start; Close, at the end of its line, sits at the end of the bar. The dimmed space above the sheet, which the app makes a control that closes it, is left out: Close does the same. Okay, let me try, the sheet's filled button across it, stays where the app draws it at the sheet's end, filled in the primary tone, across its line with its words in its middle. The three points it makes, each a line in bold over what it says, stay as text.",
     "fixture": "check-in-sheet.xml",
     "screen": "dsb-sheet",
     "secure": false,
     "title": "Check in with DSB App",
     "places": {
-      "Check in with DSB App": "page"
+      "Check in with DSB App": "page",
+      "Close": "top"
     },
     "align": {
       "Check in with DSB App": "start",
-      "Okay, let me try": "center"
+      "Okay, let me try": "center",
+      "Close": "end"
     },
     "actions": [],
     "tabs": [],
