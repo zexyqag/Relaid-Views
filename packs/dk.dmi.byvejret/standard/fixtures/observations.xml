@@ -3,8 +3,8 @@
   <node class="android.view.View" bounds="[0,80][1080,2047]">
    <node class="android.view.View" bounds="[0,80][1080,2047]">
     <node class="android.widget.ScrollView" bounds="[34,464][1046,1619]">
-     <node class="android.widget.TextView" text="Slå lokalisering til for at se nærmeste station" bounds="[102,1094][978,1221]"/>
-     <node class="android.widget.TextView" text="Du skal tillade brug af lokalisering, for at nærmeste målinger kan vises. Slå til i Indstillinger. Alternativ kan du også søge efter en lokation manuelt i søge feltet." bounds="[102,1232][978,1483]"/>
+     <node class="android.widget.TextView" text="Slå lokalisering til for at se nærmeste station" bounds="[102,1094][978,1221]" drawn-lines="[123,1094][958,1155] [462,1155][618,1221]"/>
+     <node class="android.widget.TextView" text="Du skal tillade brug af lokalisering, for at nærmeste målinger kan vises. Slå til i Indstillinger. Alternativ kan du også søge efter en lokation manuelt i søge feltet." bounds="[102,1232][978,1483]" drawn-lines="[193,1232][887,1284] [109,1284][972,1352] [153,1352][928,1420] [357,1420][724,1483]"/>
     </node>
     <node class="android.view.View" bounds="[0,80][1080,260]">
      <node class="android.widget.TextView" text="Målinger" bounds="[45,136][256,204]"/>

@@ -2,6 +2,6 @@
   "app": "com.valvesoftware.android.steam.community",
   "view": "standard",
   "name": "Steam",
-  "version": 1,
+  "version": 2,
   "description": "Steam's own dark look in both colour schemes (its slate page, darker boxes, light grey words and blue button), small corners, a plain header and filled cards; on the sign-in screen, Sign in as the main action and the account name and password fields named."
 }

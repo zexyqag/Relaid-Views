@@ -8,7 +8,7 @@
        <node class="android.widget.ScrollView" bounds="[0,0][1080,1979]" scrollable="true" scroll-forward="true">
         <node class="android.widget.TextView" text="See departure times" bounds="[45,360][506,415]" heading="true"/>
         <node class="android.view.View" bounds="[259,641][822,1046]"/>
-        <node class="android.widget.TextView" text="Save stations and stops that&#10;you travel from frequently." bounds="[229,1091][851,1214]"/>
+        <node class="android.widget.TextView" text="Save stations and stops that&#10;you travel from frequently." bounds="[229,1091][851,1214]" drawn-lines="[369,1091][851,1148] [388,1148][851,1214]"/>
         <node class="android.view.View" bounds="[45,438][1035,596]">
          <node class="android.widget.EditText" text="" bounds="[45,438][1035,596]" clickable="true" long-clickable="true" editable="true" ime-enter="true">
           <node class="android.view.View" content-desc="Search" bounds="[45,438][1035,596]"/>

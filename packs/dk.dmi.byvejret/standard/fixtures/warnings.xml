@@ -3,7 +3,7 @@
   <node class="android.widget.TextView" text="Varsler" bounds="[45,121][228,197]"/>
   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/action_info" content-desc="info" bounds="[944,91][1080,226]" clickable="true"/>
   <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/warningsEmptyTitle" text="INGEN VARSLER" bounds="[34,272][373,333]"/>
-  <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/warningsEmptyBody" text="Her vises alle aktuelle vejrvarsler for regioner og kommuner i Danmark." bounds="[34,344][1046,461]"/>
+  <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/warningsEmptyBody" text="Her vises alle aktuelle vejrvarsler for regioner og kommuner i Danmark." bounds="[34,344][1046,461]" drawn-lines="[34,344][996,406] [34,406][568,461]"/>
   <node class="android.view.ViewGroup" bounds="[0,2047][1080,2205]" collection="true">
    <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/weather_tab" content-desc="Vejr" bounds="[0,2047][216,2205]" clickable="true"/>
    <node class="android.widget.FrameLayout" resource-id="dk.dmi.byvejret:id/map_tab" content-desc="Kort &amp; Radar" bounds="[216,2047][432,2205]" clickable="true"/>

@@ -13,7 +13,7 @@
           <node class="android.widget.Button" bounds="[45,360][346,473]"/>
          </node>
          <node class="android.widget.ImageView" content-desc="Sign in to see your tickets, or create a free profile to get perks and points" bounds="[259,586][822,991]"/>
-         <node class="android.widget.TextView" text="Sign in to see your tickets, or create a free profile to get perks and points" bounds="[45,1014][1035,1137]"/>
+         <node class="android.widget.TextView" text="Sign in to see your tickets, or create a free profile to get perks and points" bounds="[45,1014][1035,1137]" drawn-lines="[81,1014][1001,1071] [210,1071][871,1137]"/>
          <node class="android.view.View" resource-id="BUTTON_CTA_PRIMARY" bounds="[45,1205][1035,1350]" clickable="true">
           <node class="android.view.View" bounds="[68,1210][1012,1345]">
            <node class="android.widget.TextView" text="Log in" bounds="[470,1250][610,1305]"/>

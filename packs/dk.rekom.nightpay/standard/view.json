@@ -3,10 +3,10 @@
     "accent": "#294ad3",
     "light": {
       "accent": "#ffffff",
-      "background": "#111f58",
-      "surface": "#111f58",
+      "background": "#294ad3",
+      "surface": "#294ad3",
       "text": "#ffffff",
-      "muted": "#bfc9f2",
+      "muted": "#ccd5f6",
       "onAccent": "#222222"
     },
     "dark": {
@@ -32,6 +32,14 @@
         {
           "select": "class:android.widget.ImageView & nth:1",
           "as": "unread"
+        },
+        {
+          "select": "class:android.widget.ImageView & is:clickable & not(nth:1)",
+          "tone": "primary"
+        },
+        {
+          "select": "class:android.widget.Button & not(nth:4)",
+          "tone": "primary"
         }
       ]
     },
@@ -48,13 +56,11 @@
         },
         {
           "select": "class:android.widget.ImageView & is:clickable & nth:3",
-          "as": "action",
           "label": "Log in with MobilePay",
           "tone": "primary"
         },
         {
           "select": "class:android.widget.ImageView & is:clickable & nth:4",
-          "as": "action",
           "label": "Log in with Google",
           "tone": "primary"
         }

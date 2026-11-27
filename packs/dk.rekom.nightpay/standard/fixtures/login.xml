@@ -1,7 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <snapshot package="dk.rekom.nightpay" width="1080" height="2125">
  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
-  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2205]">
+  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2205]" focused="true">
    <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
     <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">
      <node class="android.view.View" resource-id="" bounds="[0,0][1080,2205]">

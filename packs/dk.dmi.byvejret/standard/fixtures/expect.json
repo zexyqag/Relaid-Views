@@ -1,13 +1,10 @@
 [
   {
-    "why": "Vejr with location denied (signed out): the location's name (the app's title node) is empty, so the screen has no title. The arrows the app draws at the sides of its page, with no words of their own, become Forrige lokation and Næste lokation in the bar of actions, outlined as the app draws them (no fill). Search, graphs and the favourite switch stay where the app's boxes put them, the switch keeping its state. The bottom navigation as tabs with Relaid's icons (no sun, map or warning in its set: home, grid, chart, bell, settings).",
+    "why": "Vejr with location denied (signed out): the location's name (the app's title node) is empty, so the screen has no title. The arrows the app draws at the sides of its page, with no words of their own, are named Forrige lokation and Næste lokation where they stand, in the secondary tone, outlined as the app draws them (no fill), each at its own width on the line they share. Search, graphs and the favourite switch stay where the app's boxes put them, the switch keeping its state. The bottom navigation as tabs with Relaid's icons (no sun, map or warning in its set: home, grid, chart, bell, settings).",
     "fixture": "weather.xml",
     "screen": "dmi-weather",
     "secure": false,
-    "actions": [
-      "Forrige lokation",
-      "Næste lokation"
-    ],
+    "actions": [],
     "options": [],
     "tabs": [
       "Vejr",
@@ -18,14 +15,20 @@
     ],
     "headings": [],
     "shows": [
+      "Forrige lokation",
+      "Næste lokation",
       "søg",
       "grafer",
       "favorit",
       "Slå lokalisering til for at se nærmeste lokationer"
-    ]
+    ],
+    "tones": {
+      "Forrige lokation": "secondary",
+      "Næste lokation": "secondary"
+    }
   },
   {
-    "why": "Målinger (a Compose screen, no ids but the tabs', told apart by its selected tab): the title in the bar at its start, as the app draws it in its header band. The search field is named by the words the app shows in it (Søg lokation), not by the English description its icon gives (Search), which is left out. Nothing stands side by side.",
+    "why": "Målinger (a Compose screen, no ids but the tabs', told apart by its selected tab): the title in the bar at its start, as the app draws it in its header band. The search field is named by the words the app shows in it (Søg lokation), not by the English description its icon gives (Search), which is left out. The two lines about the location the owner has not shared are centred, as the app centres them (a recapture with where its texts' words sit). Nothing stands side by side.",
     "fixture": "observations.xml",
     "screen": "dmi-observations",
     "secure": false,
@@ -50,11 +53,13 @@
       "Målinger": "bar"
     },
     "align": {
-      "Målinger": "start"
+      "Målinger": "start",
+      "Slå lokalisering til for at se nærmeste station": "center",
+      "Du skal tillade brug af lokalisering, for at nærmeste målinger kan vises. Slå til i Indstillinger. Alternativ kan du også søge efter en lokation manuelt i søge feltet.": "center"
     }
   },
   {
-    "why": "Varsler with no warnings: the title in the bar, larger than the body as the app draws it. INGEN VARSLER, the app's small capitals over its text, is a heading. The app's info icon at the end of its bar goes to the menu, as a header's icon does; the app draws no toolbar nor page that Relaid could measure its header band by, so it is not placed in the bar.",
+    "why": "Varsler with no warnings: the title in the bar, larger than the body as the app draws it. INGEN VARSLER, the app's small capitals over its text, is a heading. The app's info icon at the end of its bar goes to the menu, as a header's icon does; the app draws no toolbar nor page that Relaid could measure its header band by, so it is not placed in the bar (a recapture with where its texts' words sit).",
     "fixture": "warnings.xml",
     "screen": "dmi-warnings",
     "secure": false,
@@ -88,7 +93,7 @@
     }
   },
   {
-    "why": "Indstillinger: the app's rows with a chevron each (Buttons in a scroll view that does not scroll) as the screen's list, so each is an item to open, as the app draws them, not a button. OM APP'EN, the app's small capitals between them, is a heading, the title not taken from it. The version centred under the rows, as the app draws it.",
+    "why": "Indstillinger: the app's rows with a chevron each (Buttons in a scroll view that does not scroll) as the screen's list, so each is an item to open, as the app draws them, not a button. OM APP'EN, the app's small capitals between them, is a heading, the title not taken from it. The version centred under the rows, as the app draws it (a recapture with where its texts' words sit).",
     "fixture": "settings.xml",
     "screen": "dmi-settings",
     "secure": false,

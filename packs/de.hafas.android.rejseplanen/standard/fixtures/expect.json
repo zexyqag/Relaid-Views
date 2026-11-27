@@ -1,36 +1,36 @@
 [
   {
-    "why": "The welcome, the first screen after install: its title, drawn large at the head of the app's page under no bar, stays in the page at its start, the bar naming the app; Continue, which the app fills in its navy across the window under its page, is the primary action, drawn across the bar of actions. Nothing stands beside anything. The capture has no drawn lines, so the title's two lines are a guess from its box and it is given no size.",
+    "why": "The welcome, the first screen after install: its title, drawn large at the head of the app's page under no bar, stays in the page at its start, the bar naming the app; Continue, which the app fills in its navy across the window under its page, sits in the bar along the bottom as the app draws it, filled in the primary tone, across its line. Nothing stands beside anything. The capture has no drawn lines, so the title's two lines are a guess from its box and it is given no size.",
     "fixture": "welcome.xml",
     "screen": "rejseplan-welcome",
     "secure": false,
     "title": "Welcome to the new Rejseplan",
-    "actions": [
-      "Continue"
-    ],
+    "actions": [],
     "shows": [
       "Experience a new and improved way to find your way from A to B."
     ],
     "rows": [],
     "places": {
-      "Welcome to the new Rejseplan": "page"
+      "Welcome to the new Rejseplan": "page",
+      "Continue": "bottom"
     },
     "align": {
       "Welcome to the new Rejseplan": "start"
     },
     "widths": {
       "Continue": "full"
+    },
+    "tones": {
+      "Continue": "primary"
     }
   },
   {
-    "why": "The first of the getting-started steps (tracking and analysis): its title, larger than its body text on one line, stays in the page at its start; Show more, a small control at the start of its line, is drawn at its own width there; the app's segmented bar over Continue is a meter named Step at 1 of 3 (its own words, 1 of 3, only repeated where it stands, so left out); Continue, filled in the app's navy across the window, is the primary action, drawn across the bar of actions. Nothing stands beside anything.",
+    "why": "The first of the getting-started steps (tracking and analysis; a recapture, the app giving no character locations): its title, larger than its body text on one line, stays in the page at its start; Show more, a small control at the start of its line, is drawn at its own width there; the app's segmented bar over Continue is a meter named Step at 1 of 3 (its own words, 1 of 3, only repeated where it stands, so left out); Continue, filled in the app's navy across the window, sits in the bar along the bottom as the app draws it, filled in the primary tone, across its line. Nothing stands beside anything.",
     "fixture": "tracking.xml",
     "screen": "rejseplan-onboarding",
     "secure": false,
     "title": "Enable tracking and analysis",
-    "actions": [
-      "Continue"
-    ],
+    "actions": [],
     "shows": [
       "Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy.",
       "Show more",
@@ -45,7 +45,8 @@
     },
     "rows": [],
     "places": {
-      "Enable tracking and analysis": "page"
+      "Enable tracking and analysis": "page",
+      "Continue": "bottom"
     },
     "align": {
       "Enable tracking and analysis": "start",
@@ -54,6 +55,9 @@
     "widths": {
       "Continue": "full",
       "Show more": "fit"
+    },
+    "tones": {
+      "Continue": "primary"
     }
   }
 ]

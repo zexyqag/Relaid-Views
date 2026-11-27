@@ -7,11 +7,11 @@
       <node class="android.view.View" bounds="[0,0][1080,1979]">
        <node class="android.widget.ScrollView" bounds="[0,0][1080,1979]" scrollable="true" scroll-forward="true">
         <node class="android.widget.TextView" text="Tickets" bounds="[45,360][242,427]"/>
-        <node class="android.widget.TextView" resource-id="TICKET_HISTORY" text="Previous trips  " bounds="[678,332][1035,467]" clickable="true">
+        <node class="android.widget.TextView" resource-id="TICKET_HISTORY" text="Previous trips  " bounds="[678,332][1035,467]" drawn-lines="[678,372][976,427]" clickable="true">
          <node class="android.view.View" bounds="[945,332][1080,467]"/>
         </node>
         <node class="android.view.View" bounds="[259,675][822,1080]"/>
-        <node class="android.widget.TextView" text="Once you purchase tickets,&#10; they will be displayed here" bounds="[240,1125][841,1248]"/>
+        <node class="android.widget.TextView" text="Once you purchase tickets,&#10; they will be displayed here" bounds="[240,1125][841,1248]" drawn-lines="[240,1125][824,1182] [254,1182][841,1248]"/>
        </node>
        <node class="android.view.View" bounds="[0,0][1080,360]">
         <node class="android.view.View" bounds="[0,0][1080,360]"/>

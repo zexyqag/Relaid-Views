@@ -53,8 +53,15 @@ rules again itself.
 ```
 
 A screen applies when all of its `when` selectors match (the highest `priority`, then the most
-selectors, wins). Its `parts` are one list of rules: each says what the nodes its `select` matches
-are, with `as`. A rule without `as` only gives a `label` to a part that shows no text of its own.
+selectors, wins). A screen with no `when` would claim every screen of its app, the ones its author
+never saw too, so it is refused unless it is `secure` and holds only what protects the person (an
+`action` with `confirm: "slide"` or a swipe to `perform`, and `pin`): a view may keep every screen of
+its app secure, with its slides to approve, but never shape screens it was not written for. Its
+`parts` are one list of rules: each says what the nodes its `select` matches are, with `as`. A rule
+without `as` leaves the part where it stands and says only what Relaid cannot read there: a
+`label` for a part that shows no words of its own and holds no field or switch (a picture's place,
+an icon button the app names nowhere), and a `tone` for a control, which is then drawn as a button
+in that tone where the app draws it.
 Without a view Relaid still shows the screen plain: the main list, the header and footer around it,
 the title, icon buttons in the header as a menu, the bottom navigation as tabs. A view is for what
 that plain reading gets wrong, or shows differently from how you want it, so write only the rules a
@@ -64,7 +71,7 @@ screen needs.
 |---|---|
 | `name` | Stable id: lowercase letters, digits and dashes. The owner can switch a screen off by it |
 | `displayName` | What people see: one line, at most 60 characters |
-| `when` | Selectors that must all match for the screen to apply |
+| `when` | Selectors that must all match for the screen to apply: at least one, unless the screen is `secure` and holds only slides, swipes and `pin` |
 | `activity` | Part of the window's activity name, where `when` cannot tell screens apart |
 | `secure` | Mark the screen secure when the app gives no signal for it |
 | `priority` | Breaks ties when several screens match |
@@ -76,7 +83,7 @@ screen needs.
 | `text` | Shown as text, never as a control (an app that offers a click on every message), with everything in it | |
 | `heading` | Shown as a section heading (who wrote the messages below, a date), with everything in it never a control | |
 | `picture` | Shown as a picture, captured live from the app's own window. Only a part with no text and no control in it. Needs the permission `pictures` | `label`: named until the picture arrives |
-| (none) | A part with no text and no control in it gets this text | `label` |
+| (none) | The part where it stands. `label`: its words, where it shows none of its own and holds no field or switch (an icon button, a meter, a picture's place). `tone`: a control drawn as a button in that tone where the app draws it (an app's filled pill in its page, in a list too), where it has one line of words and is no switch; one whose words destroy or refuse stays `destructive`. Pack format 3 for both | `label`, `tone`: `primary`, `secondary`, `muted`, `destructive` |
 | `title` | The screen's title | |
 | `hero` | Shown large and centred (an amount): text, a heading or a field | |
 | `list` | The main list | `scroll: "drag"`: Relaid drags it, for an app that ignores the scroll Relaid sends. Needs `touch` |
@@ -90,6 +97,10 @@ screen needs.
 | `unread` | Where on this screen Relaid looks for what it cannot read (photos drawn in a view of their own, a map, a chart), to show as pictures, where the owner chose that for the app. A screen a view knows gets such pictures only inside its `unread` parts, and none without them; screens no view knows, anywhere. An `unread` part inside a pressable list row is that row's thumbnail (a photo, album art). It only narrows the owner's choice, so it needs no permission. Pack format 2 | |
 
 `title`, `hero`, `list` and `pin` appear at most once per screen.
+
+A screen a view knows gets the owner's pictures of what Relaid cannot read only inside its `unread`
+parts: its author has seen that screen and says where they belong, as the plain reading's own
+guesses show odd pieces of some apps (a chat's bubbles). A screen no view knows gets them anywhere.
 
 `theme`, the app's skin, applies to every screen of the app: `accent`; `light` and `dark` palettes
 (`accent`, `background`, `surface`, `text`, `muted`, `onAccent`); `corners` (`square`, `rounded`,
@@ -125,22 +136,32 @@ to visible text, which changes with the phone's language.
   pack uses. A Relaid that does not read a pack's format says so ("needs a newer Relaid") and keeps
   any version of the pack it already has.
 - A label from a view is only used where the app shows no text of its own. A view can name an
-  unlabelled button, but it cannot rename one.
+  unlabelled button, where it stands or in a bar, but it cannot rename one.
 - A view can add friction (`confirm: "slide"`, `secure`) but never remove it, and what one installed
-  view of an app adds holds in all its views.
+  view of an app adds holds in all its views. A control whose words destroy or refuse is drawn
+  `destructive`, with Relaid's red and mark, whatever `tone` a view gives it.
 - On a secure screen nothing can be hidden or reshaped: `hidden`, `text`, `heading`, `picture`, `row`
-  and bare labels are ignored there, and Relaid never touches or captures. Relaid marks a screen
-  secure when it has a password field, a PIN pad, or a control that asks for a swipe or that a pack
-  declares a slide, whatever the pack says otherwise; `secure` can mark more screens, never fewer.
+  and rules without `as` (labels and tones where a part stands) are ignored there, and Relaid never
+  touches or captures. Relaid marks a screen secure when it has a password field, a PIN pad, or a
+  control that asks for a swipe or that a pack declares a slide, whatever the pack says otherwise;
+  `secure` can mark more screens, never fewer.
 - The skin applies to the whole screen by role, never to one control, and Relaid ignores any part
   that breaks these rules:
   - colours are `#RRGGBB`;
-  - an accent stays more than 30 degrees of hue from Relaid's destructive red (unless nearly grey),
-    and destructive actions always keep Relaid's own red;
+  - an accent may be any colour, a red brand's own red too: a control that destroys or refuses is
+    told apart by Relaid's own mark (a warning triangle) and its words, never by colour alone, and is
+    always drawn in one of Relaid's own reds, never the view's;
   - a palette has `background`, `surface`, `text` and `muted`, and an accent (its own or the
-    theme's); text and muted text reach 4.5:1 against background and surface, the accent and the
-    destructive red reach 3:1, and `onAccent` (text on accent buttons, optional) reaches 3:1 against
-    the accent.
+    theme's); text and muted text reach 4.5:1 against background and surface, the accent reaches
+    3:1, and `onAccent` (text on accent buttons, optional) reaches 3:1 against the accent;
+  - one of Relaid's reds reaches 3:1 against the palette's background and surface: devices draw a
+    destructive control in the first that does, from Relaid's reds for a light page where black
+    words read better on the background than white ones, else from its reds for a dark page (each
+    list going further from that page), with white or near-black words, whichever reads better on
+    it. So a palette keeps the app's own page (a navy or mid blue one too) and the red suits it;
+  - an accent near Relaid's red in hue (within 30 degrees of `#c63b3b`'s, unless nearly grey), and a
+    palette on which its own scheme's first red (`#c63b3b` for `light`, `#ff6b6b` for `dark`) does not
+    reach 3:1 against background or surface, need pack format 3: an older Relaid ignores them.
 - Packs contain no artwork. Tab icons come from Relaid's own generic set; an app's logos and pictures
   are never copied into a pack.
 
@@ -173,7 +194,8 @@ app draws it in its page rather than in its top bar; a control's label to where 
 bar along the bottom, or `back` for the app's own way back at the bar's start, which a device presses with its own back; one at
 most), `tiles` (a control's label to the shape of the card the app draws it as, large on its own line: its width and height in
 hundredths of the window's width, 1 to 100 wide and 1 to 200 tall), `widths` (a part's label to how wide the app draws it on its
-line outside rows: `fit` at its own width, `full` across it, `none` as a device draws it), `pad` (the keypad's 12 places as the app lays out its own
+line outside rows: `fit` at its own width, `full` across it, `none` as a device draws it), `tones` (a control's label to the tone it is
+drawn in: `primary`, `secondary`, `muted`, `destructive`, or `none`), `pad` (the keypad's 12 places as the app lays out its own
 pad, each the label of the key or of the app's part there, null for an empty one; null for a keypad laid out in Relaid's own
 order), `entry` (the code entry's name, null for none), and labels it `shows` or `hides`. Rows, shares, aligns, places, tiles,
 widths and a keypad's places are measured from the app's own boxes (and from where it draws a text's words, line by line, which a host

@@ -2,6 +2,6 @@
   "app": "dk.rejsekort.digitalrejsekort",
   "view": "standard",
   "name": "Rejsekort",
-  "version": 1,
-  "description": "Rejsekort's colours in light and dark (its blue header band, white pages and charcoal text), round buttons and flat sections; Continue as the primary action on the welcome page, its guide to travelling with the app and the location screen, with How to travel with the app beside it on the welcome page."
+  "version": 2,
+  "description": "Rejsekort's colours in light and dark (its blue header band, white pages and charcoal text), round buttons and flat sections; Continue filled where the app draws it, on the welcome page, at the end of its guide to travelling with the app and on the location screen."
 }

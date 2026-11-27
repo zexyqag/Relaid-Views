@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <snapshot package="com.lunarway.app" width="1080" height="2125">
  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
   <node class="androidx.compose.ui.platform.ComposeView" resource-id="com.lunarway.app:id/activity_compose_view" bounds="[0,0][1080,2340]">

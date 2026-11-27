@@ -56,9 +56,9 @@ PALETTE = {"accent": "str?", "background": "str?", "surface": "str?", "text": "s
 THEME = {"accent": "str?", "light": (PALETTE,), "dark": (PALETTE,), "corners": "str?", "header": "str?", "cards": "str?"}
 SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "parts": [PART]}
 PACK = {"theme": (THEME,), "screens": [SCREEN]}
-# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a bare label.
+# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label or a tone where the part stands).
 ROLES = {
-    None: {"label"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
+    None: {"label", "tone"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
     "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform"},
     "option": {"label", "tone"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
     "unread": set(),
@@ -70,20 +70,23 @@ PACK_META = {"app": "str", "view": "str", "name": "str", "version": "int", "desc
 PERMISSIONS = ("touch", "pictures")
 
 # The skin rules, exactly as Relaid's relaid.views.Skin applies them (a part that breaks them is
-# ignored on the phone): colours #RRGGBB; an accent more than 30 degrees of hue from the client's
-# destructive red unless nearly grey; a palette complete, with text and muted text at 4.5:1 and the
-# accent and the destructive red at 3:1 against background and surface, onAccent at 3:1 against the
-# accent; fixed values for corners, header and cards; tab icons from a fixed set.
+# ignored on the phone): colours #RRGGBB; any accent, a red one too (a destructive control keeps
+# Relaid's own mark and red); a palette complete, with text and muted text at 4.5:1 and the accent at
+# 3:1 against background and surface, one of Relaid's reds for a page like it at 3:1 against both
+# (the one devices draw there), onAccent at 3:1 against the accent; fixed values for corners, header
+# and cards; tab icons from a fixed set.
 CORNERS = ("square", "rounded", "round")
 HEADERS = ("bar", "plain", "accent")
 CARDS = ("outlined", "filled", "flat")
 ICONS = ("home", "list", "people", "person", "wallet", "card", "search", "settings", "bell", "chart", "star", "chat", "grid")
-DANGER_LIGHT = "#c63b3b"
-DANGER_DARK = "#ff6b6b"
+# Relaid's reds (its relaid.json danger.light and danger.dark): a page whose background is light (black words reach more contrast
+# on it than white ones) takes the first of DANGER_LIGHT that reaches DANGER_CONTRAST against its background and its surface, a
+# dark one the first of DANGER_DARK.
+DANGER_LIGHT = ("#c63b3b", "#aa3131", "#8e2929", "#732121")
+DANGER_DARK = ("#ff6b6b", "#ff8585", "#ff9e9e", "#ffb8b8")
+DANGER_CONTRAST = 3.0
 TEXT_CONTRAST = 4.5
 UI_CONTRAST = 3.0
-MIN_HUE_APART = 30.0
-GREY_SATURATION = 0.2
 
 
 def is_color(s):
@@ -104,33 +107,21 @@ def contrast(a, b):
     return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
 
 
-def hue_saturation(h):
-    r, g, b = channels(h)
-    hi, lo = max(r, g, b), min(r, g, b)
-    d = hi - lo
-    if d == 0:
-        return 0.0, 0.0
-    light = (hi + lo) / 2
-    sat = d / (1 - abs(2 * light - 1))
-    if hi == r:
-        hue = 60 * (((g - b) / d) % 6)
-    elif hi == g:
-        hue = 60 * ((b - r) / d + 2)
-    else:
-        hue = 60 * ((r - g) / d + 4)
-    return (hue + 360 if hue < 0 else hue), sat
+def reds(background):
+    """Relaid's reds for a page of [background]: the light page's where black words read better on it than white ones."""
+    return DANGER_LIGHT if contrast(background, "#000000") > contrast(background, "#ffffff") else DANGER_DARK
+
+
+def danger(background, surface):
+    """The red a destructive control is drawn in on a page of [background] and [surface], or None where none of Relaid's reaches."""
+    return next((r for r in reds(background) if contrast(r, background) >= DANGER_CONTRAST and contrast(r, surface) >= DANGER_CONTRAST), None)
 
 
 def accent_problem(accent):
-    if not is_color(accent):
-        return "is not #RRGGBB"
-    hue, sat = hue_saturation(accent)
-    danger = hue_saturation(DANGER_LIGHT)[0]
-    apart = min(abs(hue - danger), 360 - abs(hue - danger))
-    return "is too close to the destructive red" if sat >= GREY_SATURATION and apart <= MIN_HUE_APART else None
+    return None if is_color(accent) else "is not #RRGGBB"
 
 
-def palette_problem(pal, scheme, theme_accent):
+def palette_problem(pal, theme_accent):
     parts = [(k, pal.get(k)) for k in ("background", "surface", "text", "muted")]
     for k, v in parts:
         if v is None:
@@ -149,13 +140,15 @@ def palette_problem(pal, scheme, theme_accent):
     on = pal.get("onAccent")
     if on is not None and contrast(on, accent) < UI_CONTRAST:
         return "onAccent on accent is %.2f:1, needs %.1f:1" % (contrast(on, accent), UI_CONTRAST)
-    danger = DANGER_DARK if scheme == "dark" else DANGER_LIGHT
-    for name, color, need in (("text", pal["text"], TEXT_CONTRAST), ("muted", pal["muted"], TEXT_CONTRAST),
-                              ("accent", accent, UI_CONTRAST), ("destructive red", danger, UI_CONTRAST)):
+    for name, color, need in (("text", pal["text"], TEXT_CONTRAST), ("muted", pal["muted"], TEXT_CONTRAST), ("accent", accent, UI_CONTRAST)):
         for on_name, against in (("background", pal["background"]), ("surface", pal["surface"])):
             c = contrast(color, against)
             if c < need:
                 return "%s on %s is %.2f:1, needs %.1f:1" % (name, on_name, c, need)
+    bg, surface = pal["background"], pal["surface"]
+    if danger(bg, surface) is None:
+        best = max(min(contrast(r, bg), contrast(r, surface)) for r in reds(bg))
+        return "no destructive red of Relaid's reaches %.1f:1 on background and surface (at best %.2f:1)" % (DANGER_CONTRAST, best)
     return None
 
 
@@ -168,7 +161,7 @@ def theme_problems(t):
             out.append(("theme.accent", why))
     for scheme in ("light", "dark"):
         if t.get(scheme) is not None:
-            why = palette_problem(t[scheme], scheme, t.get("accent"))
+            why = palette_problem(t[scheme], t.get("accent"))
             if why:
                 out.append((f"theme.{scheme}", why))
     return out
@@ -341,6 +334,12 @@ def selector_kinds(s):
     return out
 
 
+def protective(part):
+    """A rule that protects the person (Relaid's ViewFormat.Part.protective): a slide, a swipe, or the code entry."""
+    role = part.get("as")
+    return role == "action" and (part.get("confirm") == "slide" or part.get("perform") in PERFORMS - {"click"}) or role == "pin"
+
+
 def check_pack(app, pack, where, p):
     """Every rule for one view file. Returns the screen names in order."""
     if not PACKAGE.fullmatch(app or ""):
@@ -365,6 +364,8 @@ def check_pack(app, pack, where, p):
         if name in names:
             p.refused(at, "the name is used twice")
         names.append(name)
+        if not s.get("when") and not (s.get("secure") is True and all(protective(x) for x in s.get("parts", []))):
+            p.refused(at, "a screen with no when claims every screen of the app: give it when, or mark it secure with only slides, swipes and the code entry")
         if not SCREEN_NAME.fullmatch(name):
             p.mistake(at, "name should be lowercase letters, digits and dashes (it is the screen's stable id)")
         shown = s.get("displayName")
@@ -390,8 +391,8 @@ def check_pack(app, pack, where, p):
             for opt in OPTIONS:
                 if x.get(opt) is not None and opt not in ROLES[role]:
                     p.refused(pat, f"'{role or 'label'}' takes no '{opt}'")
-            if role is None and x.get("label") is None:
-                p.refused(pat, "a rule without a role needs a label")
+            if role is None and x.get("label") is None and x.get("tone") is None:
+                p.refused(pat, "a rule without a role needs a label or a tone")
             label = x.get("label")
             if label is not None and (not label.strip() or utf16_len(label) > 60 or "\n" in label):
                 p.refused(pat, "a label must be one line, at most 60 characters")
@@ -447,7 +448,7 @@ EXPECT = {
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
-    "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "pad": "pad", "entry": "str?",
+    "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "tones": "words", "pad": "pad", "entry": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -565,6 +566,10 @@ def check_fixtures(d, names, p):
         for label, width in widths.items() if isinstance(widths, dict) else []:
             if width not in WIDTHS:
                 p.mistake(at, f"widths: '{label}' is drawn at a width Relaid does not know ('{width}'; one of {', '.join(WIDTHS)})")
+        tones = c.get("tones")
+        for label, tone in tones.items() if isinstance(tones, dict) else []:
+            if tone not in TONES | {"none"}:
+                p.mistake(at, f"tones: '{label}' is drawn in a tone Relaid does not know ('{tone}'; one of {', '.join(sorted(TONES))} or none)")
         if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
             p.mistake(at, f"pad: a keypad has {PAD} places, a label or null each, not {len(c['pad'])}")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():
@@ -678,13 +683,59 @@ def build_index(p):
 
 
 # The pack format that introduced each view feature after format 1, as "key.path" or
-# "key.path=value" (arrays are transparent: "screens.parts.as=picture"), or "selector:<kind>" for a
-# selector kind or relation used anywhere. A pack needs the highest format of the features it uses.
+# "key.path=value" (arrays are transparent: "screens.parts.as=picture"), "selector:<kind>" for a
+# selector kind or relation used anywhere, "rule:<role>.<option>" for an option on a rule of that
+# role ("none" for a rule without "as"), or "skin:<rule>" for a skin rule its colours lean on
+# (skin_rules). A pack needs the highest format of the features it uses.
 # Relaid's Packs.FORMAT_SINCE is the same table; add to both with every feature.
 FORMAT_SINCE = {
     "screens.parts.as=unread": 2,
+    # A label where a control stands (format 1 labelled only a part holding no control), a tone there.
+    "rule:none.label": 3,
+    "rule:none.tone": 3,
+    "skin:red-accent": 3,
+    "skin:red-picked": 3,
 }
 SELECTOR_PATHS = ("select", "when", "parts", "press")
+
+
+def hue_saturation(h):
+    """HSL hue in degrees (0 to 360) and saturation (0 to 1)."""
+    r, g, b = channels(h)
+    hi, lo = max(r, g, b), min(r, g, b)
+    d = hi - lo
+    if d == 0:
+        return 0.0, 0.0
+    sat = d / (1 - abs(hi + lo - 1))
+    if hi == r:
+        hue = 60 * (((g - b) / d) % 6)
+    elif hi == g:
+        hue = 60 * ((b - r) / d + 2)
+    else:
+        hue = 60 * ((r - g) / d + 4)
+    return (hue + 360 if hue < 0 else hue), sat
+
+
+def skin_rules(theme):
+    """The skin rules after format 1 a theme's colours lean on, which a Relaid reading an older format ignores the part for (Relaid's
+    Packs.skinRules): skin:red-accent, an accent near Relaid's destructive red in hue (within 30 degrees of its first light red's, not
+    nearly grey); skin:red-picked, a palette its own scheme's first red (the one every renderer drew there before format 3) does not
+    reach DANGER_CONTRAST on against its background or its surface."""
+    out = set()
+    def colour(o, key):
+        v = o.get(key) if isinstance(o, dict) else None
+        return v if is_color(v) else None
+    palettes = [(theme[k], red) for k, red in (("light", DANGER_LIGHT[0]), ("dark", DANGER_DARK[0])) if isinstance(theme.get(k), dict)]
+    accents = [a for a in [colour(theme, "accent")] + [colour(pal, "accent") for pal, _ in palettes] if a]
+    red = hue_saturation(DANGER_LIGHT[0])[0]
+    for a in accents:
+        hue, sat = hue_saturation(a)
+        if sat >= 0.2 and min(abs(hue - red), 360 - abs(hue - red)) <= 30:
+            out.add("skin:red-accent")
+    for pal, first in palettes:
+        if any(contrast(first, c) < DANGER_CONTRAST for c in (colour(pal, "background"), colour(pal, "surface")) if c):
+            out.add("skin:red-picked")
+    return out
 
 
 def format_of(view):
@@ -693,6 +744,9 @@ def format_of(view):
 
     def walk(v, path):
         if isinstance(v, dict):
+            if path == "screens.parts":
+                role = v.get("as") if isinstance(v.get("as"), str) else "none"
+                used.update(f"rule:{role}.{k}" for k in v if k != "as")
             for k, x in v.items():
                 q = f"{path}.{k}" if path else k
                 used.add(q)
@@ -709,6 +763,8 @@ def format_of(view):
                     pass
 
     walk(view, "")
+    if isinstance(view, dict) and isinstance(view.get("theme"), dict):
+        used |= skin_rules(view["theme"])
     return max([FORMAT_SINCE.get(u, 1) for u in used] or [1])
 
 def encode_index(index):
@@ -768,6 +824,8 @@ def self_test():
             wrong.append(f"{c['why']}: got {got}; problems: {[m for _, _, m in p.items]}")
         elif "ignored" in c and ignored_theme_parts(c["pack"]) != sorted(c["ignored"]):
             wrong.append(f"{c['why']}: the phone would ignore {ignored_theme_parts(c['pack'])}, expected {sorted(c['ignored'])}")
+        elif "format" in c and format_of(c["pack"]) != c["format"]:
+            wrong.append(f"{c['why']}: pack format {format_of(c['pack'])}, expected {c['format']}")
     # The view names a phone refuses for a pack (Relaid's own views), and some it takes.
     names = {"plain": False, "pictures": False, "video": False, "Full": False, "full": True, "generic": True, "lite-2": True}
     named = [f"a pack called '{n}': expected the phone to {'accept' if ok else 'refuse'} it" for n, ok in names.items() if (view_name_problem(n) is None) != ok]

@@ -3,8 +3,8 @@
     "accent": "#0c2d83",
     "light": {
       "accent": "#ffffff",
-      "background": "#091f59",
-      "surface": "#061743",
+      "background": "#0c2d83",
+      "surface": "#09205b",
       "text": "#ffffff",
       "muted": "#c2cae0",
       "onAccent": "#0c2d83"
@@ -35,13 +35,11 @@
         },
         {
           "select": "id:fragmentWeatherPrevBtn",
-          "as": "action",
           "label": "Forrige lokation",
           "tone": "secondary"
         },
         {
           "select": "id:fragmentWeatherNextBtn",
-          "as": "action",
           "label": "Næste lokation",
           "tone": "secondary"
         },

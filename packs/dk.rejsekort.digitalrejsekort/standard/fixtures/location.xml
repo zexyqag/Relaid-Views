@@ -1,8 +1,8 @@
 <snapshot package="dk.rejsekort.digitalrejsekort" width="1080" height="2125">
  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
   <node class="android.widget.TextView" resource-id="dk.rejsekort.digitalrejsekort:id/locationHeader" text="Rejsekort" bounds="[0,80][1080,347]" heading="true"/>
-  <node class="android.widget.TextView" resource-id="dk.rejsekort.digitalrejsekort:id/locationTitle" text="Location" bounds="[90,1109][990,1179]"/>
-  <node class="android.widget.TextView" resource-id="dk.rejsekort.digitalrejsekort:id/locationSubTitle" text="We use your location to search for nearby stations and calculate your journey correctly. We will only use your location while you are traveling with us." bounds="[90,1247][990,1480]"/>
-  <node class="android.widget.Button" resource-id="dk.rejsekort.digitalrejsekort:id/continueButton" text="Continue" bounds="[45,2025][1035,2160]" clickable="true"/>
+  <node class="android.widget.TextView" resource-id="dk.rejsekort.digitalrejsekort:id/locationTitle" text="Location" bounds="[90,1109][990,1179]" drawn-lines="[429,1109][653,1179]"/>
+  <node class="android.widget.TextView" resource-id="dk.rejsekort.digitalrejsekort:id/locationSubTitle" text="We use your location to search for nearby stations and calculate your journey correctly. We will only use your location while you are traveling with us." bounds="[90,1247][990,1480]" drawn-lines="[103,1247][979,1305] [174,1305][908,1364] [128,1364][954,1423] [223,1423][859,1480]"/>
+  <node class="android.widget.Button" resource-id="dk.rejsekort.digitalrejsekort:id/continueButton" text="Continue" bounds="[45,2025][1035,2160]" drawn-lines="[422,2057][658,2127]" clickable="true"/>
  </node>
 </snapshot>

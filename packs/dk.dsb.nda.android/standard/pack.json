@@ -2,6 +2,6 @@
   "app": "dk.dsb.nda.android",
   "view": "standard",
   "name": "DSB",
-  "version": 1,
-  "description": "DSB's light greys, white cards and dark text, with its navy as the accent (Relaid keeps red for what destroys), in light and dark; small corners, a plain header and outlined cards. Start, Your trips, Departures and Profile as tabs with icons; Log in and a sheet's main button filled as the screen's action; a sheet's heading as its title; the departures search named in the app's own words."
+  "version": 2,
+  "description": "DSB's light greys, white cards and dark text, with its own red as the accent (a destructive control keeps Relaid's mark), in light and dark; small corners, a plain header and outlined cards. Start, Your trips, Departures and Profile as tabs with icons; Log in and a sheet's main button filled where the app draws them; a sheet's heading as its title; the departures search in the app's words."
 }

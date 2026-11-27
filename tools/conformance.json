@@ -1,5 +1,5 @@
 {
-  "about": "Pack rule cases with the expected verdict of the phone (Relaid's validator) and of tools/check.py, and, where given, the theme parts the phone ignores. Each case is one view file. Both run these.",
+  "about": "Pack rule cases with the expected verdict of the phone (Relaid's validator) and of tools/check.py, and, where given, the theme parts the phone ignores and the pack format the view needs. Each case is one view file. Both run these.",
   "cases": [
     {
       "why": "a minimal pack",
@@ -7,12 +7,16 @@
       "pack": {
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
       "phone": true,
-      "check": true
+      "check": true,
+      "format": 1
     },
     {
       "why": "a full pack using every role and option",
@@ -62,6 +66,11 @@
               {
                 "select": "id:icon",
                 "label": "Icon"
+              },
+              {
+                "select": "id:login",
+                "label": "Log in",
+                "tone": "primary"
               },
               {
                 "select": "id:amount",
@@ -123,6 +132,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "class:Button & text:Send",
@@ -142,6 +154,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:com.example.app:id/send",
@@ -161,6 +176,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id~:list-picker-",
@@ -180,6 +198,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "class:javaClass & in(id:chat_message_list) & not(parent(id:ff_item))",
@@ -211,6 +232,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "text:Send (1)",
@@ -229,7 +253,10 @@
       "pack": {
         "screens": [
           {
-            "name": "a"
+            "name": "a",
+            "when": [
+              "id:a"
+            ]
           },
           {
             "name": "b",
@@ -249,6 +276,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "displayName": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         ]
@@ -264,6 +294,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "displayName": null,
             "activity": null,
             "parts": [
@@ -289,6 +322,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -308,6 +344,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:code",
@@ -379,7 +418,10 @@
       "pack": {
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -407,10 +449,16 @@
       "pack": {
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           },
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -423,7 +471,10 @@
       "pack": {
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ],
         "packages": [
@@ -440,6 +491,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "whenPresent": [
               "id:a"
             ]
@@ -456,6 +510,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -476,6 +533,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "as": "hidden"
@@ -494,6 +554,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -513,6 +576,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -533,6 +599,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -553,6 +622,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -573,6 +645,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -593,6 +668,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -613,6 +691,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -627,15 +708,131 @@
       "check": false
     },
     {
-      "why": "a rule without a role or a label",
+      "why": "a rule without a role, a label or a tone",
       "app": "com.example.app",
       "pack": {
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a tone on a control where it stands, a rule without a role",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:login",
+                "tone": "primary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a label and a tone on a control where it stands",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:next",
+                "label": "Next",
+                "tone": "secondary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "an unknown tone where a control stands",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:login",
+                "tone": "loud"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a keyboard on a rule without a role",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:a",
+                "label": "x",
+                "keyboard": "number"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a confirm on a rule without a role: a slide is an action's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:a",
+                "tone": "primary",
+                "confirm": "slide"
               }
             ]
           }
@@ -651,6 +848,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -670,6 +870,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -689,6 +892,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -708,6 +914,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -728,6 +937,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -748,6 +960,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -768,6 +983,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -788,6 +1006,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -808,6 +1029,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -828,6 +1052,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -848,6 +1075,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -868,6 +1098,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -888,6 +1121,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -911,6 +1147,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:a",
@@ -934,6 +1173,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "toolbar",
@@ -953,6 +1195,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "name:send",
@@ -972,6 +1217,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "",
@@ -991,6 +1239,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": " & ",
@@ -1010,6 +1261,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:",
@@ -1029,6 +1283,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "in(id:list",
@@ -1048,6 +1305,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:list)",
@@ -1067,6 +1327,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "in()",
@@ -1086,6 +1349,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "is:shiny",
@@ -1105,6 +1371,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "nth:0",
@@ -1124,6 +1393,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "nth:first",
@@ -1143,6 +1415,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "in(foo:bar)",
@@ -1178,6 +1453,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:row",
@@ -1198,6 +1476,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:row",
@@ -1218,6 +1499,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "displayName": ""
           }
         ]
@@ -1232,6 +1516,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "displayName": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         ]
@@ -1246,6 +1533,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "displayName": "a\nb"
           }
         ]
@@ -1260,6 +1550,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "priority": "high"
           }
         ]
@@ -1274,6 +1567,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "secure": "yes"
           }
         ]
@@ -1302,6 +1598,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": null
           }
         ]
@@ -1324,12 +1623,98 @@
       "check": false
     },
     {
+      "why": "a screen with no when: it would claim every screen of the app",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "hidden"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen with an empty when",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": []
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen with only an activity: it would claim every screen of that window",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "activity": "MainActivity"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a secure screen with no when: every screen of the app kept secure, with its slides",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "priority": -1,
+            "parts": [
+              {
+                "select": "desc:Approve & has(is:clickable)",
+                "as": "action",
+                "confirm": "slide"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true
+    },
+    {
+      "why": "a screen with no when that says it is not secure",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": false
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
       "why": "a screen name that is not an id",
       "app": "com.example.app",
       "pack": {
         "screens": [
           {
-            "name": "Send Screen"
+            "name": "Send Screen",
+            "when": [
+              "id:a"
+            ]
           }
         ]
       },
@@ -1345,7 +1730,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1379,6 +1767,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:amount",
@@ -1400,10 +1791,11 @@
       },
       "phone": true,
       "check": true,
-      "ignored": []
+      "ignored": [],
+      "format": 1
     },
     {
-      "why": "an accent close to the destructive red",
+      "why": "a red accent, however near Relaid's destructive red: a red brand keeps its red, and a destructive control keeps Relaid's own mark and red",
       "app": "com.example.app",
       "pack": {
         "theme": {
@@ -1411,49 +1803,17 @@
         },
         "screens": [
           {
-            "name": "x"
-          }
-        ]
-      },
-      "phone": true,
-      "check": false,
-      "ignored": [
-        "theme.accent"
-      ]
-    },
-    {
-      "why": "an orange accent is far enough from the red",
-      "app": "com.example.app",
-      "pack": {
-        "theme": {
-          "accent": "#ff8c00"
-        },
-        "screens": [
-          {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
       "phone": true,
       "check": true,
-      "ignored": []
-    },
-    {
-      "why": "a nearly grey reddish accent",
-      "app": "com.example.app",
-      "pack": {
-        "theme": {
-          "accent": "#6b5f5f"
-        },
-        "screens": [
-          {
-            "name": "x"
-          }
-        ]
-      },
-      "phone": true,
-      "check": true,
-      "ignored": []
+      "ignored": [],
+      "format": 3
     },
     {
       "why": "a palette without its muted colour",
@@ -1469,7 +1829,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1494,7 +1857,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1518,7 +1884,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1543,20 +1912,24 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
       "phone": true,
       "check": true,
-      "ignored": []
+      "ignored": [],
+      "format": 1
     },
     {
       "why": "a palette cannot borrow an accent the phone ignores",
       "app": "com.example.app",
       "pack": {
         "theme": {
-          "accent": "#e53935",
+          "accent": "#2f6fd",
           "light": {
             "background": "#ffffff",
             "surface": "#f3f4f6",
@@ -1566,7 +1939,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1592,7 +1968,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1603,7 +1982,7 @@
       ]
     },
     {
-      "why": "a background that hides the destructive red",
+      "why": "a dark grey page in the light scheme: the red is Relaid's for a dark page, chosen by the page, never by the scheme",
       "app": "com.example.app",
       "pack": {
         "theme": {
@@ -1617,7 +1996,149 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a palette whose accent is Relaid's own light red",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#c63b3b",
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#212529",
+            "muted": "#6a6e70",
+            "onAccent": "#ffffff"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a navy page in the light scheme, with white words and a white accent on it",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#ffffff",
+            "background": "#0c2d83",
+            "surface": "#09205b",
+            "text": "#ffffff",
+            "muted": "#c2cae0",
+            "onAccent": "#0c2d83"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a mid blue page: a lighter red of Relaid's stands out on it",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#ffffff",
+            "background": "#294ad3",
+            "surface": "#294ad3",
+            "text": "#ffffff",
+            "muted": "#dde3fa",
+            "onAccent": "#222222"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a mid grey page no red of Relaid's stands out on",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#ffffff",
+            "background": "#808080",
+            "surface": "#808080",
+            "text": "#000000",
+            "muted": "#101010"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.light"
+      ]
+    },
+    {
+      "why": "a light page whose grey cards no red of Relaid's stands out on",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#000000",
+            "background": "#ffffff",
+            "surface": "#868686",
+            "text": "#000000",
+            "muted": "#000000"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1643,7 +2164,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1667,7 +2191,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1692,7 +2219,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1713,7 +2243,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1736,7 +2269,10 @@
         },
         "screens": [
           {
-            "name": "x"
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
           }
         ]
       },
@@ -1750,6 +2286,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:map",
@@ -1769,6 +2308,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:map",
@@ -1789,6 +2331,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:send",
@@ -1809,6 +2354,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:send",
@@ -1829,6 +2377,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:send",
@@ -1849,6 +2400,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:send",
@@ -1869,6 +2423,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:guide",
@@ -1892,6 +2449,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:fingerprint",
@@ -1912,6 +2472,9 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "parts": [
               {
                 "select": "id:login",
@@ -1932,12 +2495,307 @@
         "screens": [
           {
             "name": "x",
+            "when": [
+              "id:x"
+            ],
             "layout": "row"
           }
         ]
       },
       "phone": false,
       "check": false
+    },
+    {
+      "why": "a secure screen with no when that names a title: it would title every screen of the app",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "parts": [
+              {
+                "select": "class:TextView",
+                "as": "title"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a secure screen with no when that fills an action: it would fill a control on every screen of the app",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "parts": [
+              {
+                "select": "class:Button",
+                "as": "action",
+                "tone": "primary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a secure screen with no when that names a part where it stands",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "parts": [
+              {
+                "select": "class:ImageButton",
+                "label": "Next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a secure screen with no when holding only slides, swipes and the code entry: every screen of the app kept secure",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "priority": -1,
+            "parts": [
+              {
+                "select": "class:View & is:clickable & has(class:Button)",
+                "as": "action",
+                "confirm": "slide"
+              },
+              {
+                "select": "desc:Approve & not(is:clickable) & has(is:clickable)",
+                "as": "action",
+                "perform": "swipe-right"
+              },
+              {
+                "select": "id:code",
+                "as": "pin"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 1
+    },
+    {
+      "why": "a label where a control stands: pack format 3, as before it only named a part holding no control",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:next",
+                "label": "Next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 3
+    },
+    {
+      "why": "a tone where a control stands: pack format 3",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:login",
+                "tone": "primary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 3
+    },
+    {
+      "why": "a tone on an action: pack format 1, as ever",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:login",
+                "as": "action",
+                "tone": "primary"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 1
+    },
+    {
+      "why": "a red accent on a palette: pack format 3, as before it was refused",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#c8102e",
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#212529",
+            "muted": "#5f6368"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a nearly grey accent with a red tint: pack format 1",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#7a6e6e"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 1
+    },
+    {
+      "why": "a dark page in the light scheme on which Relaid's light red still stands out: pack format 1",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#1a9fff",
+            "background": "#23242b",
+            "surface": "#16171c",
+            "text": "#ffffff",
+            "muted": "#c8c8c8"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 1
+    },
+    {
+      "why": "a dark page in the light scheme on which Relaid's light red no longer stands out: drawn in a red picked for it, pack format 3",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "light": {
+            "accent": "#1a9fff",
+            "background": "#2a2c34",
+            "surface": "#1f2127",
+            "text": "#ffffff",
+            "muted": "#c8c8c8"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
+    },
+    {
+      "why": "a light page in the dark scheme: Relaid's dark red does not stand out on it, pack format 3",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "dark": {
+            "accent": "#1a73e8",
+            "background": "#ffffff",
+            "surface": "#f3f4f6",
+            "text": "#16191d",
+            "muted": "#5d6672"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": [],
+      "format": 3
     }
   ]
 }

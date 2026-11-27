@@ -2,13 +2,13 @@
  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
   <node class="android.widget.TextView" text="Indstillinger" bounds="[45,121][351,197]"/>
   <node class="android.widget.ScrollView" bounds="[0,238][1080,2047]">
-   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsPushNotifications" text="Varsler" bounds="[0,238][1080,373]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsPushNotifications" text="Varsler" bounds="[0,238][1080,373]" drawn-lines="[34,271][200,339]" clickable="true"/>
    <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsLocationSettings" text="Lokalitetsindstillinger" bounds="[0,373][1080,508]" clickable="true"/>
    <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsWeatherData" text="Indsamling af vejrdata" bounds="[0,508][1080,643]" clickable="true"/>
-   <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/settingsAboutHeader" text="OM APP'EN" bounds="[34,744][1046,805]"/>
-   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsAbout" text="Om DMI" bounds="[0,822][1080,957]" clickable="true"/>
+   <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/settingsAboutHeader" text="OM APP'EN" bounds="[34,744][1046,805]" drawn-lines="[34,744][272,805]"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsAbout" text="Om DMI" bounds="[0,822][1080,957]" drawn-lines="[34,855][221,923]" clickable="true"/>
    <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsPrivacyPolicy" text="Privatlivspolitik" bounds="[0,957][1080,1092]" clickable="true"/>
-   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsHelp" text="Hjælp" bounds="[0,1092][1080,1227]" clickable="true"/>
+   <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsHelp" text="Hjælp" bounds="[0,1092][1080,1227]" drawn-lines="[34,1125][171,1193]" clickable="true"/>
    <node class="android.widget.Button" resource-id="dk.dmi.byvejret:id/fragmentSettingsUrl" text="Tilgængelighed" bounds="[0,1227][1080,1362]" clickable="true"/>
    <node class="android.widget.TextView" resource-id="dk.dmi.byvejret:id/fragmentSettingsTvVersion" text="2.6.6 V - 180" bounds="[437,1956][643,2002]"/>
   </node>

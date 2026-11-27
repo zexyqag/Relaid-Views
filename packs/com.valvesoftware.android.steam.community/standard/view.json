@@ -3,8 +3,8 @@
     "accent": "#2479c3",
     "light": {
       "accent": "#2479c3",
-      "background": "#23242b",
-      "surface": "#16171c",
+      "background": "#2a2c34",
+      "surface": "#1f2127",
       "text": "#dfe3e6",
       "muted": "#8d949b",
       "onAccent": "#dfe3e6"

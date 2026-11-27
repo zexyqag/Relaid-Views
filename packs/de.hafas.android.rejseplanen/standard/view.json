@@ -31,7 +31,6 @@
       "parts": [
         {
           "select": "is:clickable & has(class:android.widget.Button)",
-          "as": "action",
           "tone": "primary"
         }
       ]
@@ -55,7 +54,6 @@
         },
         {
           "select": "is:clickable & has(class:android.widget.Button)",
-          "as": "action",
           "tone": "primary"
         }
       ]

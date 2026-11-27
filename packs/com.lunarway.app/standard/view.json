@@ -36,12 +36,10 @@
         },
         {
           "select": "is:clickable & nth:1 & parent(nth:3 & parent(class:ScrollView))",
-          "as": "action",
           "tone": "primary"
         },
         {
           "select": "is:clickable & nth:2 & parent(nth:3 & parent(class:ScrollView))",
-          "as": "action",
           "tone": "secondary"
         }
       ]

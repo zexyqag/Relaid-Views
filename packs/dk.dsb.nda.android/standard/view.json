@@ -1,6 +1,6 @@
 {
   "theme": {
-    "accent": "#00233c",
+    "accent": "#b41730",
     "light": {
       "background": "#fafafa",
       "surface": "#ffffff",
@@ -9,12 +9,12 @@
       "onAccent": "#ffffff"
     },
     "dark": {
-      "accent": "#8db6d6",
+      "accent": "#e21d3c",
       "background": "#121416",
       "surface": "#1d2023",
       "text": "#f1f3f5",
       "muted": "#a9aeb2",
-      "onAccent": "#00233c"
+      "onAccent": "#ffffff"
     },
     "corners": "square",
     "header": "plain",
@@ -125,7 +125,6 @@
       "parts": [
         {
           "select": "id:BUTTON_CTA_PRIMARY",
-          "as": "action",
           "tone": "primary"
         },
         {
@@ -167,7 +166,6 @@
         },
         {
           "select": "class:Button & in(class:ScrollView) & parent(is:clickable & has(class:TextView))",
-          "as": "action",
           "tone": "primary"
         }
       ]

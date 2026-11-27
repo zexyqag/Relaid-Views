@@ -2,6 +2,6 @@
   "app": "de.hafas.android.rejseplanen",
   "view": "standard",
   "name": "Rejseplan",
-  "version": 1,
-  "description": "Rejseplan's colours in light and dark (its navy, light grey and dark text), round corners, a plain header and outlined cards; the welcome and the getting-started steps named, with Continue as the primary action, filled as the app fills it."
+  "version": 2,
+  "description": "Rejseplan's colours in light and dark (its navy, light grey and dark text), round corners, a plain header and outlined cards; the welcome and the getting-started steps named, with Continue filled where the app draws it, as the app fills it."
 }

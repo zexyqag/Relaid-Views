@@ -1,30 +1,35 @@
 [
   {
-    "why": "The welcome page (Rejsekort's start, signed out), at its top: the app's logo band, its illustration, then Continue, a white pill the app fills, over How to travel with the app, words it draws without a fill that scroll the page down to its guide. Plain, the two are items of the page's list; here Continue is the screen's primary action and How to travel with the app the action beside it, each across the bar of actions on a line of its own, stacked as the app stacks them. The page's list stays, empty, so a device can still scroll down to the guide. The logo carries no words of Rejsekort's own (its description names Fairtiq), so the screen has no title and a device names it by the app.",
+    "why": "The welcome page (Rejsekort's start, signed out), at its top: the app's logo band, its illustration, then Continue, a white pill the app fills, over How to travel with the app, words it draws without a fill that scroll the page down to its guide. Both stay in the page's list where the app draws them, Continue filled in the primary tone, at the middle of its line and across it as the app draws its pill (the view's tone where it stands says it is the app's filled button, so Relaid needs no reading of where its words sit, which this capture predates), How to travel with the app as the app draws it, unfilled, an item; so a device can still scroll down to the guide. The logo carries no words of Rejsekort's own (its description names Fairtiq), so the screen has no title and a device names it by the app.",
     "fixture": "welcome.xml",
     "screen": "rejsekort-welcome",
     "secure": false,
-    "actions": [
-      "Continue",
-      "How to travel with the app"
-    ],
+    "actions": [],
     "hides": [
       "Fairtiq. Public transport made easy"
     ],
-    "rows": [],
+    "tones": {
+      "Continue": "primary",
+      "How to travel with the app": "none"
+    },
+    "align": {
+      "Continue": "center"
+    },
     "widths": {
-      "Continue": "full",
-      "How to travel with the app": "full"
-    }
+      "Continue": "full"
+    },
+    "rows": [],
+    "shows": [
+      "Continue",
+      "How to travel with the app"
+    ]
   },
   {
-    "why": "The welcome page scrolled down to its guide, How to travel with the app: four sections, each a headline the app draws bold and larger than its body text over a few lines of text, beside an illustration (left out, as it has no words). Its Continue at the end of the guide, a charcoal pill the app fills, is the screen's primary action, across the bar of actions.",
+    "why": "The welcome page scrolled down to its guide, How to travel with the app: four sections, each a headline the app draws bold and larger than its body text over a few lines of text, beside an illustration (left out, as it has no words). Its Continue at the end of the guide, a charcoal pill the app fills, stays there, filled in the primary tone, at the middle of its line and across it as the app draws it (the view's tone says it is the app's filled button; this capture predates where a text's words are drawn).",
     "fixture": "howto.xml",
     "screen": "rejsekort-how-to",
     "secure": false,
-    "actions": [
-      "Continue"
-    ],
+    "actions": [],
     "headings": [
       "Start your journey",
       "Ticket inspection",
@@ -34,7 +39,8 @@
     "shows": [
       "With the app, you can travel all over Denmark, except Bornholm.",
       "Check in with a swipe before you enter a bus, train, metro or light rail.",
-      "The app automatically calculates your price at the end of your journey."
+      "The app automatically calculates your price at the end of your journey.",
+      "Continue"
     ],
     "sizes": {
       "Start your journey": "larger",
@@ -43,20 +49,24 @@
       "Check your price": "larger",
       "Check in with a swipe before you enter a bus, train, metro or light rail.": "body"
     },
-    "rows": [],
+    "tones": {
+      "Continue": "primary"
+    },
+    "align": {
+      "Continue": "center"
+    },
     "widths": {
       "Continue": "full"
-    }
+    },
+    "rows": []
   },
   {
-    "why": "Why the app asks for the location, before Android asks: Rejsekort in the app's blue band at the top is the screen's title, in the bar; Location, a step larger than the paragraph under it, and the paragraph stay in the page. Continue, the white pill the app fills under its page, is the screen's primary action (plain, it sits in the bar along the bottom unfilled, in its own tone), across the bar of actions.",
+    "why": "Why the app asks for the location, before Android asks (a recapture with where its texts' words sit): Rejsekort in the app's blue band at the top is the screen's title, in the bar; Location, a step larger than the paragraph under it, and the paragraph stay in the page, centred as the app centres them. Continue, the white pill the app fills under its page, sits in the bar along the bottom as the app draws it, filled in the primary tone, across its line.",
     "fixture": "location.xml",
     "screen": "rejsekort-location",
     "secure": false,
     "title": "Rejsekort",
-    "actions": [
-      "Continue"
-    ],
+    "actions": [],
     "shows": [
       "Location",
       "We use your location to search for nearby stations and calculate your journey correctly. We will only use your location while you are traveling with us."
@@ -67,10 +77,18 @@
     },
     "rows": [],
     "places": {
-      "Rejsekort": "bar"
+      "Rejsekort": "bar",
+      "Continue": "bottom"
     },
     "widths": {
       "Continue": "full"
+    },
+    "tones": {
+      "Continue": "primary"
+    },
+    "align": {
+      "Location": "center",
+      "We use your location to search for nearby stations and calculate your journey correctly. We will only use your location while you are traveling with us.": "center"
     }
   }
 ]

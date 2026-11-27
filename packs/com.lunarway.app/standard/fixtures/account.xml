@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <snapshot package="com.lunarway.app" width="1080" height="2125">
  <node class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
   <node class="androidx.compose.ui.platform.ComposeView" resource-id="com.lunarway.app:id/activity_compose_view" bounds="[0,0][1080,2340]">
@@ -8,9 +7,9 @@
       <node class="android.view.View" bounds="[0,0][1080,2340]" scrollable="true" scroll-forward="true" collection="true">
        <node class="android.view.View" bounds="[45,283][1035,1451]" clickable="true">
         <node class="android.widget.TextView" text="Personal account" bounds="[90,328][615,407]"/>
-        <node class="android.widget.TextView" text="Get a free bank account for your day-to-day finances" bounds="[90,418][990,520]"/>
+        <node class="android.widget.TextView" text="Get a free bank account for your day-to-day finances" bounds="[90,418][990,520]" drawn-lines="[90,418][884,469] [90,469][245,520]"/>
         <node class="android.view.View" bounds="[113,500][358,635]">
-         <node class="android.widget.TextView" text="From 0 kr./mo" bounds="[113,542][358,593]"/>
+     <node class="android.widget.TextView" text="From 0 kr./mo" bounds="[113,542][358,593]"/>
         </node>
         <node class="android.view.View" bounds="[90,672][990,1235]"/>
         <node class="android.widget.TextView" text="Get a personal account" bounds="[90,1349][572,1406]"/>

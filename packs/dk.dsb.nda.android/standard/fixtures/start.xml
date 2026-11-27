@@ -24,7 +24,7 @@
          <node class="android.view.View" bounds="[90,1676][990,1812]">
           <node class="android.view.View" resource-id="INPUT_DATE" bounds="[90,1676][990,1812]" clickable="true">
            <node class="android.view.View" bounds="[91,1677][226,1812]"/>
-           <node class="android.widget.TextView" text="Now" content-desc=" Now" bounds="[237,1717][342,1772]"/>
+           <node class="android.widget.TextView" text="Fri 27. Nov 2026 13:13" content-desc=" Fri 27. Nov 2026 13:13" bounds="[237,1717][745,1772]"/>
           </node>
          </node>
          <node class="android.view.View" bounds="[90,1835][990,1971]">
@@ -37,9 +37,9 @@
         </node>
         <node class="android.widget.TextView" text="Check in now" bounds="[45,693][353,771]" heading="true"/>
         <node class="android.view.View" bounds="[101,827][979,1090]">
-         <node class="android.widget.TextView" text="Now you can check in and travel by train, bus, metro and light rail" bounds="[101,827][979,932]"/>
+         <node class="android.widget.TextView" text="Now you can check in and travel by train, bus, metro and light rail" bounds="[101,827][979,932]" drawn-lines="[101,827][974,877] [101,877][465,932]"/>
          <node class="android.view.View" resource-id="BUTTON_CTA_SECONDARY" bounds="[101,955][979,1090]" clickable="true">
-      <node class="android.widget.TextView" text="Get started here" bounds="[362,995][718,1050]"/>
+          <node class="android.widget.TextView" text="Get started here" bounds="[362,995][718,1050]"/>
           <node class="android.widget.Button" bounds="[101,955][979,1090]"/>
          </node>
         </node>
