@@ -449,6 +449,7 @@ EXPECT = {
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
     "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "tones": "words", "pad": "pad", "entry": "str?",
+    "values": "map",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")

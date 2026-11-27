@@ -1,16 +1,19 @@
 [
   {
-    "why": "The intro, signed out, over the app's photo (a tree with where its words sit). Its headline, drawn three times the body's height at the head of a page with no toolbar, stays in the page as the screen's title, largest and centred. Apply for new account, the pill the app fills, and Log in with MitID, its other pill, stay where the app draws them under the country picker, the first filled in the primary tone and the second in the secondary one; both span the window with their words in their middle, so each is drawn across its line, one above the other as the app stacks them. The country picker stays an item, and the two legal lines stay centred as the app draws them. The unlabelled control the app lays over its logo (a press and a hold with no words) is left out.",
+    "why": "The intro, signed out, over the app's photo (a tree with where its words sit). Its headline, drawn three times the body's height at the head of a page with no toolbar, stays in the page as the screen's title, largest and centred. Apply for new account, the pill the app fills, and Log in with MitID, its other pill, stay where the app draws them under the country picker, the first filled in the primary tone and the second in the secondary one; both span the window with their words in their middle, so each is drawn across its line, one above the other as the app stacks them. The country picker is a field the app lets no one type in (a press opens the country list): it reads as the app draws it, named Country, the label the app draws in it, its value Denmark under it, an item pressed as the app takes it. The two legal lines stay centred as the app draws them. The unlabelled control the app lays over its logo (a press and a hold with no words) is left out.",
     "fixture": "intro.xml",
     "screen": "lunar-intro",
     "secure": false,
     "title": "The smarter way to bank.",
     "actions": [],
     "shows": [
-      "Denmark",
+      "Country",
       "By continuing, you acknowledge that you have read and understood our Privacy Policy.",
       "See Lunar’s Accessibility Statement."
     ],
+    "values": {
+      "Country": "Denmark"
+    },
     "sizes": {
       "The smarter way to bank.": "largest"
     },

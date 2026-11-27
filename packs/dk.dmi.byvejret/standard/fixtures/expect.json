@@ -37,7 +37,7 @@
     }
   },
   {
-    "why": "Målinger (a Compose screen, no ids but the tabs', told apart by its selected tab): the title in the bar at its start, as the app draws it in its header band. The search field is named by the words the app shows in it (Søg lokation), not by the English description its icon gives (Search), which is left out. The two lines about the location the owner has not shared are centred, as the app centres them (a recapture with where its texts' words sit). Nothing stands side by side.",
+    "why": "Målinger (a Compose screen, no ids but the tabs', told apart by its selected tab): the title in the bar at its start, as the app draws it in its header band. The search field is named by the words the app shows in it (Søg lokation), never by the English description its icon and the whole field give (Search), which the view hides (it would name no field over the words drawn in it all the same) and which shows nowhere. The two lines about the location the owner has not shared are centred, as the app centres them (a recapture with where its texts' words sit). Nothing stands side by side.",
     "fixture": "observations.xml",
     "screen": "dmi-observations",
     "secure": false,

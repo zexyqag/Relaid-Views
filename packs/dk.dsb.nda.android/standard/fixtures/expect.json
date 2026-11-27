@@ -70,7 +70,7 @@
     ]
   },
   {
-    "why": "Departures, signed out (a recapture with where its texts' words sit): its title in the page, the app's own heading over its search field, the tabs with their icons. The field is named by the words the app draws in it (Search for station or stop), not by the bare Search the app also gives the whole field as a description, which is left out.",
+    "why": "Departures, signed out (a recapture with where its texts' words sit): its title in the page, the app's own heading over its search field, the tabs with their icons. The field is named by the words the app draws in it (Search for station or stop), never by the bare Search the app also gives the whole field as a description, which the view hides (it would name no field over the words drawn in it all the same) and which shows nowhere.",
     "fixture": "departures.xml",
     "screen": "dsb-departures",
     "secure": false,

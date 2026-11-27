@@ -25,7 +25,7 @@
     }
   },
   {
-    "why": "The first of the getting-started steps (tracking and analysis; a recapture, the app giving no character locations): its title, larger than its body text on one line, stays in the page at its start; Show more, a small control at the start of its line, is drawn at its own width there; the app's segmented bar over Continue is a meter named Step at 1 of 3 (its own words, 1 of 3, only repeated where it stands, so left out); Continue, filled in the app's navy across the window, sits in the bar along the bottom as the app draws it, filled in the primary tone, across its line. Nothing stands beside anything.",
+    "why": "The first of the getting-started steps (tracking and analysis; a recapture, the app giving no character locations): its title, larger than its body text on one line, stays in the page at its start; Show more, a small control at the start of its line, is drawn at its own width there; the app's segmented bar over Continue is a meter named Step at 1 of 3 (its own words, 1 of 3, say only where it stands, which names no meter: left out, the view names it where the app names it nowhere); Continue, filled in the app's navy across the window, sits in the bar along the bottom as the app draws it, filled in the primary tone, across its line. Nothing stands beside anything.",
     "fixture": "tracking.xml",
     "screen": "rejseplan-onboarding",
     "secure": false,
@@ -39,6 +39,9 @@
     "hides": [
       "1 of 3"
     ],
+    "values": {
+      "Step": "1 of 3"
+    },
     "sizes": {
       "Enable tracking and analysis": "larger",
       "Help us improve our services by allowing the app to analyze your data anonymously. For more information, see our Privacy Policy.": "body"
