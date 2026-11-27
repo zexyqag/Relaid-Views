@@ -217,6 +217,10 @@ def type_ok(v, t):
         return is_int(v)
     if base == "map":
         return isinstance(v, dict) and all(isinstance(x, str) or x is None for x in v.values())
+    if base == "rows":
+        return isinstance(v, list)
+    if base == "shares":
+        return isinstance(v, dict) and all(is_int(x) for x in v.values())
     if isinstance(base, list):
         return isinstance(v, list) and all(isinstance(x, dict) for x in v)
     if isinstance(base, tuple):
@@ -436,10 +440,38 @@ EXPECT = {
     "why": "str?", "fixture": "str", "screen": "str?", "secure": "bool", "title": "str?",
     "shows": "strs", "hides": "strs", "actions": "strs", "options": "strs", "tabs": "strs",
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
-    "avatars": "strs", "headings": "strs", "sizes": "map",
+    "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
+# Parts the app draws side by side (Relaid's relaid.json frames.arrangement): a row holds 2 to CELLS_MOST cells, and a cell takes
+# 1 to SHARE_MOST shares of its row, a fixture's shares saying only those that are not 1.
+CELLS_MOST = 4
+SHARE_MOST = 4
+
+
+def rows_problems(rows):
+    """What is wrong with a fixture's rows: each a row of 2 to CELLS_MOST cells, a cell a label (null for a part with no words) or a
+    stack of 2 or more items, an item a label or a row. Yields the problems found."""
+    def label(x):
+        return x is None or isinstance(x, str)
+
+    def row(r, where):
+        if not isinstance(r, list) or not 2 <= len(r) <= CELLS_MOST:
+            yield f"{where} must be a row of 2 to {CELLS_MOST} cells"
+            return
+        for j, cell in enumerate(r):
+            if label(cell):
+                continue
+            if not isinstance(cell, list) or len(cell) < 2:
+                yield f"{where} cell {j + 1} must be a label, or a stack of 2 or more"
+                continue
+            for k, item in enumerate(cell):
+                if not label(item):
+                    yield from row(item, f"{where} cell {j + 1} item {k + 1}")
+
+    for i, r in enumerate(rows):
+        yield from row(r, f"row {i + 1}")
 
 
 def check_fixtures(d, names, p):
@@ -478,6 +510,13 @@ def check_fixtures(d, names, p):
         for label, step in sizes.items() if isinstance(sizes, dict) else []:
             if step not in SIZES:
                 p.mistake(at, f"sizes: '{label}' is drawn at no size Relaid knows ('{step}'; one of {', '.join(SIZES)})")
+        if isinstance(c.get("rows"), list):
+            for m in rows_problems(c["rows"]):
+                p.mistake(at, f"rows: {m}")
+        shares = c.get("shares")
+        for label, share in shares.items() if isinstance(shares, dict) else []:
+            if not 2 <= share <= SHARE_MOST:
+                p.mistake(at, f"shares: '{label}' takes {share} shares (2 to {SHARE_MOST}: a cell that takes one is not listed)")
         if not FIXTURE_NAME.fullmatch(name) or not (fx / name).is_file():
             p.mistake(at, f"no fixture '{name}'")
         if isinstance(c.get("screen"), str) and c["screen"] not in names:
@@ -682,17 +721,24 @@ def self_test():
     # The view names a phone refuses for a pack (Relaid's own views), and some it takes.
     names = {"plain": False, "pictures": False, "video": False, "Full": False, "full": True, "generic": True, "lite-2": True}
     named = [f"a pack called '{n}': expected the phone to {'accept' if ok else 'refuse'} it" for n, ok in names.items() if (view_name_problem(n) is None) != ok]
-    for w in wrong + named:
+    # A fixture's rows, well formed and not: a row of 2 to CELLS_MOST cells, a stack of 2 or more, which may hold a row.
+    shapes = [
+        ([["A", "B"]], True), ([["A", ["B", "C"]], ["D", "E"]], True), ([["A", ["B", ["C", "D"]]]], True), ([[None, "B"]], True), ([], True),
+        ([["A"]], False), ([["A", "B", "C", "D", "E"]], False), ([["A", ["B"]]], False), ([["A", 3]], False), ([["A", ["B", ["C"]]]], False),
+    ]
+    shaped = [f"rows {r}: expected them {'well formed' if ok else 'refused'}" for r, ok in shapes if (not list(rows_problems(r))) != ok]
+    for w in wrong + named + shaped:
         print("conformance:", w)
-    print(f"{len(cases) - len(wrong)} of {len(cases)} conformance cases agree, and {len(names) - len(named)} of {len(names)} view names")
-    return 1 if wrong or named else 0
+    print(f"{len(cases) - len(wrong)} of {len(cases)} conformance cases agree, {len(names) - len(named)} of {len(names)} view names, "
+          f"and {len(shapes) - len(shaped)} of {len(shapes)} fixture rows")
+    return 1 if wrong or named or shaped else 0
 
 
 def main():
     ap = argparse.ArgumentParser(description="Check the packs and build index.json.")
     ap.add_argument("--write", action="store_true", help="write index.json")
     ap.add_argument("--base", help="git ref to compare versions against (a pull request's target)")
-    ap.add_argument("--self-test", action="store_true", help="run tools/conformance.json, and the view names no pack may take")
+    ap.add_argument("--self-test", action="store_true", help="run tools/conformance.json, the view names no pack may take, and fixture rows' shapes")
     args = ap.parse_args()
     if args.self_test:
         return self_test()

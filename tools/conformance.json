@@ -1781,6 +1781,100 @@
       },
       "phone": false,
       "check": false
+    },
+    {
+      "why": "a part that says its layout: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:send",
+                "as": "action",
+                "layout": "row"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a part that says its share: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:send",
+                "as": "action",
+                "share": 2
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a part that says its align: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:send",
+                "as": "action",
+                "align": "center"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a part that says its place: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "parts": [
+              {
+                "select": "id:send",
+                "as": "action",
+                "place": "top"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen that says its layout: arrangement is measured from the app, never a view's",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "layout": "row"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
     }
   ]
 }

@@ -163,7 +163,11 @@ them. With the app shared and in front on a host, save one with
 `adb shell dumpsys activity service relaid.host/.RelaidAccessibilityService tree | sed -n '/<snapshot/,/<\/snapshot>/p' > packs/<app>/<view>/fixtures/<name>.xml`. Next to them, `expect.json` says what the pack must make of each: which screen applies (`screen`), `secure`,
 `title`, `actions`, `options`, `tabs`, `slides`, `gestures` (the controls Relaid swipes), `fields` (label to keyboard),
 `keypad`, `progress`, `hero`, `avatars`, `headings`, `sizes` (label to the step the app draws it at: small, body,
-large, larger or largest, `body` for none; only texts, headings and the screen's title), and labels it `shows` or `hides`. Relaid's tests run every pack's fixtures through
+large, larger or largest, `body` for none; only texts, headings and the screen's title), `rows` (every row of parts the app
+draws side by side, in reading order: a list of its cells, each a label, or a list for a stack of parts one above the other,
+which may hold a row; `[]` for none), `shares` (a cell's label to its share of its row, 2 to 4, where it is not 1; a stack's by
+its first part), and labels it `shows` or `hides`. Rows and shares are measured from the app's own boxes, never set by a pack;
+with either key, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
 its real pipeline, so a change to Relaid or to a pack that breaks a screen shows up before anyone
 installs it. Relaid itself knows no app; this is where that knowledge lives.
 

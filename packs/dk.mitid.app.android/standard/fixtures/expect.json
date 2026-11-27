@@ -1,6 +1,6 @@
 [
   {
-    "why": "PIN: masked progress read from the app's own indicator (counts only, never digits)",
+    "why": "PIN: masked progress read from the app's own indicator (counts only, never digits). Its keys stand as the app draws them (no full digit pad, so no keypad of Relaid's): three side by side, then 0 and Delete, every cell alike; nothing else of the screen stands beside anything.",
     "fixture": "pin.xml",
     "screen": "mitid-pin",
     "secure": true,
@@ -8,7 +8,18 @@
       "filled": 3,
       "total": 6,
       "counted": false
-    }
+    },
+    "rows": [
+      [
+        "1",
+        "2",
+        "3"
+      ],
+      [
+        "0",
+        "Delete"
+      ]
+    ]
   },
   {
     "why": "Every other screen is marked secure by the catch-all recipe (MitID is secure throughout)",
@@ -22,7 +33,8 @@
     "sizes": {
       "Ready for use": "larger",
       "You approve here – e.g. when you are logging into borger.dk or your bank.": "body"
-    }
+    },
+    "rows": []
   },
   {
     "why": "The start screen, secure like every MitID screen; the view's skin (MitID's colours, small corners, a plain header, outlined cards) reaches it whole, as it reaches every screen of the app (Relaid's fixture test checks the skin on each fixture). Its title on 96 px lines against its body text's 72 (three to a paragraph): larger, the body text body.",
@@ -35,7 +47,8 @@
     "sizes": {
       "Activate your MitID": "larger",
       "Is it the first time you use MitID?": "body"
-    }
+    },
+    "rows": []
   },
   {
     "why": "The approve step of a login in code mode (texts replaced). MitID's approve control is a slider that also takes a click; it shows as the screen's action, needing a deliberate slide, with MitID's own label. The service's name and the heading under it on 96 px lines against the body text's 72: half again as large, as measured from the app's own boxes.",
@@ -52,7 +65,8 @@
       "Service One": "larger",
       "Signer": "larger",
       "Wants you to log on": "body"
-    }
+    },
+    "rows": []
   },
   {
     "why": "The approve step in MitID 3.8 (texts replaced): the slider is no longer clickable and holds no Button, and a click on its thumb does nothing (tried, 2026-11-26). It shows as the screen's action in MitID's own word, a slide the person drags, which Relaid performs as a swipe across the slider (the pack's touch permission; allowed on a secure screen only for a control the app names, behind a slide). The service's name (the screen's title) and the heading under it are drawn on 96 px lines against the one line of body text's 84, so both a step above it (large), as the app's own boxes say (sizes hold on secure screens: no view sets them).",
@@ -72,6 +86,7 @@
       "Service One": "large",
       "Wants you to log on": "large",
       "Signer": "body"
-    }
+    },
+    "rows": []
   }
 ]

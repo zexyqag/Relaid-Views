@@ -1,6 +1,6 @@
 [
   {
-    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials",
+    "why": "Home: Send and Request as actions, QR in the overflow, the bottom navigation as tabs, contacts with initials. Its tiles stand as the app draws them, from its own boxes: the to-do tile beside the first two contacts, one above the other, then the other two side by side, every cell alike (no shares); the promotion with its two buttons inside it, and Profile, given after the page though drawn over it, stand where they are.",
     "fixture": "landing.xml",
     "screen": "mobilepay-home",
     "secure": false,
@@ -26,6 +26,19 @@
       "Contact Two",
       "Contact Three",
       "Contact Four"
+    ],
+    "rows": [
+      [
+        "To-do list, Nothing to follow up!",
+        [
+          "Contact One",
+          "Contact Two"
+        ]
+      ],
+      [
+        "Contact Three",
+        "Contact Four"
+      ]
     ]
   },
   {
@@ -39,7 +52,8 @@
       "Recipient One",
       "Recipient Two",
       "Recipient Three"
-    ]
+    ],
+    "rows": []
   },
   {
     "why": "Amount: labelled fields with a number keyboard, the amount as hero, Next, the calculator keys hidden",
@@ -62,7 +76,8 @@
       "=",
       "Back",
       "Send to"
-    ]
+    ],
+    "rows": []
   },
   {
     "why": "Confirm: the amount as title and hero, the swipe-to-send as a slide in the app's own words, nothing hidden",
@@ -77,7 +92,8 @@
     "shows": [
       "Recipient One",
       "Mobile 00000000"
-    ]
+    ],
+    "rows": []
   },
   {
     "why": "PIN lock (a real capture): a keypad, four counted dots in place of the code field, Forgot code? kept",
@@ -96,6 +112,7 @@
     ],
     "shows": [
       "Forgot code?"
-    ]
+    ],
+    "rows": []
   }
 ]
