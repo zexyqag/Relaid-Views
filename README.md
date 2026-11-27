@@ -175,7 +175,8 @@ most), `tiles` (a control's label to the shape of the card the app draws it as, 
 hundredths of the window's width, 1 to 100 wide and 1 to 200 tall), `pad` (the keypad's 12 places as the app lays out its own
 pad, each the label of the key or of the app's part there, null for an empty one; null for a keypad laid out in Relaid's own
 order), `entry` (the code entry's name, null for none), and labels it `shows` or `hides`. Rows, shares, aligns, places, tiles
-and a keypad's places are measured from the app's own boxes, never set by a pack; with `rows` or `shares`, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
+and a keypad's places are measured from the app's own boxes (and from where it draws a text's words, line by line, which a host
+writes as a node's `drawn-lines` for a text whose box is wider than its words: keep it in a capture), never set by a pack; with `rows` or `shares`, the screen's rows and shares must be exactly those. Relaid's tests run every pack's fixtures through
 its real pipeline, so a change to Relaid or to a pack that breaks a screen shows up before anyone
 installs it. Relaid itself knows no app; this is where that knowledge lives.
 
