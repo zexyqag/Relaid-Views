@@ -1,0 +1,45 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.widget.ScrollView" resource-id="menu" bounds="[0,272][1080,1286]">
+        <node class="android.widget.TextView" text="User ID" bounds="[96,344][349,440]" heading="true"/>
+        <node class="android.view.View" bounds="[0,488][1080,887]" clickable="true">
+         <node class="android.view.View" content-desc="Change your user ID. You must know your current user ID to change it" bounds="[0,488][1080,887]"/>
+         <node class="android.view.View" bounds="[96,560][668,656]"/>
+         <node class="android.view.View" bounds="[96,668][912,812]"/>
+         <node class="android.widget.Button" bounds="[0,488][1080,887]"/>
+        </node>
+        <node class="android.view.View" bounds="[0,887][1080,1286]" clickable="true">
+         <node class="android.view.View" content-desc="View your user ID. You must use your passport to see your user ID" bounds="[0,887][1080,1286]"/>
+         <node class="android.view.View" bounds="[96,959][596,1055]"/>
+         <node class="android.view.View" bounds="[96,1067][912,1211]"/>
+         <node class="android.widget.Button" bounds="[0,887][1080,1286]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,0][1080,272]">
+        <node class="android.view.View" bounds="[0,80][1080,272]">
+         <node class="android.view.View" bounds="[12,104][345,248]" clickable="true">
+          <node class="android.view.View" content-desc="Back to Profile" bounds="[12,104][345,248]"/>
+          <node class="android.view.View" bounds="[156,140][303,212]"/>
+          <node class="android.widget.Button" bounds="[12,104][345,248]"/>
+         </node>
+         <node class="android.view.View" bounds="[468,104][612,248]"/>
+         <node class="android.view.View" bounds="[924,104][1068,248]">
+          <node class="android.view.View" resource-id="closeButton" bounds="[924,104][1068,248]" clickable="true">
+           <node class="android.view.View" content-desc="Close" bounds="[924,104][1068,248]"/>
+           <node class="android.widget.Button" bounds="[924,104][1068,248]"/>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

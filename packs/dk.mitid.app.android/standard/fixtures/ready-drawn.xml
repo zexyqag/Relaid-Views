@@ -1,0 +1,31 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="dk.mitid.app.android.activity.MainActivity">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.widget.ScrollView" bounds="[0,272][1080,2256]">
+       <node class="android.view.View" content-desc="Learn how to approve using your MitID app" bounds="[240,287][840,887]" clickable="true"/>
+       <node class="android.widget.TextView" text="Ready for use" bounds="[0,973][1080,1069]" drawn-lines="[263,973][646,1069]" heading="true"/>
+       <node class="android.widget.TextView" text="You approve here – e.g. when you are logging into Service One or your bank." bounds="[86,1093][994,1237]" drawn-lines="[141,1093][940,1165] [164,1165][918,1237]"/>
+      </node>
+      <node class="android.view.View" bounds="[0,0][1080,272]">
+       <node class="android.view.View" bounds="[0,80][1080,272]">
+        <node class="android.view.View" bounds="[60,104][243,248]"/>
+        <node class="android.view.View" bounds="[468,104][612,248]"/>
+        <node class="android.view.View" bounds="[760,104][1068,248]">
+         <node class="android.view.View" resource-id="settingsButton" bounds="[760,104][1068,248]" clickable="true">
+          <node class="android.view.View" content-desc="Menu" bounds="[760,104][1068,248]"/>
+          <node class="android.view.View" bounds="[802,140][924,212]"/>
+          <node class="android.view.View" bounds="[924,104][1068,248]"/>
+          <node class="android.widget.Button" bounds="[760,104][1068,248]"/>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

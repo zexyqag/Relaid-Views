@@ -2,8 +2,8 @@
   "app": "dk.mitid.app.android",
   "view": "standard",
   "name": "MitID",
-  "version": 9,
-  "description": "MitID's own colours in light and dark (its blue, white, navy and greys), small corners, a plain header and outlined cards; codes as masked progress dots (how many digits, never which); every MitID screen marked secure, so no view can hide anything there; the approve slider as a slide you drag, in MitID's own word, which Relaid then swipes (the touch permission: MitID 3.8 takes no click there).",
+  "version": 10,
+  "description": "MitID's own colours (its blue, white, navy and greys), small corners, a plain header and outlined cards; its ready and PIN screens in its blue; close, help, menu and next icons, menu rows with their lines, info boxes as notes, the approve card; every screen secure; codes as masked dots; the approve slider as a slide (touch); On the phone where it scans a passport or asks for a fingerprint.",
   "permissions": [
     "touch"
   ]

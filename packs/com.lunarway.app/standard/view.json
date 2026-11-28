@@ -40,7 +40,8 @@
         },
         {
           "select": "is:clickable & nth:2 & parent(nth:3 & parent(class:ScrollView))",
-          "tone": "secondary"
+          "tone": "secondary",
+          "phone": "app"
         }
       ]
     },

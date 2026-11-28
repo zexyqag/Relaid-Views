@@ -1,0 +1,32 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" bounds="[0,0][1080,2400]">
+   <node class="android.view.View" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" content-desc="Close sheet" bounds="[0,0][1080,720]" clickable="true"/>
+      <node class="android.view.View" bounds="[0,720][1080,2400]">
+       <node class="android.view.View" bounds="[0,720][1080,2400]">
+        <node class="android.view.View" bounds="[0,720][1080,2256]">
+         <node class="android.view.View" bounds="[0,864][1080,2256]" collection="true">
+          <node class="android.widget.TextView" text="How to enter one-time code" bounds="[96,864][878,960]" heading="true"/>
+          <node class="android.widget.TextView" text="Find the 4 digit one-time passcode on the screen where you entered your MitID user ID." bounds="[162,1008][972,1214]"/>
+          <node class="android.widget.TextView" text="Enter the code here in the MitID app on the screen &quot;Enter the one-time passcode&quot;." bounds="[162,1262][972,1468]" drawn-lines="[162,1262][937,1327] [162,1327][888,1399] [162,1399][395,1468]"/>
+          <node class="android.widget.TextView" text="Approve with MitID." bounds="[162,1516][589,1578]"/>
+          <node class="android.widget.TextView" text="Be sure to read what you are approving with MitID. If you change your mind, or if you have not started the approval process yourself, press &quot;Cancel&quot;." bounds="[96,1626][984,1914]" drawn-lines="[96,1626][935,1698] [96,1698][966,1770] [96,1770][816,1842] [96,1842][794,1914]"/>
+         </node>
+         <node class="android.view.View" bounds="[96,2010][984,2256]">
+          <node class="android.view.View" bounds="[96,2010][984,2160]" clickable="true">
+           <node class="android.widget.TextView" text="OK" bounds="[144,2058][936,2113]" drawn-lines="[510,2058][571,2113]"/>
+           <node class="android.widget.Button" bounds="[96,2010][984,2160]"/>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

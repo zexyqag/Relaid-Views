@@ -57,15 +57,16 @@ PART = {"select": "str", "as": "str?", "label": "str?", "tone": "str?", "confirm
         "keyboard": "str?", "scroll": "str?", "parts": "str?", "press": "str?", "total": "int?", "phone": "str?"}
 PALETTE = {"accent": "str?", "background": "str?", "surface": "str?", "text": "str?", "muted": "str?", "onAccent": "str?"}
 THEME = {"accent": "str?", "light": (PALETTE,), "dark": (PALETTE,), "corners": "str?", "header": "str?", "cards": "str?"}
-SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "phone": "str?", "parts": [PART]}
+SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "phone": "str?",
+          "page": "str?", "parts": [PART]}
 PACK = {"theme": (THEME,), "screens": [SCREEN]}
-# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label, a tone or a
-# phone where the part stands).
+# Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label, a tone, a
+# phone or an icon where the part stands).
 ROLES = {
-    None: {"label", "tone", "phone"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
-    "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform", "phone"},
-    "option": {"label", "tone", "phone"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
-    "unread": set(),
+    None: {"label", "tone", "phone", "icon"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
+    "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform", "phone", "icon"},
+    "option": {"label", "tone", "phone", "icon"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
+    "card": set(), "note": set(), "unread": set(),
 }
 SINGLE = {"title", "hero", "list", "pin"}
 OPTIONS = ("label", "tone", "confirm", "perform", "icon", "keyboard", "scroll", "parts", "press", "total", "phone")
@@ -83,6 +84,19 @@ CORNERS = ("square", "rounded", "round")
 HEADERS = ("bar", "plain", "accent")
 CARDS = ("outlined", "filled", "flat")
 ICONS = ("home", "list", "people", "person", "wallet", "card", "search", "settings", "bell", "chart", "star", "chat", "grid")
+# Relaid's icons a view may name on a control (its relaid.json frames.controlIcons), drawn beside its words, never instead of them:
+# before them (ICONS_START) or after them (ICONS_END). Never on a slide or a swipe, nor (by Relaid itself) on a control that destroys.
+ICONS_START = ("close", "help", "document", "download", "external")
+ICONS_END = ("menu", "next", "settings", "save", "remove")
+CONTROL_ICONS = ICONS_START + ICONS_END
+# The pages a screen may be drawn on (relaid.json frames.skin.pages): accent, the whole page in the theme's accent, as Relaid builds
+# it from the theme for each scheme and checks it as any palette.
+PAGES = ("accent",)
+# A device's own page, the same on every device, in the light and the dark scheme (relaid.json frames.skin.own: background, surface):
+# a theme's accent with no palette for a scheme is drawn on it there, so it must reach OWN_CONTRAST (frames.skin.contrast) against both.
+OWN_LIGHT = ("#f6f7f9", "#ffffff")
+OWN_DARK = ("#0f1114", "#181b20")
+OWN_CONTRAST = 3.0
 # Relaid's reds (its relaid.json danger.light and danger.dark): a page whose background is light (black words reach more contrast
 # on it than white ones) takes the first of DANGER_LIGHT that reaches DANGER_CONTRAST against its background and its surface, a
 # dark one the first of DANGER_DARK.
@@ -125,6 +139,20 @@ def accent_problem(accent):
     return None if is_color(accent) else "is not #RRGGBB"
 
 
+def own_page_problem(accent, dark):
+    """Why a theme's accent cannot be drawn on a device's own page in the dark or the light scheme (Relaid's Skin.ownPageProblem), or None."""
+    bg, surface = OWN_DARK if dark else OWN_LIGHT
+    c = min(contrast(accent, bg), contrast(accent, surface))
+    if c >= OWN_CONTRAST:
+        return None
+    return "on a device's own %s page is %.2f:1, needs %.1f:1 (give that scheme a palette)" % ("dark" if dark else "light", c, OWN_CONTRAST)
+
+
+def words_on(c):
+    """White or near-black words on a colour, as every renderer picks them: white where it reaches at least the contrast black would."""
+    return "#ffffff" if contrast(c, "#ffffff") >= contrast(c, "#000000") else "#0b1220"
+
+
 def palette_problem(pal, theme_accent):
     parts = [(k, pal.get(k)) for k in ("background", "surface", "text", "muted")]
     for k, v in parts:
@@ -157,24 +185,73 @@ def palette_problem(pal, theme_accent):
 
 
 def theme_problems(t):
-    """Each part of a theme the phone ignores, with why, in Relaid's order."""
+    """Each part of a theme the phone ignores, with why, in Relaid's order: its accent (not a colour, or one that does not read on a
+    device's own page in a scheme no palette of the theme's is applied in), then its palettes."""
     out = []
+    palettes = {scheme: palette_problem(t[scheme], t.get("accent")) if t.get(scheme) is not None else None for scheme in ("light", "dark")}
     if t.get("accent") is not None:
         why = accent_problem(t["accent"])
+        if why is None:
+            for dark, scheme in ((False, "light"), (True, "dark")):
+                if t.get(scheme) is None or palettes[scheme] is not None:
+                    why = own_page_problem(t["accent"], dark)
+                    if why:
+                        break
         if why:
             out.append(("theme.accent", why))
     for scheme in ("light", "dark"):
-        if t.get(scheme) is not None:
-            why = palette_problem(t[scheme], t.get("accent"))
+        if palettes[scheme]:
+            out.append((f"theme.{scheme}", palettes[scheme]))
+    return out
+
+
+def sanitize(t):
+    """The theme the phone applies (Relaid's Skin.sanitize): its parts the rules keep, a palette with the theme's accent where it gives
+    none of its own; {"accent": None, "light": None, "dark": None} for nothing kept."""
+    bad = {k for k, _ in theme_problems(t)}
+    borrowed = t.get("accent") if t.get("accent") is not None and accent_problem(t["accent"]) is None else None
+    out = {"accent": t.get("accent") if "theme.accent" not in bad else None}
+    for scheme in ("light", "dark"):
+        p = t.get(scheme)
+        out[scheme] = dict(p, accent=p.get("accent") or borrowed) if p is not None and f"theme.{scheme}" not in bad else None
+    return out
+
+
+def accent_page_problem(t):
+    """Why a screen of a view with theme [t] cannot be drawn on a page in the accent (Relaid's Skin.accentPage), or None: for each scheme,
+    its applied palette's accent (else the theme's, where it is a colour, whether or not it reads on a device's own page, as the page is
+    drawn on none) as the page, its onAccent (else white or near-black) as the words, checked as any palette."""
+    if not isinstance(t, dict):
+        return "the view has no theme to draw the page in"
+    s = sanitize(t)
+    borrowed = t.get("accent") if accent_problem(t.get("accent")) is None else None
+    for scheme in ("light", "dark"):
+        p = s[scheme]
+        accent = (p or {}).get("accent") or borrowed
+        if accent is None:
+            return f"the {scheme} scheme has no accent to draw the page in"
+        words = (p.get("onAccent") if p is not None and p.get("accent") == accent else None) or words_on(accent)
+        why = palette_problem({"accent": words, "background": accent, "surface": accent, "text": words, "muted": words, "onAccent": accent}, None)
+        if why:
+            return f"the {scheme} page in the accent: {why}"
+    return None
+
+
+def page_problems(pack):
+    """Each screen whose page the phone draws otherwise than it asks (the theme's own instead), with why: screens.<name>.page."""
+    out = []
+    for s in (pack.get("screens") or []) if isinstance(pack, dict) else []:
+        if isinstance(s, dict) and s.get("page") == "accent":
+            why = accent_page_problem(pack.get("theme"))
             if why:
-                out.append((f"theme.{scheme}", why))
+                out.append((f"screens.{s.get('name')}.page", why))
     return out
 
 
 def ignored_theme_parts(pack):
-    """The theme parts the phone ignores in a pack (for tools/conformance.json)."""
+    """The theme parts the phone ignores in a pack, and the screens whose page it draws otherwise (for tools/conformance.json)."""
     t = pack.get("theme") if isinstance(pack, dict) else None
-    return sorted(key for key, _ in theme_problems(t)) if isinstance(t, dict) else []
+    return sorted(([key for key, _ in theme_problems(t)] if isinstance(t, dict) else []) + [key for key, _ in page_problems(pack)])
 
 class Problems:
     def __init__(self):
@@ -361,6 +438,8 @@ def check_pack(app, pack, where, p):
                 p.refused(where, f"unknown theme {key} '{theme[key]}' (use: {', '.join(allowed)})")
         for key, why in theme_problems(theme):
             p.mistake(where, f"{key} {why} (the phone ignores it)")
+    for key, why in page_problems(pack):
+        p.mistake(where, f"{key}: {why} (the phone draws the screen in the theme's own)")
     names = []
     for s in pack["screens"]:
         name = s["name"]
@@ -375,6 +454,11 @@ def check_pack(app, pack, where, p):
                 p.refused(at, f"unknown phone '{s['phone']}' (use: {', '.join(PHONES)})")
             if not s.get("when"):
                 p.refused(at, "a screen with no when takes no phone: it would say so of every screen of the app")
+        if s.get("page") is not None:
+            if s["page"] not in PAGES:
+                p.refused(at, f"unknown page '{s['page']}' (use: {', '.join(PAGES)})")
+            if not s.get("when"):
+                p.refused(at, "a screen with no when takes no page: it would draw every screen of the app so")
         if not SCREEN_NAME.fullmatch(name):
             p.mistake(at, "name should be lowercase letters, digits and dashes (it is the screen's stable id)")
         shown = s.get("displayName")
@@ -400,17 +484,20 @@ def check_pack(app, pack, where, p):
             for opt in OPTIONS:
                 if x.get(opt) is not None and opt not in ROLES[role]:
                     p.refused(pat, f"'{role or 'label'}' takes no '{opt}'")
-            if role is None and x.get("label") is None and x.get("tone") is None and x.get("phone") is None:
-                p.refused(pat, "a rule without a role needs a label, a tone or a phone")
+            if role is None and x.get("label") is None and x.get("tone") is None and x.get("phone") is None and x.get("icon") is None:
+                p.refused(pat, "a rule without a role needs a label, a tone, a phone or an icon")
             label = x.get("label")
             if label is not None and (not label.strip() or utf16_len(label) > 60 or "\n" in label):
                 p.refused(pat, "a label must be one line, at most 60 characters")
-            for opt, allowed in (("tone", TONES), ("confirm", CONFIRMS), ("perform", PERFORMS), ("icon", set(ICONS)),
+            icons = set(ICONS) if role == "tab" else set(CONTROL_ICONS)
+            for opt, allowed in (("tone", TONES), ("confirm", CONFIRMS), ("perform", PERFORMS), ("icon", icons),
                                  ("keyboard", KEYBOARDS), ("scroll", SCROLLS), ("phone", set(PHONES))):
                 if x.get(opt) is not None and x[opt] not in allowed:
                     p.refused(pat, f"unknown {opt} '{x[opt]}' (use: {', '.join(sorted(allowed))})")
             if x.get("phone") is not None and protective(x):
                 p.refused(pat, "a slide or a swipe takes no phone: its own deliberate slide guards it")
+            if x.get("icon") is not None and protective(x):
+                p.refused(pat, "a slide or a swipe takes no icon: it is drawn as Relaid's own slide")
             if x.get("total") is not None and not 1 <= x["total"] <= 12:
                 p.refused(pat, "total must be 1 to 12")
             for opt in ("select", "parts", "press"):
@@ -460,7 +547,7 @@ EXPECT = {
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
     "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "tones": "words", "pad": "pad", "entry": "str?",
-    "values": "map", "phones": "words", "phone": "str?",
+    "values": "map", "phones": "words", "phone": "str?", "icons": "words", "boxes": "words", "page": "str?",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -480,6 +567,8 @@ TITLE_PLACES = ("bar", "page")
 CONTROL_PLACES = ("top", "bottom", "back")
 TILE_TALLEST = 200
 PAD = 12
+# The boxes the app draws parts in, as a view says (relaid.json frames.styles card and note), as a fixture's boxes expect them.
+BOXES = ("card", "note")
 
 
 def rows_problems(rows, fit=()):
@@ -586,6 +675,16 @@ def check_fixtures(d, names, p):
         for label, reason in phones.items() if isinstance(phones, dict) else []:
             if reason not in PHONES + ("none",):
                 p.mistake(at, f"phones: '{label}' needs the phone for a reason Relaid does not know ('{reason}'; one of {', '.join(PHONES)} or none)")
+        icons = c.get("icons")
+        for label, icon in icons.items() if isinstance(icons, dict) else []:
+            if icon not in CONTROL_ICONS + ("none",):
+                p.mistake(at, f"icons: '{label}' is drawn with an icon Relaid does not have for a control ('{icon}'; one of {', '.join(CONTROL_ICONS)} or none)")
+        boxes = c.get("boxes")
+        for label, box in boxes.items() if isinstance(boxes, dict) else []:
+            if box not in BOXES + ("none",):
+                p.mistake(at, f"boxes: '{label}' is drawn in a box Relaid does not know ('{box}'; one of {', '.join(BOXES)} or none)")
+        if isinstance(c.get("page"), str) and c["page"] not in PAGES:
+            p.mistake(at, f"page: the screen is drawn on a page Relaid does not know ('{c['page']}'; one of {', '.join(PAGES)}, or null)")
         if isinstance(c.get("phone"), str) and c["phone"] not in PHONES:
             p.mistake(at, f"phone: the screen needs the phone for a reason Relaid does not know ('{c['phone']}'; one of {', '.join(PHONES)}, or null)")
         if isinstance(c.get("pad"), list) and len(c["pad"]) != PAD:
@@ -718,6 +817,13 @@ FORMAT_SINCE = {
     "rule:action.phone": 4,
     "rule:option.phone": 4,
     "screens.phone": 4,
+    # The real look: a screen's page in the accent, Relaid's icons on controls, the app's boxes as cards and notes.
+    "screens.page": 5,
+    "rule:none.icon": 5,
+    "rule:action.icon": 5,
+    "rule:option.icon": 5,
+    "screens.parts.as=card": 5,
+    "screens.parts.as=note": 5,
 }
 SELECTOR_PATHS = ("select", "when", "parts", "press")
 

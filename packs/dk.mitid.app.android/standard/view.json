@@ -4,7 +4,7 @@
     "light": {
       "background": "#ffffff",
       "surface": "#ffffff",
-      "text": "#333333",
+      "text": "#1c2a4a",
       "muted": "#687484",
       "onAccent": "#ffffff"
     },
@@ -22,16 +22,173 @@
   },
   "screens": [
     {
-      "name": "mitid-pin",
-      "displayName": "PIN entry",
+      "name": "mitid-code",
+      "displayName": "One-time code",
       "when": [
-        "desc~:digits entered"
+        "desc~:digits entered",
+        "id:digit-field-1"
       ],
       "secure": true,
       "parts": [
         {
           "select": "desc~:digits entered",
           "as": "pin"
+        },
+        {
+          "select": "id:helpButton",
+          "icon": "help"
+        },
+        {
+          "select": "id:closeButton",
+          "icon": "close"
+        }
+      ]
+    },
+    {
+      "name": "mitid-pin",
+      "displayName": "PIN entry",
+      "when": [
+        "desc~:digits entered"
+      ],
+      "secure": true,
+      "page": "accent",
+      "parts": [
+        {
+          "select": "desc~:digits entered",
+          "as": "pin"
+        },
+        {
+          "select": "is:clickable & nth:2 & has(class:android.widget.Button)",
+          "icon": "close"
+        },
+        {
+          "select": "is:clickable & nth:10 & parent(has(nth:12 & is:clickable))",
+          "phone": "fingerprint"
+        }
+      ]
+    },
+    {
+      "name": "mitid-ready",
+      "displayName": "Ready for use",
+      "when": [
+        "id:settingsButton",
+        "is:clickable & nth:1 & parent(class:android.widget.ScrollView)"
+      ],
+      "secure": true,
+      "page": "accent",
+      "parts": [
+        {
+          "select": "id:settingsButton",
+          "icon": "menu"
+        }
+      ]
+    },
+    {
+      "name": "mitid-welcome",
+      "displayName": "Activate your MitID",
+      "when": [
+        "id:settingsButton",
+        "id:nextButton"
+      ],
+      "secure": true,
+      "parts": [
+        {
+          "select": "id:settingsButton",
+          "icon": "menu"
+        },
+        {
+          "select": "id:nextButton",
+          "icon": "next"
+        }
+      ]
+    },
+    {
+      "name": "mitid-request",
+      "displayName": "Approve, approved and rejected",
+      "when": [
+        "class:android.widget.ScrollView & has(class:android.view.View & has(is:heading))"
+      ],
+      "secure": true,
+      "parts": [
+        {
+          "select": "class:android.view.View & parent(class:android.widget.ScrollView) & has(is:heading)",
+          "as": "card"
+        }
+      ]
+    },
+    {
+      "name": "mitid-menus",
+      "displayName": "Menu and its lists",
+      "when": [
+        "id:menu"
+      ],
+      "secure": true,
+      "priority": 1,
+      "parts": [
+        {
+          "select": "id:closeButton",
+          "icon": "close"
+        }
+      ]
+    },
+    {
+      "name": "mitid-passport",
+      "displayName": "Pages that scan your passport (in English)",
+      "when": [
+        "id:closeButton",
+        "text~:scan your passport"
+      ],
+      "secure": true,
+      "priority": 1,
+      "parts": [
+        {
+          "select": "is:clickable & has(class:android.widget.TextView) & has(class:android.widget.Button)",
+          "phone": "chip",
+          "icon": "next"
+        },
+        {
+          "select": "id:closeButton",
+          "icon": "close"
+        },
+        {
+          "select": "class:android.view.View & not(is:clickable) & parent(class:android.widget.ScrollView) & has(class:android.widget.TextView) & has(class:android.view.View)",
+          "as": "note"
+        }
+      ]
+    },
+    {
+      "name": "mitid-pages",
+      "displayName": "Other pages with a close button",
+      "when": [
+        "id:closeButton"
+      ],
+      "secure": true,
+      "parts": [
+        {
+          "select": "id:nextButton",
+          "icon": "next"
+        },
+        {
+          "select": "id:closeButton",
+          "icon": "close"
+        },
+        {
+          "select": "class:android.view.View & not(is:clickable) & parent(class:android.widget.ScrollView) & has(class:android.widget.TextView) & has(class:android.view.View)",
+          "as": "note"
+        }
+      ]
+    },
+    {
+      "name": "mitid-required",
+      "displayName": "Steps you must complete",
+      "when": [
+        "id:progressRecyclerView"
+      ],
+      "secure": true,
+      "parts": [
+        {
+          "select": "id:primaryButton",
+          "icon": "next"
         }
       ]
     },

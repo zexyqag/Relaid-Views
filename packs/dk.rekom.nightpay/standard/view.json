@@ -40,6 +40,10 @@
         {
           "select": "class:android.widget.Button & not(nth:4)",
           "tone": "primary"
+        },
+        {
+          "select": "class:android.widget.ImageView & is:clickable & nth:3",
+          "phone": "app"
         }
       ]
     },
@@ -57,7 +61,8 @@
         {
           "select": "class:android.widget.ImageView & is:clickable & nth:3",
           "label": "Log in with MobilePay",
-          "tone": "primary"
+          "tone": "primary",
+          "phone": "app"
         },
         {
           "select": "class:android.widget.ImageView & is:clickable & nth:4",

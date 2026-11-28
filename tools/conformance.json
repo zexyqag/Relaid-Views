@@ -3056,6 +3056,593 @@
       "phone": true,
       "check": true,
       "format": 4
+    },
+    {
+      "why": "an icon of Relaid's beside a control's words, where it stands: format 5",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "icon": "next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 5
+    },
+    {
+      "why": "an action's and an option's icons",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "action",
+                "icon": "save"
+              },
+              {
+                "select": "id:b",
+                "as": "option",
+                "icon": "help"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 5
+    },
+    {
+      "why": "an icon with a label and a tone where a control stands",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "label": "Close",
+                "tone": "muted",
+                "icon": "close"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 5
+    },
+    {
+      "why": "an icon Relaid does not have (no ticks)",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "icon": "tick"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a tab's icon on a control",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "icon": "home"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a control's icon on a tab",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "tab",
+                "icon": "next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an icon on a slide: it is drawn as Relaid's own slide",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "confirm": "slide",
+                "icon": "next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an icon on a swipe",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "action",
+                "perform": "swipe-right",
+                "icon": "next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an icon on a field",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:x",
+                "as": "field",
+                "icon": "next"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a card and a note, the boxes the app draws parts in: format 5",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "card"
+              },
+              {
+                "select": "id:b",
+                "as": "note"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 5
+    },
+    {
+      "why": "a card takes no label",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:a",
+                "as": "card",
+                "label": "A"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a screen whose page is the accent, its colours holding in both schemes: format 5",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#0060e6",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "muted": "#687484",
+            "onAccent": "#ffffff"
+          },
+          "dark": {
+            "accent": "#9ac4ff",
+            "background": "#001c44",
+            "surface": "#001c44",
+            "text": "#ffffff",
+            "muted": "#adb5bd",
+            "onAccent": "#001c44"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 5,
+      "ignored": []
+    },
+    {
+      "why": "a page Relaid does not know",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#0060e6",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "muted": "#687484",
+            "onAccent": "#ffffff"
+          },
+          "dark": {
+            "accent": "#9ac4ff",
+            "background": "#001c44",
+            "surface": "#001c44",
+            "text": "#ffffff",
+            "muted": "#adb5bd",
+            "onAccent": "#001c44"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "dark"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a page on a screen with no when would draw every screen of the app so",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#0060e6",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "muted": "#687484",
+            "onAccent": "#ffffff"
+          },
+          "dark": {
+            "accent": "#9ac4ff",
+            "background": "#001c44",
+            "surface": "#001c44",
+            "text": "#ffffff",
+            "muted": "#adb5bd",
+            "onAccent": "#001c44"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "secure": true,
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a page in an accent no words read on (near-black on this red, 4.43:1): the phone draws the screen in the theme as it is",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#e53935"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "format": 5,
+      "ignored": [
+        "screens.x.page"
+      ]
+    },
+    {
+      "why": "a page in the accent with no theme to take it from",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "screens.x.page"
+      ]
+    },
+    {
+      "why": "a page in an accent no red of Relaid's stands out on: the phone draws the screen in the theme as it is",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#2f6fde"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "format": 5,
+      "ignored": [
+        "screens.x.page"
+      ]
+    },
+    {
+      "why": "an accent dropped only as it does not read on a device's own dark page (a navy blue, a light palette alone) still draws a page in the accent, which stands on no device's own page",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#0055aa",
+          "light": {
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "text": "#333333",
+            "muted": "#687484"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "page": "accent"
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "format": 5,
+      "ignored": [
+        "theme.accent"
+      ]
+    },
+    {
+      "why": "an accent alone, drawn on a device's own page in both schemes, reads on both",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#e53935"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "an accent alone that does not read on a device's own dark page (2.55:1): ignored, a device draws its own",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#b41730"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.accent"
+      ]
+    },
+    {
+      "why": "an accent alone that does not read on a device's own light page (1.37:1)",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#c8d4ff"
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.accent"
+      ]
+    },
+    {
+      "why": "the same accent with a palette for the scheme it fails in: checked only on the other's own page, where it reads",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#b41730",
+          "dark": {
+            "accent": "#ff8a80",
+            "background": "#0f1114",
+            "surface": "#181b20",
+            "text": "#eef1f4",
+            "muted": "#9aa4b0"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "ignored": []
+    },
+    {
+      "why": "a palette that takes the theme's accent keeps it, though the theme's own is ignored on the other scheme's own page",
+      "app": "com.example.app",
+      "pack": {
+        "theme": {
+          "accent": "#c8d4ff",
+          "dark": {
+            "background": "#0f1114",
+            "surface": "#181b20",
+            "text": "#eef1f4",
+            "muted": "#9aa4b0"
+          }
+        },
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": false,
+      "ignored": [
+        "theme.accent"
+      ]
     }
   ]
 }

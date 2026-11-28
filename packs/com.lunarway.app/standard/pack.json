@@ -2,6 +2,6 @@
   "app": "com.lunarway.app",
   "view": "standard",
   "name": "Lunar",
-  "version": 2,
-  "description": "Lunar's own colours in light and dark (near-black and white, its light grey page and white cards), round corners, a plain header and filled cards. On the intro, Apply for new account filled and Log in with MitID under it in its quieter tone, where the app draws them; the account choice named in the app's own words, which its header does not say; the country list as a list."
+  "version": 3,
+  "description": "Lunar's own colours in light and dark (near-black, white, its grey page and white cards), round corners, a plain header and filled cards. On the intro, Apply for new account filled and Log in with MitID under it in its quieter tone, where the app draws them, the latter said to use another app; the account choice named in the app's own words its header does not say; the country list as a list."
 }

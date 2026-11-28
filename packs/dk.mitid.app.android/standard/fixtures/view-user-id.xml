@@ -1,0 +1,45 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.widget.ScrollView" bounds="[0,272][1080,2007]">
+        <node class="android.view.View" bounds="[119,344][962,824]"/>
+        <node class="android.widget.TextView" text="View your user ID" bounds="[99,920][699,1016]" heading="true"/>
+        <node class="android.widget.TextView" text="To view your user ID, you must scan your passport." bounds="[99,1064][981,1208]" drawn-lines="[99,1064][972,1136] [99,1136][302,1208]"/>
+        <node class="android.view.View" bounds="[99,1256][981,1640]">
+         <node class="android.view.View" bounds="[111,1268][255,1412]"/>
+         <node class="android.widget.TextView" text="Do not share your user ID. If you suspect that someone else is aware of your user ID, you should change it." bounds="[243,1304][933,1592]" drawn-lines="[243,1304][847,1376] [243,1376][906,1448] [243,1448][849,1520] [243,1520][607,1592]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,2007][1080,2256]">
+        <node class="android.view.View" bounds="[99,2007][981,2157]" clickable="true">
+         <node class="android.widget.TextView" text="NEXT" bounds="[147,2055][837,2110]" drawn-lines="[147,2055][262,2110]"/>
+         <node class="android.widget.Button" bounds="[99,2007][981,2157]"/>
+        </node>
+       </node>
+       <node class="android.view.View" bounds="[0,0][1080,272]">
+        <node class="android.view.View" bounds="[0,80][1080,272]">
+         <node class="android.view.View" bounds="[12,104][365,248]" clickable="true">
+          <node class="android.view.View" content-desc="Back to User ID" bounds="[12,104][365,248]"/>
+          <node class="android.view.View" bounds="[156,140][323,212]"/>
+          <node class="android.widget.Button" bounds="[12,104][365,248]"/>
+         </node>
+         <node class="android.view.View" bounds="[468,104][612,248]"/>
+         <node class="android.view.View" bounds="[924,104][1068,248]">
+          <node class="android.view.View" resource-id="closeButton" bounds="[924,104][1068,248]" clickable="true">
+           <node class="android.view.View" content-desc="Close" bounds="[924,104][1068,248]"/>
+           <node class="android.widget.Button" bounds="[924,104][1068,248]"/>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>

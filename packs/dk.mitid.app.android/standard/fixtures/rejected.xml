@@ -1,0 +1,30 @@
+<snapshot package="dk.mitid.app.android" width="1080" height="2400" screen="android.view.View">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2400]">
+  <node class="android.view.ViewGroup" resource-id="dk.mitid.app.android:id/content" bounds="[0,0][1080,2400]">
+   <node class="androidx.compose.ui.platform.q1" bounds="[0,0][1080,2400]">
+    <node class="android.view.View" bounds="[0,0][1080,2400]">
+     <node class="android.view.View" bounds="[0,0][1080,2400]">
+      <node class="android.view.View" bounds="[0,0][1080,2400]">
+       <node class="android.view.View" bounds="[72,102][288,242]"/>
+       <node class="android.view.View" bounds="[0,242][1080,2256]">
+        <node class="android.widget.ScrollView" bounds="[0,242][1080,1896]">
+         <node class="android.view.View" bounds="[72,573][1008,1566]">
+          <node class="android.widget.TextView" text="Service One" bounds="[379,939][702,1035]" heading="true"/>
+          <node class="android.widget.TextView" text="Rejected" bounds="[168,1182][416,1278]" heading="true"/>
+          <node class="android.widget.TextView" text="You have rejected Service One" bounds="[168,1302][912,1470]" drawn-lines="[168,1302][647,1386] [168,1386][422,1470]"/>
+         </node>
+        </node>
+        <node class="android.view.View" bounds="[72,1896][1008,2088]">
+         <node class="android.view.View" bounds="[144,1896][936,2088]" clickable="true">
+          <node class="android.widget.TextView" text="OK" bounds="[192,1965][888,2020]" drawn-lines="[510,1965][571,2020]"/>
+          <node class="android.widget.Button" bounds="[144,1896][936,2088]"/>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</snapshot>
