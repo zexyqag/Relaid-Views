@@ -68,6 +68,10 @@
           "select": "class:android.widget.ImageView & is:clickable & nth:4",
           "label": "Log in with Google",
           "tone": "primary"
+        },
+        {
+          "select": "class:android.widget.Button & desc:Back",
+          "look": "link"
         }
       ]
     }

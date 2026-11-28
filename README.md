@@ -87,7 +87,7 @@ screen needs.
 | `text` | Shown as text, never as a control (an app that offers a click on every message), with everything in it | |
 | `heading` | Shown as a section heading (who wrote the messages below, a date), with everything in it never a control | |
 | `picture` | Shown as a picture, captured live from the app's own window. Only a part with no text and no control in it. Needs the permission `pictures` | `label`: named until the picture arrives |
-| (none) | The part where it stands. `label`: its words, where it shows none of its own and holds no field or switch (an icon button, a meter, a picture's place). `tone`: a control drawn as a button in that tone where the app draws it (an app's filled pill in its page, in a list too), where it has one line of words and is no switch; one whose words destroy or refuse stays `destructive`, and `secondary` there draws it as an outline in Relaid's red. Pack format 3 for both. `phone`: the control needs the phone itself (pack format 4). `icon`: one of Relaid's icons beside its words (pack format 5) | `label`, `tone`: `primary`, `secondary`, `muted`, `destructive`; `phone`; `icon` |
+| (none) | The part where it stands. `label`: its words, where it shows none of its own and holds no field or switch (an icon button, a meter, a picture's place). `tone`: a control drawn as a button in that tone where the app draws it (an app's filled pill in its page, in a list too), where it has one line of words and is no switch; one whose words destroy or refuse stays `destructive`, and `secondary` there draws it as an outline in Relaid's red. Pack format 3 for both. `phone`: the control needs the phone itself (pack format 4). `icon`: one of Relaid's icons beside its words (pack format 5). `look`: how the app draws a button there, which its tree does not tell (pack format 6) | `label`, `tone`: `primary`, `secondary`, `muted`, `destructive`; `phone`; `icon`; `look`: `link` |
 | `title` | The screen's title | |
 | `hero` | Shown large and centred (an amount): text, a heading or a field | |
 | `list` | The main list | `scroll: "drag"`: Relaid drags it, for an app that ignores the scroll Relaid sends. Needs `touch` |
@@ -127,16 +127,21 @@ The mark never goes on what protects the person: a view may not give `phone` to 
 of a keypad. It hides, moves and renames nothing, so unlike the other rules where a part stands it
 holds on secure screens too.
 
-### Icons, boxes and pages
+### Icons, links, boxes and pages
 
 A view may ask for some of the app's look in Relaid's own terms, never with its own drawings or colours beyond its theme. Like
-`phone`, these hide, move and rename nothing, so they hold on secure screens too.
+`phone`, icons, boxes and pages hide, move and rename nothing, so they hold on secure screens too; a link's look does not.
 
 - `icon`, on a rule without `as`, an `action` or an `option`: one of Relaid's icons, drawn beside the control's words, never
   instead of them (they always show). Before the words: `close`, `help`, `document`, `download`, `external`; after them: `menu`,
   `next`, `settings`, `save`, `remove`. Never on a slide or a swipe; Relaid itself never draws one on a field, a key of a keypad,
   a control the app draws as a large tile (whose card shows its words alone) or a control that destroys or refuses, whose only
   mark is Relaid's own.
+- `look: "link"`, on a rule without `as`: the app draws the button there as a text link, its words alone with no box (a quiet Back
+  under a page's pills): its tree draws a text button and an outlined one alike, so only a view can say it. Devices draw its words
+  underlined in its tone's colour (the accent, muted where its tone is muted), no box around them. A look shapes what is shown, so
+  like a tone it is ignored on a secure screen; never on a control whose words destroy or refuse (drawn as Relaid draws them), one
+  that asks for a slide, one in a bar or a tile. Pack format 6.
 - `card` and `note`: the box the app draws parts in. Its parts stay where they are in reading order, inside a card, or inside a note
   (a panel tinted with the accent, Relaid's info icon at its start). A part a bar takes (the bottom bar, the top bar, the way back)
   stays out of it.
@@ -196,7 +201,7 @@ to visible text, which changes with the phone's language.
   view of an app adds holds in all its views. A control whose words destroy or refuse is drawn
   `destructive`, with Relaid's red and mark, whatever `tone` a view gives it.
 - On a secure screen nothing can be hidden or reshaped: `hidden`, `text`, `heading`, `picture`, `row`
-  and rules without `as` (labels and tones where a part stands; a `phone` or an `icon` still holds, as do `card` and `note`) are ignored there, and Relaid never
+  and rules without `as` (labels, tones and looks where a part stands; a `phone` or an `icon` still holds, as do `card` and `note`) are ignored there, and Relaid never
   touches or captures. Relaid marks a screen secure when it has a password field, a PIN pad, or a
   control that asks for a swipe or that a pack declares a slide, whatever the pack says otherwise;
   `secure` can mark more screens, never fewer.
@@ -253,13 +258,15 @@ app draws it in its page rather than in its top bar; a control's label to where 
 bar along the bottom, or `back` for the app's own way back at the bar's start, which a device presses with its own back; one at
 most), `tiles` (a control's label to the shape of the card the app draws it as, large on its own line: its width and height in
 hundredths of the window's width, 1 to 100 wide and 1 to 200 tall; null for a control drawn as no tile, a row of a list), `widths` (a part's label to how wide the app draws it on its
-line outside rows: `fit` at its own width, `full` across it, `none` as a device draws it), `tones` (a control's label to the tone it is
+line outside rows: `fit` at its own width, `full` across it, `same` at one width with the buttons the app stacks right under or over
+it at that width, `none` as a device draws it), `tones` (a control's label to the tone it is
 drawn in: `primary`, `secondary`, `muted`, `destructive`, or `none`), `pad` (the keypad's 12 places as the app lays out its own
 pad, each the label of the key or of the app's part there, null for an empty one; null for a keypad laid out in Relaid's own
 order), `entry` (the code entry's name, null for none), `values` (a part's label to the value it shows under its name: a field's
 text, how far along its range a meter or a slider is (1 of 3, 40%), a row's second line; null for none), `phones` (a control's label
 to the reason it needs the phone itself for, one of the `phone` reasons above, or `none`), `phone` (the screen's own reason, null for
-none), `icons` (a control's label to the icon of Relaid's drawn beside its words, or `none`), `boxes` (a part's label to the box it
+none), `icons` (a control's label to the icon of Relaid's drawn beside its words, or `none`), `looks` (a control's label to the look it
+is drawn in, `link` or `none`), `boxes` (a part's label to the box it
 is drawn in, `card` or `note`, or `none`), `page` (the page the screen is drawn on, `accent`, or null for the theme's own), and labels
 it `shows` or `hides`. Rows, shares, aligns, places, tiles,
 widths and a keypad's places are measured from the app's own boxes (and from where it draws a text's words, line by line, which a host

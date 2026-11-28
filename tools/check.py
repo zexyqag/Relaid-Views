@@ -42,6 +42,8 @@ SELECTOR_STATES = ("clickable", "long-clickable", "editable", "scrollable", "che
 CONFIRMS = {"slide"}
 PERFORMS = {"click", "swipe-right", "swipe-left", "swipe-up", "swipe-down"}
 TONES = {"primary", "secondary", "muted", "destructive"}
+# How the app draws a button where it stands, which its tree does not tell (Relaid's ViewFormat.LOOKS): its words alone, a text link.
+LOOKS = {"link"}
 KEYBOARDS = {"number", "phone", "email", "text"}
 SCROLLS = {"drag"}
 # Why a control or a screen needs the phone itself (Relaid's relaid.json frames.phone.reasons): Relaid's own reasons, each said in
@@ -54,22 +56,22 @@ INT = re.compile(r"[+-]?[0-9]+")
 
 # Field types, as Relaid reads them. "?" marks a field that may also be null.
 PART = {"select": "str", "as": "str?", "label": "str?", "tone": "str?", "confirm": "str?", "perform": "str?", "icon": "str?",
-        "keyboard": "str?", "scroll": "str?", "parts": "str?", "press": "str?", "total": "int?", "phone": "str?"}
+        "keyboard": "str?", "scroll": "str?", "parts": "str?", "press": "str?", "total": "int?", "phone": "str?", "look": "str?"}
 PALETTE = {"accent": "str?", "background": "str?", "surface": "str?", "text": "str?", "muted": "str?", "onAccent": "str?"}
 THEME = {"accent": "str?", "light": (PALETTE,), "dark": (PALETTE,), "corners": "str?", "header": "str?", "cards": "str?"}
 SCREEN = {"name": "str", "displayName": "str?", "when": "strs", "activity": "str?", "secure": "bool", "priority": "int", "phone": "str?",
           "page": "str?", "parts": [PART]}
 PACK = {"theme": (THEME,), "screens": [SCREEN]}
 # Each role a part can have, and the options it takes (Relaid's ViewFormat.ROLES); None: a rule without a role (a label, a tone, a
-# phone or an icon where the part stands).
+# phone, an icon or a look where the part stands).
 ROLES = {
-    None: {"label", "tone", "phone", "icon"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
+    None: {"label", "tone", "phone", "icon", "look"}, "hidden": set(), "text": set(), "heading": set(), "picture": {"label"}, "title": set(), "hero": set(),
     "list": {"scroll"}, "field": {"label", "keyboard"}, "action": {"label", "tone", "confirm", "perform", "phone", "icon"},
     "option": {"label", "tone", "phone", "icon"}, "tab": {"label", "icon"}, "person": set(), "row": {"parts", "press"}, "pin": {"label", "total"},
     "card": set(), "note": set(), "unread": set(),
 }
 SINGLE = {"title", "hero", "list", "pin"}
-OPTIONS = ("label", "tone", "confirm", "perform", "icon", "keyboard", "scroll", "parts", "press", "total", "phone")
+OPTIONS = ("label", "tone", "confirm", "perform", "icon", "keyboard", "scroll", "parts", "press", "total", "phone", "look")
 PACK_META = {"app": "str", "view": "str", "name": "str", "version": "int", "description": "str", "permissions": "strs"}
 # What a pack may ask for beyond shaping screens (Relaid's Packs.PERMISSIONS); the owner grants it.
 PERMISSIONS = ("touch", "pictures")
@@ -484,20 +486,22 @@ def check_pack(app, pack, where, p):
             for opt in OPTIONS:
                 if x.get(opt) is not None and opt not in ROLES[role]:
                     p.refused(pat, f"'{role or 'label'}' takes no '{opt}'")
-            if role is None and x.get("label") is None and x.get("tone") is None and x.get("phone") is None and x.get("icon") is None:
-                p.refused(pat, "a rule without a role needs a label, a tone, a phone or an icon")
+            if role is None and all(x.get(o) is None for o in ("label", "tone", "phone", "icon", "look")):
+                p.refused(pat, "a rule without a role needs a label, a tone, a phone, an icon or a look")
             label = x.get("label")
             if label is not None and (not label.strip() or utf16_len(label) > 60 or "\n" in label):
                 p.refused(pat, "a label must be one line, at most 60 characters")
             icons = set(ICONS) if role == "tab" else set(CONTROL_ICONS)
             for opt, allowed in (("tone", TONES), ("confirm", CONFIRMS), ("perform", PERFORMS), ("icon", icons),
-                                 ("keyboard", KEYBOARDS), ("scroll", SCROLLS), ("phone", set(PHONES))):
+                                 ("keyboard", KEYBOARDS), ("scroll", SCROLLS), ("phone", set(PHONES)), ("look", LOOKS)):
                 if x.get(opt) is not None and x[opt] not in allowed:
                     p.refused(pat, f"unknown {opt} '{x[opt]}' (use: {', '.join(sorted(allowed))})")
             if x.get("phone") is not None and protective(x):
                 p.refused(pat, "a slide or a swipe takes no phone: its own deliberate slide guards it")
             if x.get("icon") is not None and protective(x):
                 p.refused(pat, "a slide or a swipe takes no icon: it is drawn as Relaid's own slide")
+            if x.get("look") is not None and x.get("tone") == "destructive":
+                p.refused(pat, "a destructive control takes no look: it is drawn as Relaid draws what destroys")
             if x.get("total") is not None and not 1 <= x["total"] <= 12:
                 p.refused(pat, "total must be 1 to 12")
             for opt in ("select", "parts", "press"):
@@ -547,7 +551,7 @@ EXPECT = {
     "slides": "strs", "gestures": "strs", "fields": "map", "keypad": "int", "progress": (PROGRESS_EXPECT,), "hero": "str?",
     "avatars": "strs", "headings": "strs", "sizes": "map", "rows": "rows", "shares": "shares",
     "align": "words", "places": "words", "tiles": "tiles", "widths": "words", "tones": "words", "pad": "pad", "entry": "str?",
-    "values": "map", "phones": "words", "phone": "str?", "icons": "words", "boxes": "words", "page": "str?",
+    "values": "map", "phones": "words", "phone": "str?", "icons": "words", "boxes": "words", "page": "str?", "looks": "words",
 }
 # The size steps a text is drawn at (Relaid's relaid.json frames.sizes), as a fixture's sizes expect them: "body" for none.
 SIZES = ("small", "body", "large", "larger", "largest")
@@ -562,7 +566,7 @@ SHARE_FIT = 0
 # (tiles.tallest, and 100 wide), how wide a part is drawn on its line ("none", or one of relaid.json's widths), and how many places
 # a keypad has (keys.order).
 ALIGNS = ("start", "center", "end")
-WIDTHS = ("none", "fit", "full")
+WIDTHS = ("none", "fit", "full", "same")
 TITLE_PLACES = ("bar", "page")
 CONTROL_PLACES = ("top", "bottom", "back")
 TILE_TALLEST = 200
@@ -679,6 +683,10 @@ def check_fixtures(d, names, p):
         for label, icon in icons.items() if isinstance(icons, dict) else []:
             if icon not in CONTROL_ICONS + ("none",):
                 p.mistake(at, f"icons: '{label}' is drawn with an icon Relaid does not have for a control ('{icon}'; one of {', '.join(CONTROL_ICONS)} or none)")
+        looks = c.get("looks")
+        for label, look in looks.items() if isinstance(looks, dict) else []:
+            if look not in LOOKS | {"none"}:
+                p.mistake(at, f"looks: '{label}' is drawn in a look Relaid does not know ('{look}'; one of {', '.join(sorted(LOOKS))} or none)")
         boxes = c.get("boxes")
         for label, box in boxes.items() if isinstance(boxes, dict) else []:
             if box not in BOXES + ("none",):
@@ -824,6 +832,8 @@ FORMAT_SINCE = {
     "rule:option.icon": 5,
     "screens.parts.as=card": 5,
     "screens.parts.as=note": 5,
+    # How the app draws a button where it stands, which its tree does not tell: as a text link.
+    "rule:none.look": 6,
 }
 SELECTOR_PATHS = ("select", "when", "parts", "press")
 

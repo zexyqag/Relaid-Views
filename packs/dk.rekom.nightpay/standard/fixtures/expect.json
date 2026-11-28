@@ -67,7 +67,7 @@
     }
   },
   {
-    "why": "Choosing how to log in (a recapture; NightPay gives no character locations): the app draws its two log-in buttons as pictures (the MobilePay mark, Google's G) and names neither, so plain they are left out and the screen offers only Back. The view names them where they stand, for MobilePay and Google, in the app's own phrasing of its sign-up, filled as the app fills them (tone primary), each in the middle of its line as the app draws it, one above the other. Back, the app's quiet link under them in the middle of its line, stays in the page there, muted. Its lead-in, a text it gives as a description, sits in the middle of its line as the app draws it. Log in with MobilePay hands over to MobilePay, another app, so it says On the phone where it stands; Log in with Google is not claimed.",
+    "why": "Choosing how to log in (a recapture; NightPay gives no character locations): the app draws its two log-in buttons as pictures (the MobilePay mark, Google's G) and names neither, so plain they are left out and the screen offers only Back. The view names them where they stand, for MobilePay and Google, in the app's own phrasing of its sign-up, filled as the app fills them (tone primary), each in the middle of its line as the app draws it, one above the other, at the one width the app gives them both whatever their words. Back, the app's quiet link under them in the middle of its line, stays in the page there, muted, drawn as the text link it is (look link: its tree draws it as any button). Its lead-in, a text it gives as a description, sits in the middle of its line as the app draws it. Log in with MobilePay hands over to MobilePay, another app, so it says On the phone where it stands; Log in with Google is not claimed.",
     "fixture": "login.xml",
     "screen": "nightpay-login",
     "secure": false,
@@ -89,6 +89,16 @@
       "Log in with MobilePay": "primary",
       "Log in with Google": "primary",
       "Back": "muted"
+    },
+    "widths": {
+      "Log in with MobilePay": "same",
+      "Log in with Google": "same",
+      "Back": "none"
+    },
+    "looks": {
+      "Log in with MobilePay": "none",
+      "Log in with Google": "none",
+      "Back": "link"
     },
     "phones": {
       "Log in with MobilePay": "app",

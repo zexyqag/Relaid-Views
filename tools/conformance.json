@@ -3643,6 +3643,144 @@
       "ignored": [
         "theme.accent"
       ]
+    },
+    {
+      "why": "a button the app draws as a text link, where it stands: format 6",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:back",
+                "look": "link"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 6
+    },
+    {
+      "why": "a text link with a tone, where it stands",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:back",
+                "tone": "muted",
+                "look": "link"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": true,
+      "check": true,
+      "format": 6
+    },
+    {
+      "why": "an unknown look",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:back",
+                "look": "underline"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a destructive control takes no look",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:delete",
+                "tone": "destructive",
+                "look": "link"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "an action takes no look",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:next",
+                "as": "action",
+                "look": "link"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
+    },
+    {
+      "why": "a text takes no look",
+      "app": "com.example.app",
+      "pack": {
+        "screens": [
+          {
+            "name": "x",
+            "when": [
+              "id:x"
+            ],
+            "parts": [
+              {
+                "select": "id:words",
+                "as": "text",
+                "look": "link"
+              }
+            ]
+          }
+        ]
+      },
+      "phone": false,
+      "check": false
     }
   ]
 }

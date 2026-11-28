@@ -2,6 +2,6 @@
   "app": "dk.rekom.nightpay",
   "view": "standard",
   "name": "NightPay",
-  "version": 3,
-  "description": "NightPay's own colours: white words and round white buttons on its blue, in light and dark, a plain header and outlined cards. The welcome and log-in screens named, its logo as a picture where the owner shows what Relaid cannot read, its white pills filled where it draws them, and its unnamed MobilePay and Google log-in buttons named and filled there. Its MobilePay buttons said to use another app."
+  "version": 4,
+  "description": "NightPay's own colours: white words and round white buttons on its blue, in light and dark, a plain header and outlined cards. Its welcome and log-in screens named, its logo a picture where the owner shows what Relaid cannot read, its white pills filled, its unnamed MobilePay and Google log-in buttons named and filled, its MobilePay buttons said to use another app, and its quiet Back a text link."
 }
